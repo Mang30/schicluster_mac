@@ -1,0 +1,4 @@
+"""Version information for schicluster package."""
+
+version = "1.0.0"
+__version__ = version
