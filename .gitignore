@@ -27,6 +27,7 @@ wheels/
 .LSOverride
 
 # Data directories - exclude large data files
+output/
 data/
 converted_matrices/
 converted_matrices_by_stage_20k/
