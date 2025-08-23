@@ -7163,3 +7163,475 @@
 2025-08-23 16:41:24,390 - INFO - ✅ Converged after 6 iterations
 2025-08-23 16:41:24,390 - INFO - Converting MPS result back to sparse matrix...
 2025-08-23 16:41:24,392 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:24,425 - INFO -    RWR 耗时: 0.087 秒
+2025-08-23 16:41:24,581 - INFO -    归一化耗时: 0.029 秒
+2025-08-23 16:41:25,202 - INFO -    ✅ 完成，总耗时: 0.134 秒
+2025-08-23 16:41:25,203 - INFO -   ✅ chr4: 完成，耗时 0.91 秒
+2025-08-23 16:41:25,203 - INFO - 🧬 开始处理 chr5 (bin格式)
+2025-08-23 16:41:25,204 - INFO -    染色体 chr5 大小: 151,834,684 bp, bins: 1519
+2025-08-23 16:41:25,219 - INFO -    数据形状: (9433, 3)
+2025-08-23 16:41:25,219 - INFO -    bin 范围: 30-1517, 30-1517
+2025-08-23 16:41:25,221 - INFO -    矩阵大小: (1519, 1519), 非零元素: 17,530, 稀疏度: 0.007597
+2025-08-23 16:41:25,222 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:25,222 - INFO - 🔥 MPS Gaussian filter: 1519x1519 matrix, 内存需求: 35.3MB
+2025-08-23 16:41:25,228 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:25,239 - INFO -    卷积耗时: 0.017 秒
+2025-08-23 16:41:25,241 - INFO - 🚀 MPS 加速: 1519x1519 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0293)
+2025-08-23 16:41:25,241 - INFO - 🚀 Using MPS for 1519x1519 matrix with 24GB GPU memory
+2025-08-23 16:41:25,241 - INFO - Converting 1519x1519 sparse matrix to dense for MPS...
+2025-08-23 16:41:25,247 - INFO - 💾 Estimated GPU memory usage: 26.4 MB
+2025-08-23 16:41:25,262 - INFO - 🔥 MPS Iter 1 takes 0.006 seconds. Loss: 3.136
+2025-08-23 16:41:25,270 - INFO - 🔥 MPS Iter 2 takes 0.022 seconds. Loss: 0.468
+2025-08-23 16:41:25,276 - INFO - 🔥 MPS Iter 3 takes 0.029 seconds. Loss: 0.123
+2025-08-23 16:41:25,283 - INFO - 🔥 MPS Iter 4 takes 0.036 seconds. Loss: 0.040
+2025-08-23 16:41:25,290 - INFO - 🔥 MPS Iter 5 takes 0.043 seconds. Loss: 0.015
+2025-08-23 16:41:25,296 - INFO - 🔥 MPS Iter 6 takes 0.049 seconds. Loss: 0.006
+2025-08-23 16:41:25,297 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:25,297 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:25,300 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:25,339 - INFO -    RWR 耗时: 0.100 秒
+2025-08-23 16:41:25,371 - INFO -    归一化耗时: 0.032 秒
+2025-08-23 16:41:25,590 - INFO -    ✅ 完成，总耗时: 0.149 秒
+2025-08-23 16:41:25,591 - INFO -   ✅ chr5: 完成，耗时 0.39 秒
+2025-08-23 16:41:25,591 - INFO - 🧬 开始处理 chr6 (bin格式)
+2025-08-23 16:41:25,592 - INFO -    染色体 chr6 大小: 149,736,546 bp, bins: 1498
+2025-08-23 16:41:25,612 - INFO -    数据形状: (10029, 3)
+2025-08-23 16:41:25,613 - INFO -    bin 范围: 30-1495, 31-1495
+2025-08-23 16:41:25,613 - INFO -    矩阵大小: (1498, 1498), 非零元素: 18,705, 稀疏度: 0.008336
+2025-08-23 16:41:25,613 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:25,613 - INFO - 🔥 MPS Gaussian filter: 1498x1498 matrix, 内存需求: 34.3MB
+2025-08-23 16:41:25,619 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:25,629 - INFO -    卷积耗时: 0.016 秒
+2025-08-23 16:41:25,631 - INFO - 🚀 MPS 加速: 1498x1498 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0330)
+2025-08-23 16:41:25,631 - INFO - 🚀 Using MPS for 1498x1498 matrix with 24GB GPU memory
+2025-08-23 16:41:25,631 - INFO - Converting 1498x1498 sparse matrix to dense for MPS...
+2025-08-23 16:41:25,634 - INFO - 💾 Estimated GPU memory usage: 25.7 MB
+2025-08-23 16:41:25,647 - INFO - 🔥 MPS Iter 1 takes 0.004 seconds. Loss: 2.879
+2025-08-23 16:41:25,654 - INFO - 🔥 MPS Iter 2 takes 0.016 seconds. Loss: 0.441
+2025-08-23 16:41:25,661 - INFO - 🔥 MPS Iter 3 takes 0.024 seconds. Loss: 0.116
+2025-08-23 16:41:25,667 - INFO - 🔥 MPS Iter 4 takes 0.031 seconds. Loss: 0.037
+2025-08-23 16:41:25,672 - INFO - 🔥 MPS Iter 5 takes 0.037 seconds. Loss: 0.013
+2025-08-23 16:41:25,678 - INFO - 🔥 MPS Iter 6 takes 0.042 seconds. Loss: 0.005
+2025-08-23 16:41:25,679 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:25,679 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:25,680 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:25,714 - INFO -    RWR 耗时: 0.084 秒
+2025-08-23 16:41:25,738 - INFO -    归一化耗时: 0.024 秒
+2025-08-23 16:41:25,947 - INFO -    ✅ 完成，总耗时: 0.123 秒
+2025-08-23 16:41:25,948 - INFO -   ✅ chr6: 完成，耗时 0.36 秒
+2025-08-23 16:41:25,948 - INFO - 🧬 开始处理 chr7 (bin格式)
+2025-08-23 16:41:25,949 - INFO -    染色体 chr7 大小: 145,441,459 bp, bins: 1455
+2025-08-23 16:41:25,967 - INFO -    数据形状: (9939, 3)
+2025-08-23 16:41:25,968 - INFO -    bin 范围: 30-1453, 30-1453
+2025-08-23 16:41:25,969 - INFO -    矩阵大小: (1455, 1455), 非零元素: 18,641, 稀疏度: 0.008805
+2025-08-23 16:41:25,969 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:25,969 - INFO - 🔥 MPS Gaussian filter: 1455x1455 matrix, 内存需求: 32.3MB
+2025-08-23 16:41:25,975 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:25,984 - INFO -    卷积耗时: 0.015 秒
+2025-08-23 16:41:25,987 - INFO - 🚀 MPS 加速: 1455x1455 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0352)
+2025-08-23 16:41:25,987 - INFO - 🚀 Using MPS for 1455x1455 matrix with 24GB GPU memory
+2025-08-23 16:41:25,987 - INFO - Converting 1455x1455 sparse matrix to dense for MPS...
+2025-08-23 16:41:25,989 - INFO - 💾 Estimated GPU memory usage: 24.2 MB
+2025-08-23 16:41:26,004 - INFO - 🔥 MPS Iter 1 takes 0.003 seconds. Loss: 2.923
+2025-08-23 16:41:26,010 - INFO - 🔥 MPS Iter 2 takes 0.018 seconds. Loss: 0.455
+2025-08-23 16:41:26,017 - INFO - 🔥 MPS Iter 3 takes 0.025 seconds. Loss: 0.120
+2025-08-23 16:41:26,021 - INFO - 🔥 MPS Iter 4 takes 0.030 seconds. Loss: 0.038
+2025-08-23 16:41:26,026 - INFO - 🔥 MPS Iter 5 takes 0.035 seconds. Loss: 0.013
+2025-08-23 16:41:26,031 - INFO - 🔥 MPS Iter 6 takes 0.040 seconds. Loss: 0.005
+2025-08-23 16:41:26,031 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:26,031 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:26,032 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:26,061 - INFO -    RWR 耗时: 0.076 秒
+2025-08-23 16:41:26,086 - INFO -    归一化耗时: 0.025 秒
+2025-08-23 16:41:26,272 - INFO -    ✅ 完成，总耗时: 0.115 秒
+2025-08-23 16:41:26,272 - INFO -   ✅ chr7: 完成，耗时 0.32 秒
+2025-08-23 16:41:26,272 - INFO - 🧬 开始处理 chr8 (bin格式)
+2025-08-23 16:41:26,273 - INFO -    染色体 chr8 大小: 129,401,213 bp, bins: 1295
+2025-08-23 16:41:26,290 - INFO -    数据形状: (8510, 3)
+2025-08-23 16:41:26,290 - INFO -    bin 范围: 30-1292, 31-1292
+2025-08-23 16:41:26,291 - INFO -    矩阵大小: (1295, 1295), 非零元素: 15,868, 稀疏度: 0.009462
+2025-08-23 16:41:26,291 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:26,291 - INFO - 🔥 MPS Gaussian filter: 1295x1295 matrix, 内存需求: 25.6MB
+2025-08-23 16:41:26,296 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:26,304 - INFO -    卷积耗时: 0.013 秒
+2025-08-23 16:41:26,305 - INFO - 🚀 MPS 加速: 1295x1295 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0361)
+2025-08-23 16:41:26,305 - INFO - 🚀 Using MPS for 1295x1295 matrix with 24GB GPU memory
+2025-08-23 16:41:26,305 - INFO - Converting 1295x1295 sparse matrix to dense for MPS...
+2025-08-23 16:41:26,308 - INFO - 💾 Estimated GPU memory usage: 19.2 MB
+2025-08-23 16:41:26,318 - INFO - 🔥 MPS Iter 1 takes 0.003 seconds. Loss: 2.728
+2025-08-23 16:41:26,324 - INFO - 🔥 MPS Iter 2 takes 0.014 seconds. Loss: 0.415
+2025-08-23 16:41:26,329 - INFO - 🔥 MPS Iter 3 takes 0.019 seconds. Loss: 0.109
+2025-08-23 16:41:26,332 - INFO - 🔥 MPS Iter 4 takes 0.024 seconds. Loss: 0.036
+2025-08-23 16:41:26,336 - INFO - 🔥 MPS Iter 5 takes 0.028 seconds. Loss: 0.013
+2025-08-23 16:41:26,340 - INFO - 🔥 MPS Iter 6 takes 0.032 seconds. Loss: 0.005
+2025-08-23 16:41:26,340 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:26,340 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:26,341 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:26,364 - INFO -    RWR 耗时: 0.059 秒
+2025-08-23 16:41:26,381 - INFO -    归一化耗时: 0.017 秒
+2025-08-23 16:41:26,534 - INFO -    ✅ 完成，总耗时: 0.090 秒
+2025-08-23 16:41:26,535 - INFO -   ✅ chr8: 完成，耗时 0.26 秒
+2025-08-23 16:41:26,535 - INFO - 🧬 开始处理 chr9 (bin格式)
+2025-08-23 16:41:26,535 - INFO -    染色体 chr9 大小: 124,595,110 bp, bins: 1246
+2025-08-23 16:41:26,551 - INFO -    数据形状: (8651, 3)
+2025-08-23 16:41:26,551 - INFO -    bin 范围: 30-1244, 30-1244
+2025-08-23 16:41:26,551 - INFO -    矩阵大小: (1246, 1246), 非零元素: 16,144, 稀疏度: 0.010399
+2025-08-23 16:41:26,552 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:26,552 - INFO - 🔥 MPS Gaussian filter: 1246x1246 matrix, 内存需求: 23.7MB
+2025-08-23 16:41:26,557 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:26,565 - INFO -    卷积耗时: 0.013 秒
+2025-08-23 16:41:26,566 - INFO - 🚀 MPS 加速: 1246x1246 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0383)
+2025-08-23 16:41:26,566 - INFO - 🚀 Using MPS for 1246x1246 matrix with 24GB GPU memory
+2025-08-23 16:41:26,566 - INFO - Converting 1246x1246 sparse matrix to dense for MPS...
+2025-08-23 16:41:26,570 - INFO - 💾 Estimated GPU memory usage: 17.8 MB
+2025-08-23 16:41:26,581 - INFO - 🔥 MPS Iter 1 takes 0.004 seconds. Loss: 2.676
+2025-08-23 16:41:26,587 - INFO - 🔥 MPS Iter 2 takes 0.016 seconds. Loss: 0.410
+2025-08-23 16:41:26,591 - INFO - 🔥 MPS Iter 3 takes 0.022 seconds. Loss: 0.109
+2025-08-23 16:41:26,594 - INFO - 🔥 MPS Iter 4 takes 0.025 seconds. Loss: 0.036
+2025-08-23 16:41:26,598 - INFO - 🔥 MPS Iter 5 takes 0.029 seconds. Loss: 0.013
+2025-08-23 16:41:26,601 - INFO - 🔥 MPS Iter 6 takes 0.032 seconds. Loss: 0.005
+2025-08-23 16:41:26,602 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:26,602 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:26,603 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:26,625 - INFO -    RWR 耗时: 0.060 秒
+2025-08-23 16:41:26,641 - INFO -    归一化耗时: 0.017 秒
+2025-08-23 16:41:26,784 - INFO -    ✅ 完成，总耗时: 0.089 秒
+2025-08-23 16:41:26,784 - INFO -   ✅ chr9: 完成，耗时 0.25 秒
+2025-08-23 16:41:26,784 - INFO - 🧬 开始处理 chr10 (bin格式)
+2025-08-23 16:41:26,785 - INFO -    染色体 chr10 大小: 130,694,993 bp, bins: 1307
+2025-08-23 16:41:26,798 - INFO -    数据形状: (8459, 3)
+2025-08-23 16:41:26,799 - INFO -    bin 范围: 31-1305, 31-1305
+2025-08-23 16:41:26,799 - INFO -    矩阵大小: (1307, 1307), 非零元素: 15,736, 稀疏度: 0.009212
+2025-08-23 16:41:26,799 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:26,799 - INFO - 🔥 MPS Gaussian filter: 1307x1307 matrix, 内存需求: 26.1MB
+2025-08-23 16:41:26,806 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:26,813 - INFO -    卷积耗时: 0.014 秒
+2025-08-23 16:41:26,815 - INFO - 🚀 MPS 加速: 1307x1307 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0373)
+2025-08-23 16:41:26,815 - INFO - 🚀 Using MPS for 1307x1307 matrix with 24GB GPU memory
+2025-08-23 16:41:26,815 - INFO - Converting 1307x1307 sparse matrix to dense for MPS...
+2025-08-23 16:41:26,817 - INFO - 💾 Estimated GPU memory usage: 19.5 MB
+2025-08-23 16:41:26,827 - INFO - 🔥 MPS Iter 1 takes 0.003 seconds. Loss: 2.690
+2025-08-23 16:41:26,832 - INFO - 🔥 MPS Iter 2 takes 0.014 seconds. Loss: 0.415
+2025-08-23 16:41:26,836 - INFO - 🔥 MPS Iter 3 takes 0.018 seconds. Loss: 0.110
+2025-08-23 16:41:26,840 - INFO - 🔥 MPS Iter 4 takes 0.023 seconds. Loss: 0.036
+2025-08-23 16:41:26,844 - INFO - 🔥 MPS Iter 5 takes 0.026 seconds. Loss: 0.013
+2025-08-23 16:41:26,847 - INFO - 🔥 MPS Iter 6 takes 0.029 seconds. Loss: 0.005
+2025-08-23 16:41:26,848 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:26,848 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:26,849 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:26,874 - INFO -    RWR 耗时: 0.060 秒
+2025-08-23 16:41:26,894 - INFO -    归一化耗时: 0.020 秒
+2025-08-23 16:41:27,047 - INFO -    ✅ 完成，总耗时: 0.094 秒
+2025-08-23 16:41:27,048 - INFO -   ✅ chr10: 完成，耗时 0.26 秒
+2025-08-23 16:41:27,048 - INFO - 🧬 开始处理 chr11 (bin格式)
+2025-08-23 16:41:27,048 - INFO -    染色体 chr11 大小: 122,082,543 bp, bins: 1221
+2025-08-23 16:41:27,063 - INFO -    数据形状: (8320, 3)
+2025-08-23 16:41:27,063 - INFO -    bin 范围: 31-1219, 31-1219
+2025-08-23 16:41:27,063 - INFO -    矩阵大小: (1221, 1221), 非零元素: 15,499, 稀疏度: 0.010396
+2025-08-23 16:41:27,064 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:27,064 - INFO - 🔥 MPS Gaussian filter: 1221x1221 matrix, 内存需求: 22.8MB
+2025-08-23 16:41:27,069 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:27,076 - INFO -    卷积耗时: 0.012 秒
+2025-08-23 16:41:27,077 - INFO - 🚀 MPS 加速: 1221x1221 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0369)
+2025-08-23 16:41:27,077 - INFO - 🚀 Using MPS for 1221x1221 matrix with 24GB GPU memory
+2025-08-23 16:41:27,077 - INFO - Converting 1221x1221 sparse matrix to dense for MPS...
+2025-08-23 16:41:27,080 - INFO - 💾 Estimated GPU memory usage: 17.1 MB
+2025-08-23 16:41:27,091 - INFO - 🔥 MPS Iter 1 takes 0.003 seconds. Loss: 2.791
+2025-08-23 16:41:27,097 - INFO - 🔥 MPS Iter 2 takes 0.015 seconds. Loss: 0.432
+2025-08-23 16:41:27,101 - INFO - 🔥 MPS Iter 3 takes 0.020 seconds. Loss: 0.115
+2025-08-23 16:41:27,105 - INFO - 🔥 MPS Iter 4 takes 0.024 seconds. Loss: 0.038
+2025-08-23 16:41:27,108 - INFO - 🔥 MPS Iter 5 takes 0.028 seconds. Loss: 0.014
+2025-08-23 16:41:27,112 - INFO - 🔥 MPS Iter 6 takes 0.032 seconds. Loss: 0.005
+2025-08-23 16:41:27,113 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:27,113 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:27,114 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:27,132 - INFO -    RWR 耗时: 0.056 秒
+2025-08-23 16:41:27,148 - INFO -    归一化耗时: 0.016 秒
+2025-08-23 16:41:27,283 - INFO -    ✅ 完成，总耗时: 0.084 秒
+2025-08-23 16:41:27,284 - INFO -   ✅ chr11: 完成，耗时 0.24 秒
+2025-08-23 16:41:27,284 - INFO - 🧬 开始处理 chr12 (bin格式)
+2025-08-23 16:41:27,285 - INFO -    染色体 chr12 大小: 120,129,022 bp, bins: 1202
+2025-08-23 16:41:27,297 - INFO -    数据形状: (7674, 3)
+2025-08-23 16:41:27,297 - INFO -    bin 范围: 30-1200, 31-1200
+2025-08-23 16:41:27,298 - INFO -    矩阵大小: (1202, 1202), 非零元素: 14,304, 稀疏度: 0.009900
+2025-08-23 16:41:27,298 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:27,298 - INFO - 🔥 MPS Gaussian filter: 1202x1202 matrix, 内存需求: 22.1MB
+2025-08-23 16:41:27,303 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:27,311 - INFO -    卷积耗时: 0.013 秒
+2025-08-23 16:41:27,312 - INFO - 🚀 MPS 加速: 1202x1202 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0386)
+2025-08-23 16:41:27,312 - INFO - 🚀 Using MPS for 1202x1202 matrix with 24GB GPU memory
+2025-08-23 16:41:27,312 - INFO - Converting 1202x1202 sparse matrix to dense for MPS...
+2025-08-23 16:41:27,314 - INFO - 💾 Estimated GPU memory usage: 16.5 MB
+2025-08-23 16:41:27,323 - INFO - 🔥 MPS Iter 1 takes 0.003 seconds. Loss: 2.765
+2025-08-23 16:41:27,328 - INFO - 🔥 MPS Iter 2 takes 0.012 seconds. Loss: 0.419
+2025-08-23 16:41:27,332 - INFO - 🔥 MPS Iter 3 takes 0.017 seconds. Loss: 0.109
+2025-08-23 16:41:27,336 - INFO - 🔥 MPS Iter 4 takes 0.020 seconds. Loss: 0.035
+2025-08-23 16:41:27,339 - INFO - 🔥 MPS Iter 5 takes 0.024 seconds. Loss: 0.012
+2025-08-23 16:41:27,342 - INFO - 🔥 MPS Iter 6 takes 0.028 seconds. Loss: 0.005
+2025-08-23 16:41:27,342 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:27,342 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:27,344 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:27,364 - INFO -    RWR 耗时: 0.053 秒
+2025-08-23 16:41:27,382 - INFO -    归一化耗时: 0.018 秒
+2025-08-23 16:41:27,510 - INFO -    ✅ 完成，总耗时: 0.084 秒
+2025-08-23 16:41:27,511 - INFO -   ✅ chr12: 完成，耗时 0.23 秒
+2025-08-23 16:41:27,511 - INFO - 🧬 开始处理 chr13 (bin格式)
+2025-08-23 16:41:27,512 - INFO -    染色体 chr13 大小: 120,421,639 bp, bins: 1205
+2025-08-23 16:41:27,524 - INFO -    数据形状: (8155, 3)
+2025-08-23 16:41:27,524 - INFO -    bin 范围: 30-1203, 30-1203
+2025-08-23 16:41:27,525 - INFO -    矩阵大小: (1205, 1205), 非零元素: 15,248, 稀疏度: 0.010501
+2025-08-23 16:41:27,525 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:27,525 - INFO - 🔥 MPS Gaussian filter: 1205x1205 matrix, 内存需求: 22.2MB
+2025-08-23 16:41:27,530 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:27,538 - INFO -    卷积耗时: 0.013 秒
+2025-08-23 16:41:27,541 - INFO - 🚀 MPS 加速: 1205x1205 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0407)
+2025-08-23 16:41:27,541 - INFO - 🚀 Using MPS for 1205x1205 matrix with 24GB GPU memory
+2025-08-23 16:41:27,541 - INFO - Converting 1205x1205 sparse matrix to dense for MPS...
+2025-08-23 16:41:27,545 - INFO - 💾 Estimated GPU memory usage: 16.6 MB
+2025-08-23 16:41:27,554 - INFO - 🔥 MPS Iter 1 takes 0.004 seconds. Loss: 2.540
+2025-08-23 16:41:27,558 - INFO - 🔥 MPS Iter 2 takes 0.013 seconds. Loss: 0.389
+2025-08-23 16:41:27,563 - INFO - 🔥 MPS Iter 3 takes 0.017 seconds. Loss: 0.103
+2025-08-23 16:41:27,566 - INFO - 🔥 MPS Iter 4 takes 0.022 seconds. Loss: 0.033
+2025-08-23 16:41:27,569 - INFO - 🔥 MPS Iter 5 takes 0.025 seconds. Loss: 0.012
+2025-08-23 16:41:27,572 - INFO - 🔥 MPS Iter 6 takes 0.029 seconds. Loss: 0.005
+2025-08-23 16:41:27,573 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:27,573 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:27,574 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:27,594 - INFO -    RWR 耗时: 0.055 秒
+2025-08-23 16:41:27,610 - INFO -    归一化耗时: 0.016 秒
+2025-08-23 16:41:27,740 - INFO -    ✅ 完成，总耗时: 0.083 秒
+2025-08-23 16:41:27,740 - INFO -   ✅ chr13: 完成，耗时 0.23 秒
+2025-08-23 16:41:27,740 - INFO - 🧬 开始处理 chr14 (bin格式)
+2025-08-23 16:41:27,741 - INFO -    染色体 chr14 大小: 124,902,244 bp, bins: 1250
+2025-08-23 16:41:27,754 - INFO -    数据形状: (8341, 3)
+2025-08-23 16:41:27,754 - INFO -    bin 范围: 30-1246, 59-1247
+2025-08-23 16:41:27,754 - INFO -    矩阵大小: (1250, 1250), 非零元素: 15,682, 稀疏度: 0.010036
+2025-08-23 16:41:27,754 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:27,754 - INFO - 🔥 MPS Gaussian filter: 1250x1250 matrix, 内存需求: 23.9MB
+2025-08-23 16:41:27,760 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:27,767 - INFO -    卷积耗时: 0.013 秒
+2025-08-23 16:41:27,769 - INFO - 🚀 MPS 加速: 1250x1250 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0419)
+2025-08-23 16:41:27,769 - INFO - 🚀 Using MPS for 1250x1250 matrix with 24GB GPU memory
+2025-08-23 16:41:27,769 - INFO - Converting 1250x1250 sparse matrix to dense for MPS...
+2025-08-23 16:41:27,772 - INFO - 💾 Estimated GPU memory usage: 17.9 MB
+2025-08-23 16:41:27,783 - INFO - 🔥 MPS Iter 1 takes 0.003 seconds. Loss: 2.801
+2025-08-23 16:41:27,789 - INFO - 🔥 MPS Iter 2 takes 0.015 seconds. Loss: 0.408
+2025-08-23 16:41:27,795 - INFO - 🔥 MPS Iter 3 takes 0.021 seconds. Loss: 0.103
+2025-08-23 16:41:27,799 - INFO - 🔥 MPS Iter 4 takes 0.026 seconds. Loss: 0.032
+2025-08-23 16:41:27,803 - INFO - 🔥 MPS Iter 5 takes 0.030 seconds. Loss: 0.011
+2025-08-23 16:41:27,806 - INFO - 🔥 MPS Iter 6 takes 0.034 seconds. Loss: 0.004
+2025-08-23 16:41:27,806 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:27,806 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:27,807 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:27,828 - INFO -    RWR 耗时: 0.060 秒
+2025-08-23 16:41:27,847 - INFO -    归一化耗时: 0.019 秒
+2025-08-23 16:41:27,986 - INFO -    ✅ 完成，总耗时: 0.092 秒
+2025-08-23 16:41:27,986 - INFO -   ✅ chr14: 完成，耗时 0.25 秒
+2025-08-23 16:41:27,987 - INFO - 🧬 开始处理 chr15 (bin格式)
+2025-08-23 16:41:27,987 - INFO -    染色体 chr15 大小: 104,043,685 bp, bins: 1041
+2025-08-23 16:41:28,000 - INFO -    数据形状: (6689, 3)
+2025-08-23 16:41:28,000 - INFO -    bin 范围: 31-1038, 31-1039
+2025-08-23 16:41:28,001 - INFO -    矩阵大小: (1041, 1041), 非零元素: 12,451, 稀疏度: 0.011490
+2025-08-23 16:41:28,001 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:28,001 - INFO - 🔥 MPS Gaussian filter: 1041x1041 matrix, 内存需求: 16.6MB
+2025-08-23 16:41:28,005 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:28,009 - INFO -    卷积耗时: 0.009 秒
+2025-08-23 16:41:28,010 - INFO - 🚀 MPS 加速: 1041x1041 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0428)
+2025-08-23 16:41:28,010 - INFO - 🚀 Using MPS for 1041x1041 matrix with 24GB GPU memory
+2025-08-23 16:41:28,010 - INFO - Converting 1041x1041 sparse matrix to dense for MPS...
+2025-08-23 16:41:28,012 - INFO - 💾 Estimated GPU memory usage: 12.4 MB
+2025-08-23 16:41:28,017 - INFO - 🔥 MPS Iter 1 takes 0.002 seconds. Loss: 2.471
+2025-08-23 16:41:28,022 - INFO - 🔥 MPS Iter 2 takes 0.007 seconds. Loss: 0.378
+2025-08-23 16:41:28,025 - INFO - 🔥 MPS Iter 3 takes 0.012 seconds. Loss: 0.100
+2025-08-23 16:41:28,029 - INFO - 🔥 MPS Iter 4 takes 0.015 seconds. Loss: 0.033
+2025-08-23 16:41:28,032 - INFO - 🔥 MPS Iter 5 takes 0.019 seconds. Loss: 0.012
+2025-08-23 16:41:28,034 - INFO - 🔥 MPS Iter 6 takes 0.022 seconds. Loss: 0.005
+2025-08-23 16:41:28,035 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:28,035 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:28,035 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:28,050 - INFO -    RWR 耗时: 0.041 秒
+2025-08-23 16:41:28,062 - INFO -    归一化耗时: 0.011 秒
+2025-08-23 16:41:28,164 - INFO -    ✅ 完成，总耗时: 0.061 秒
+2025-08-23 16:41:28,165 - INFO -   ✅ chr15: 完成，耗时 0.18 秒
+2025-08-23 16:41:28,165 - INFO - 🧬 开始处理 chr16 (bin格式)
+2025-08-23 16:41:28,166 - INFO -    染色体 chr16 大小: 98,207,768 bp, bins: 983
+2025-08-23 16:41:28,174 - INFO -    数据形状: (6141, 3)
+2025-08-23 16:41:28,174 - INFO -    bin 范围: 30-980, 32-980
+2025-08-23 16:41:28,175 - INFO -    矩阵大小: (983, 983), 非零元素: 11,440, 稀疏度: 0.011839
+2025-08-23 16:41:28,175 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:28,175 - INFO - 🔥 MPS Gaussian filter: 983x983 matrix, 内存需求: 14.8MB
+2025-08-23 16:41:28,180 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:28,185 - INFO -    卷积耗时: 0.010 秒
+2025-08-23 16:41:28,186 - INFO - 🚀 MPS 加速: 983x983 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0475)
+2025-08-23 16:41:28,186 - INFO - 🚀 Using MPS for 983x983 matrix with 24GB GPU memory
+2025-08-23 16:41:28,186 - INFO - Converting 983x983 sparse matrix to dense for MPS...
+2025-08-23 16:41:28,188 - INFO - 💾 Estimated GPU memory usage: 11.1 MB
+2025-08-23 16:41:28,194 - INFO - 🔥 MPS Iter 1 takes 0.002 seconds. Loss: 2.402
+2025-08-23 16:41:28,197 - INFO - 🔥 MPS Iter 2 takes 0.009 seconds. Loss: 0.374
+2025-08-23 16:41:28,200 - INFO - 🔥 MPS Iter 3 takes 0.012 seconds. Loss: 0.098
+2025-08-23 16:41:28,203 - INFO - 🔥 MPS Iter 4 takes 0.015 seconds. Loss: 0.032
+2025-08-23 16:41:28,205 - INFO - 🔥 MPS Iter 5 takes 0.018 seconds. Loss: 0.011
+2025-08-23 16:41:28,207 - INFO - 🔥 MPS Iter 6 takes 0.020 seconds. Loss: 0.004
+2025-08-23 16:41:28,208 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:28,208 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:28,208 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:28,222 - INFO -    RWR 耗时: 0.036 秒
+2025-08-23 16:41:28,232 - INFO -    归一化耗时: 0.010 秒
+2025-08-23 16:41:28,322 - INFO -    ✅ 完成，总耗时: 0.056 秒
+2025-08-23 16:41:28,322 - INFO -   ✅ chr16: 完成，耗时 0.16 秒
+2025-08-23 16:41:28,322 - INFO - 🧬 开始处理 chr17 (bin格式)
+2025-08-23 16:41:28,323 - INFO -    染色体 chr17 大小: 94,987,271 bp, bins: 950
+2025-08-23 16:41:28,331 - INFO -    数据形状: (6170, 3)
+2025-08-23 16:41:28,331 - INFO -    bin 范围: 30-948, 30-948
+2025-08-23 16:41:28,332 - INFO -    矩阵大小: (950, 950), 非零元素: 11,481, 稀疏度: 0.012721
+2025-08-23 16:41:28,332 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:28,332 - INFO - 🔥 MPS Gaussian filter: 950x950 matrix, 内存需求: 13.8MB
+2025-08-23 16:41:28,336 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:28,341 - INFO -    卷积耗时: 0.009 秒
+2025-08-23 16:41:28,343 - INFO - 🚀 MPS 加速: 950x950 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0480)
+2025-08-23 16:41:28,343 - INFO - 🚀 Using MPS for 950x950 matrix with 24GB GPU memory
+2025-08-23 16:41:28,343 - INFO - Converting 950x950 sparse matrix to dense for MPS...
+2025-08-23 16:41:28,345 - INFO - 💾 Estimated GPU memory usage: 10.3 MB
+2025-08-23 16:41:28,349 - INFO - 🔥 MPS Iter 1 takes 0.002 seconds. Loss: 2.361
+2025-08-23 16:41:28,355 - INFO - 🔥 MPS Iter 2 takes 0.007 seconds. Loss: 0.364
+2025-08-23 16:41:28,358 - INFO - 🔥 MPS Iter 3 takes 0.013 seconds. Loss: 0.097
+2025-08-23 16:41:28,362 - INFO - 🔥 MPS Iter 4 takes 0.016 seconds. Loss: 0.032
+2025-08-23 16:41:28,365 - INFO - 🔥 MPS Iter 5 takes 0.020 seconds. Loss: 0.011
+2025-08-23 16:41:28,366 - INFO - 🔥 MPS Iter 6 takes 0.023 seconds. Loss: 0.004
+2025-08-23 16:41:28,367 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:28,367 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:28,367 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:28,380 - INFO -    RWR 耗时: 0.038 秒
+2025-08-23 16:41:28,390 - INFO -    归一化耗时: 0.010 秒
+2025-08-23 16:41:28,473 - INFO -    ✅ 完成，总耗时: 0.057 秒
+2025-08-23 16:41:28,474 - INFO -   ✅ chr17: 完成，耗时 0.15 秒
+2025-08-23 16:41:28,474 - INFO - 🧬 开始处理 chr18 (bin格式)
+2025-08-23 16:41:28,475 - INFO -    染色体 chr18 大小: 90,702,639 bp, bins: 908
+2025-08-23 16:41:28,482 - INFO -    数据形状: (5930, 3)
+2025-08-23 16:41:28,482 - INFO -    bin 范围: 30-905, 30-905
+2025-08-23 16:41:28,483 - INFO -    矩阵大小: (908, 908), 非零元素: 11,053, 稀疏度: 0.013406
+2025-08-23 16:41:28,483 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:28,484 - INFO - 🔥 MPS Gaussian filter: 908x908 matrix, 内存需求: 12.6MB
+2025-08-23 16:41:28,487 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:28,492 - INFO -    卷积耗时: 0.008 秒
+2025-08-23 16:41:28,493 - INFO - 🚀 MPS 加速: 908x908 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0514)
+2025-08-23 16:41:28,493 - INFO - 🚀 Using MPS for 908x908 matrix with 24GB GPU memory
+2025-08-23 16:41:28,493 - INFO - Converting 908x908 sparse matrix to dense for MPS...
+2025-08-23 16:41:28,495 - INFO - 💾 Estimated GPU memory usage: 9.4 MB
+2025-08-23 16:41:28,497 - INFO - 🔥 MPS Iter 1 takes 0.002 seconds. Loss: 2.234
+2025-08-23 16:41:28,500 - INFO - 🔥 MPS Iter 2 takes 0.005 seconds. Loss: 0.345
+2025-08-23 16:41:28,502 - INFO - 🔥 MPS Iter 3 takes 0.008 seconds. Loss: 0.092
+2025-08-23 16:41:28,505 - INFO - 🔥 MPS Iter 4 takes 0.010 seconds. Loss: 0.030
+2025-08-23 16:41:28,507 - INFO - 🔥 MPS Iter 5 takes 0.012 seconds. Loss: 0.011
+2025-08-23 16:41:28,509 - INFO - 🔥 MPS Iter 6 takes 0.015 seconds. Loss: 0.004
+2025-08-23 16:41:28,509 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:28,510 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:28,511 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:28,522 - INFO -    RWR 耗时: 0.030 秒
+2025-08-23 16:41:28,531 - INFO -    归一化耗时: 0.009 秒
+2025-08-23 16:41:28,612 - INFO -    ✅ 完成，总耗时: 0.047 秒
+2025-08-23 16:41:28,612 - INFO -   ✅ chr18: 完成，耗时 0.14 秒
+2025-08-23 16:41:28,613 - INFO - 🧬 开始处理 chr19 (bin格式)
+2025-08-23 16:41:28,614 - INFO -    染色体 chr19 大小: 61,431,566 bp, bins: 615
+2025-08-23 16:41:28,620 - INFO -    数据形状: (3858, 3)
+2025-08-23 16:41:28,620 - INFO -    bin 范围: 31-613, 31-613
+2025-08-23 16:41:28,620 - INFO -    矩阵大小: (615, 615), 非零元素: 7,161, 稀疏度: 0.018933
+2025-08-23 16:41:28,621 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:28,621 - INFO - 🔥 MPS Gaussian filter: 615x615 matrix, 内存需求: 5.8MB
+2025-08-23 16:41:28,625 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:28,627 - INFO -    卷积耗时: 0.006 秒
+2025-08-23 16:41:28,629 - INFO - 🚀 MPS 加速: 615x615 矩阵 (内存需求: 0.00GB, 稀疏度: 0.0667)
+2025-08-23 16:41:28,629 - INFO - 🚀 Using MPS for 615x615 matrix with 24GB GPU memory
+2025-08-23 16:41:28,629 - INFO - Converting 615x615 sparse matrix to dense for MPS...
+2025-08-23 16:41:28,631 - INFO - 💾 Estimated GPU memory usage: 4.3 MB
+2025-08-23 16:41:28,633 - INFO - 🔥 MPS Iter 1 takes 0.002 seconds. Loss: 1.969
+2025-08-23 16:41:28,637 - INFO - 🔥 MPS Iter 2 takes 0.007 seconds. Loss: 0.299
+2025-08-23 16:41:28,639 - INFO - 🔥 MPS Iter 3 takes 0.009 seconds. Loss: 0.080
+2025-08-23 16:41:28,642 - INFO - 🔥 MPS Iter 4 takes 0.012 seconds. Loss: 0.026
+2025-08-23 16:41:28,644 - INFO - 🔥 MPS Iter 5 takes 0.013 seconds. Loss: 0.010
+2025-08-23 16:41:28,644 - INFO - ✅ Converged after 5 iterations
+2025-08-23 16:41:28,644 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:28,645 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:28,651 - INFO -    RWR 耗时: 0.023 秒
+2025-08-23 16:41:28,655 - INFO -    归一化耗时: 0.004 秒
+2025-08-23 16:41:28,690 - INFO -    ✅ 完成，总耗时: 0.033 秒
+2025-08-23 16:41:28,691 - INFO -   ✅ chr19: 完成，耗时 0.08 秒
+2025-08-23 16:41:28,691 - INFO - 🧬 开始处理 chrX (bin格式)
+2025-08-23 16:41:28,692 - INFO -    染色体 chrX 大小: 171,031,299 bp, bins: 1711
+2025-08-23 16:41:28,695 - INFO -    数据形状: (9197, 3)
+2025-08-23 16:41:28,695 - INFO -    bin 范围: 32-1699, 45-1699
+2025-08-23 16:41:28,696 - INFO -    矩阵大小: (1711, 1711), 非零元素: 17,224, 稀疏度: 0.005883
+2025-08-23 16:41:28,697 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:28,697 - INFO - 🔥 MPS Gaussian filter: 1711x1711 matrix, 内存需求: 44.7MB
+2025-08-23 16:41:28,742 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:28,755 - INFO -    卷积耗时: 0.059 秒
+2025-08-23 16:41:28,757 - INFO - 🚀 MPS 加速: 1711x1711 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0312)
+2025-08-23 16:41:28,757 - INFO - 🚀 Using MPS for 1711x1711 matrix with 24GB GPU memory
+2025-08-23 16:41:28,757 - INFO - Converting 1711x1711 sparse matrix to dense for MPS...
+2025-08-23 16:41:28,806 - INFO - 💾 Estimated GPU memory usage: 33.5 MB
+2025-08-23 16:41:28,819 - INFO - 🔥 MPS Iter 1 takes 0.049 seconds. Loss: 3.230
+2025-08-23 16:41:28,827 - INFO - 🔥 MPS Iter 2 takes 0.063 seconds. Loss: 0.711
+2025-08-23 16:41:28,834 - INFO - 🔥 MPS Iter 3 takes 0.071 seconds. Loss: 0.289
+2025-08-23 16:41:28,841 - INFO - 🔥 MPS Iter 4 takes 0.078 seconds. Loss: 0.135
+2025-08-23 16:41:28,851 - INFO - 🔥 MPS Iter 5 takes 0.085 seconds. Loss: 0.066
+2025-08-23 16:41:28,857 - INFO - 🔥 MPS Iter 6 takes 0.094 seconds. Loss: 0.033
+2025-08-23 16:41:28,864 - INFO - 🔥 MPS Iter 7 takes 0.101 seconds. Loss: 0.016
+2025-08-23 16:41:28,871 - INFO - 🔥 MPS Iter 8 takes 0.108 seconds. Loss: 0.008
+2025-08-23 16:41:28,872 - INFO - ✅ Converged after 8 iterations
+2025-08-23 16:41:28,872 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:28,873 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:28,908 - INFO -    RWR 耗时: 0.152 秒
+2025-08-23 16:41:28,938 - INFO -    归一化耗时: 0.030 秒
+2025-08-23 16:41:29,185 - INFO -    ✅ 完成，总耗时: 0.241 秒
+2025-08-23 16:41:29,186 - INFO -   ✅ chrX: 完成，耗时 0.50 秒
+2025-08-23 16:41:29,186 - INFO - 🎯 细胞 GasdE701018 完成: 20 成功, 0 失败, 总耗时 0.1 分钟
+2025-08-23 16:41:29,186 - INFO - 📊 处理: GasdE701019 (56/557)
+2025-08-23 16:41:29,186 - INFO - 🧬 开始处理细胞: GasdE701019
+2025-08-23 16:41:29,203 - INFO - 🧬 开始处理 chr1 (bin格式)
+2025-08-23 16:41:29,204 - INFO -    染色体 chr1 大小: 195,471,971 bp, bins: 1955
+2025-08-23 16:41:29,206 - INFO -    数据形状: (4435, 3)
+2025-08-23 16:41:29,206 - INFO -    bin 范围: 30-1953, 30-1953
+2025-08-23 16:41:29,207 - INFO -    矩阵大小: (1955, 1955), 非零元素: 8,018, 稀疏度: 0.002098
+2025-08-23 16:41:29,207 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:29,207 - INFO - 🔥 MPS Gaussian filter: 1955x1955 matrix, 内存需求: 58.4MB
+2025-08-23 16:41:29,226 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:29,242 - INFO -    卷积耗时: 0.035 秒
+2025-08-23 16:41:29,243 - INFO - 🚀 MPS 加速: 1955x1955 矩阵 (内存需求: 0.04GB, 稀疏度: 0.0128)
+2025-08-23 16:41:29,243 - INFO - 🚀 Using MPS for 1955x1955 matrix with 24GB GPU memory
+2025-08-23 16:41:29,243 - INFO - Converting 1955x1955 sparse matrix to dense for MPS...
+2025-08-23 16:41:29,290 - INFO - 💾 Estimated GPU memory usage: 43.7 MB
+2025-08-23 16:41:29,307 - INFO - 🔥 MPS Iter 1 takes 0.047 seconds. Loss: 4.741
+2025-08-23 16:41:29,317 - INFO - 🔥 MPS Iter 2 takes 0.065 seconds. Loss: 0.861
+2025-08-23 16:41:29,327 - INFO - 🔥 MPS Iter 3 takes 0.075 seconds. Loss: 0.204
+2025-08-23 16:41:29,337 - INFO - 🔥 MPS Iter 4 takes 0.085 seconds. Loss: 0.054
+2025-08-23 16:41:29,347 - INFO - 🔥 MPS Iter 5 takes 0.095 seconds. Loss: 0.017
+2025-08-23 16:41:29,360 - INFO - 🔥 MPS Iter 6 takes 0.105 seconds. Loss: 0.006
+2025-08-23 16:41:29,362 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:29,362 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:29,368 - INFO - 🧹 GPU memory cleared
+2025-08-23 16:41:29,438 - INFO -    RWR 耗时: 0.196 秒
+2025-08-23 16:41:29,481 - INFO -    归一化耗时: 0.042 秒
+2025-08-23 16:41:29,836 - INFO -    ✅ 完成，总耗时: 0.273 秒
+2025-08-23 16:41:29,837 - INFO -   ✅ chr1: 完成，耗时 0.63 秒
+2025-08-23 16:41:29,837 - INFO - 🧬 开始处理 chr2 (bin格式)
+2025-08-23 16:41:29,837 - INFO -    染色体 chr2 大小: 182,113,224 bp, bins: 1822
+2025-08-23 16:41:29,857 - INFO -    数据形状: (3844, 3)
+2025-08-23 16:41:29,857 - INFO -    bin 范围: 31-1818, 32-1819
+2025-08-23 16:41:29,857 - INFO -    矩阵大小: (1822, 1822), 非零元素: 6,841, 稀疏度: 0.002061
+2025-08-23 16:41:29,857 - INFO -    使用 MPS 加速 Gaussian 卷积
+2025-08-23 16:41:29,857 - INFO - 🔥 MPS Gaussian filter: 1822x1822 matrix, 内存需求: 50.7MB
+2025-08-23 16:41:29,876 - INFO - ✅ MPS Gaussian filter completed, GPU 内存已清理
+2025-08-23 16:41:29,890 - INFO -    卷积耗时: 0.032 秒
+2025-08-23 16:41:29,891 - INFO - 🚀 MPS 加速: 1822x1822 矩阵 (内存需求: 0.04GB, 稀疏度: 0.0120)
+2025-08-23 16:41:29,891 - INFO - 🚀 Using MPS for 1822x1822 matrix with 24GB GPU memory
+2025-08-23 16:41:29,891 - INFO - Converting 1822x1822 sparse matrix to dense for MPS...
+2025-08-23 16:41:29,934 - INFO - 💾 Estimated GPU memory usage: 38.0 MB
+2025-08-23 16:41:29,951 - INFO - 🔥 MPS Iter 1 takes 0.044 seconds. Loss: 4.882
+2025-08-23 16:41:29,960 - INFO - 🔥 MPS Iter 2 takes 0.061 seconds. Loss: 0.917
+2025-08-23 16:41:29,967 - INFO - 🔥 MPS Iter 3 takes 0.070 seconds. Loss: 0.225
+2025-08-23 16:41:29,975 - INFO - 🔥 MPS Iter 4 takes 0.077 seconds. Loss: 0.060
+2025-08-23 16:41:29,983 - INFO - 🔥 MPS Iter 5 takes 0.085 seconds. Loss: 0.019
+2025-08-23 16:41:29,995 - INFO - 🔥 MPS Iter 6 takes 0.093 seconds. Loss: 0.007
+2025-08-23 16:41:29,996 - INFO - ✅ Converged after 6 iterations
+2025-08-23 16:41:29,996 - INFO - Converting MPS result back to sparse matrix...
+2025-08-23 16:41:29,998 - INFO - 🧹 GPU memory cleared
