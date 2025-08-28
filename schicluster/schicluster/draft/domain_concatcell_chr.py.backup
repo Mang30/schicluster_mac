@@ -34,7 +34,7 @@ def load_boundary(i):
 def domain_concatcell_chr(cell_list, outprefix, res, input_type='insulation', ncpus=10):
 
 	global celllist, rs
-	celllist = np.loadtxt(cell_list, dtype=str)
+	celllist = np.loadtxt(cell_list, dtype=np.str)
 	rs = res
 
 	p = Pool(ncpus)

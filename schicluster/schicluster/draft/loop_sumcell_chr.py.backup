@@ -33,7 +33,7 @@ def loop_sumcell_chr(cell_list, outprefix, res,
         g.attrs['count'] = tot
         f.close()
 
-    celllist = np.loadtxt(cell_list, dtype=str)
+    celllist = np.loadtxt(cell_list, dtype=np.str)
     tot = len(celllist)
 
     if not test_only:
@@ -43,7 +43,7 @@ def loop_sumcell_chr(cell_list, outprefix, res,
         Qsum, Esum, Osum = [csr_matrix((dim1, dim2)) for i in range(3)]
         start_time = time.time()
         if group_list:
-            grouplist = np.loadtxt(group_list, dtype=str)
+            grouplist = np.loadtxt(group_list, dtype=np.str)
             for i, cell in enumerate(grouplist):
                 if 'Q' in matrix:
                     A, tmp = load_group_hdf(f'{cell}.hdf5')

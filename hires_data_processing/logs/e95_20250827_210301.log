@@ -1,0 +1,40 @@
+Starting processing for stage E95 at 2025年 8月27日 星期三 21时03分01秒 CST
+2025-08-27 21:03:03,444 - INFO - Starting schicluster processing for stages: ['E95']
+2025-08-27 21:03:03,445 - INFO - Parameters: resolution=100000, batch_size=1536, cpu_per_job=30
+2025-08-27 21:03:03,445 - INFO - 
+==================================================
+2025-08-27 21:03:03,445 - INFO - Processing stage: E95
+2025-08-27 21:03:03,445 - INFO - ==================================================
+2025-08-27 21:03:03,469 - INFO - Processing 1108 cells for stage E95
+2025-08-27 21:03:03,471 - INFO - Starting complete schicluster pipeline for stage E95
+2025-08-27 21:03:03,471 - INFO - Step 1: Running prepare-impute for stage E95
+2025-08-27 21:03:03,471 - INFO - Command: hicluster prepare-impute --cell_table /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E95.tsv --batch_size 1536 --pad 1 --cpu_per_job 30 --chr1 1 --pos1 2 --chr2 5 --pos2 6 --output_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E95/impute/100K --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --output_dist 500000000 --window_size 500000000 --step_size 500000000 --resolution 100000
+2025-08-27 21:03:03,471 - INFO - Output directory: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E95/impute/100K
+2025-08-27 21:03:03,471 - INFO - Contact table: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E95.tsv
+2025-08-27 21:03:10,248 - INFO - Successfully completed prepare-impute for stage E95
+2025-08-27 21:03:10,251 - INFO - STDOUT: command	prepare-impute
+output_dir	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E95/impute/100K
+chrom_size_path	/Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt
+output_dist	500000000
+window_size	500000000
+step_size	500000000
+resolution	100000
+input_scool	None
+cell_table	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E95.tsv
+batch_size	1536
+logscale	False
+pad	1
+std	1
+rp	0.5
+tol	0.01
+min_cutoff	1e-05
+cpu_per_job	30
+chrom1	1
+chrom2	5
+pos1	2
+pos2	6
+hicluster: Executing prepare-impute...
+prepare-impute finished.
+
+2025-08-27 21:03:10,252 - INFO - Step 2: Running snakemake imputation for stage E95
+2025-08-27 21:03:10,252 - INFO - Command: snakemake -d /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E95/impute/100K/chunk0 --snakefile /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E95/impute/100K/chunk0/Snakefile -j 30

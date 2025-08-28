@@ -67,4 +67,4 @@ cd HiRES_preprocess_pipeline; ./runHiRES_preprocess.sh
 
 ## analysis_and_plot_notebooks
 
-analysis_and_plot_notebooks holds the python/R notebooks used in the analysis of the project.
+analysis_and_plot_notebooks 文件夹包含本项目分析所用的 Python/R 笔记本。

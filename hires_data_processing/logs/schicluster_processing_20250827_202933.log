@@ -1,0 +1,44 @@
+2025-08-27 20:29:33,876 - INFO - Starting schicluster processing for stages: ['E70']
+2025-08-27 20:29:33,876 - INFO - Parameters: resolution=100000, batch_size=1536, cpu_per_job=30
+2025-08-27 20:29:33,876 - INFO - 
+==================================================
+2025-08-27 20:29:33,876 - INFO - Processing stage: E70
+2025-08-27 20:29:33,876 - INFO - ==================================================
+2025-08-27 20:29:33,877 - INFO - Processing 557 cells for stage E70
+2025-08-27 20:29:33,878 - INFO - Starting schicluster processing for stage E70
+2025-08-27 20:29:33,878 - INFO - Command: hicluster prepare-impute --cell_table /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E70.tsv --batch_size 1536 --pad 1 --cpu_per_job 30 --chr1 1 --pos1 2 --chr2 5 --pos2 6 --output_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --output_dist 500000000 --window_size 500000000 --step_size 500000000 --resolution 100000
+2025-08-27 20:29:33,878 - INFO - Output directory: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K
+2025-08-27 20:29:33,878 - INFO - Contact table: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E70.tsv
+2025-08-27 20:29:34,970 - INFO - Successfully completed schicluster processing for stage E70
+2025-08-27 20:29:34,970 - INFO - STDOUT: command	prepare-impute
+output_dir	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K
+chrom_size_path	/Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt
+output_dist	500000000
+window_size	500000000
+step_size	500000000
+resolution	100000
+input_scool	None
+cell_table	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E70.tsv
+batch_size	1536
+logscale	False
+pad	1
+std	1
+rp	0.5
+tol	0.01
+min_cutoff	1e-05
+cpu_per_job	30
+chrom1	1
+chrom2	5
+pos1	2
+pos2	6
+hicluster: Executing prepare-impute...
+prepare-impute finished.
+
+2025-08-27 20:29:34,970 - INFO - Stage E70 processing result: Success
+2025-08-27 20:29:34,970 - INFO - 
+==================================================
+2025-08-27 20:29:34,970 - INFO - PROCESSING SUMMARY
+2025-08-27 20:29:34,970 - INFO - ==================================================
+2025-08-27 20:29:34,970 - INFO - E70: Success
+2025-08-27 20:29:34,970 - INFO - 
+Successfully processed 1/1 stages

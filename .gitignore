@@ -34,6 +34,7 @@ converted_matrices_by_stage_20k/
 imputed_matrices_by_stage_20k/
 test_impute_output/
 lwh_schicluster_impute_code/imputation_mac/logs/
+hires_data_processing/outputs/
 
 # Large data files
 *.hdf5

@@ -1,0 +1,62 @@
+Starting processing for stage E75 at 2025年 8月27日 星期三 21时02分13秒 CST
+2025-08-27 21:02:14,718 - INFO - Starting schicluster processing for stages: ['E75']
+2025-08-27 21:02:14,718 - INFO - Parameters: resolution=100000, batch_size=1536, cpu_per_job=30
+2025-08-27 21:02:14,719 - INFO - 
+==================================================
+2025-08-27 21:02:14,719 - INFO - Processing stage: E75
+2025-08-27 21:02:14,720 - INFO - ==================================================
+2025-08-27 21:02:14,724 - INFO - Processing 1870 cells for stage E75
+2025-08-27 21:02:14,725 - INFO - Starting complete schicluster pipeline for stage E75
+2025-08-27 21:02:14,725 - INFO - Step 1: Running prepare-impute for stage E75
+2025-08-27 21:02:14,725 - INFO - Command: hicluster prepare-impute --cell_table /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E75.tsv --batch_size 1536 --pad 1 --cpu_per_job 30 --chr1 1 --pos1 2 --chr2 5 --pos2 6 --output_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E75/impute/100K --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --output_dist 500000000 --window_size 500000000 --step_size 500000000 --resolution 100000
+2025-08-27 21:02:14,725 - INFO - Output directory: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E75/impute/100K
+2025-08-27 21:02:14,725 - INFO - Contact table: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E75.tsv
+2025-08-27 21:02:19,258 - INFO - Successfully completed prepare-impute for stage E75
+2025-08-27 21:02:19,258 - INFO - STDOUT: command	prepare-impute
+output_dir	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E75/impute/100K
+chrom_size_path	/Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt
+output_dist	500000000
+window_size	500000000
+step_size	500000000
+resolution	100000
+input_scool	None
+cell_table	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E75.tsv
+batch_size	1536
+logscale	False
+pad	1
+std	1
+rp	0.5
+tol	0.01
+min_cutoff	1e-05
+cpu_per_job	30
+chrom1	1
+chrom2	5
+pos1	2
+pos2	6
+hicluster: Executing prepare-impute...
+prepare-impute finished.
+
+2025-08-27 21:02:19,258 - INFO - Step 2: Running snakemake imputation for stage E75
+2025-08-27 21:02:19,258 - INFO - Command: snakemake -d /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E75/impute/100K/chunk0 --snakefile /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E75/impute/100K/chunk0/Snakefile -j 30
+snakemake -d /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E75/impute/100K/chunk1 --snakefile /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E75/impute/100K/chunk1/Snakefile -j 30
+2025-08-27 21:02:25,725 - ERROR - Error in snakemake imputation for stage E75
+2025-08-27 21:02:25,727 - ERROR - Return code: 1
+2025-08-27 21:02:25,727 - ERROR - STDERR: Assuming unrestricted shared filesystem usage.
+host: liuwuhaodeMacBook-Air.local
+Building DAG of jobs...
+MissingRuleException:
+No rule to produce snakemake (if you use input functions make sure that they don't raise unexpected exceptions).
+
+2025-08-27 21:02:25,727 - ERROR - STDOUT: 334 cells to process
+21 chromosomes in each cell.
+
+2025-08-27 21:02:25,727 - ERROR - Imputation step failed for stage E75
+2025-08-27 21:02:25,727 - INFO - Stage E75 processing result: Failed
+2025-08-27 21:02:25,727 - INFO - 
+==================================================
+2025-08-27 21:02:25,727 - INFO - PROCESSING SUMMARY
+2025-08-27 21:02:25,727 - INFO - ==================================================
+2025-08-27 21:02:25,727 - INFO - E75: Failed
+2025-08-27 21:02:25,727 - INFO - 
+Successfully processed 0/1 stages
+Stage E75 completed successfully at 2025年 8月27日 星期三 21时02分25秒 CST

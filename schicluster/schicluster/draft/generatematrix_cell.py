@@ -10,7 +10,7 @@ import pandas as pd
 def generatematrix_cell(infile, outdir, cell, res, chrom_file, 
 					chr1=1, pos1=2, chr2=5, pos2=6, split_file=None, dist=2500):
 
-	chrom = np.loadtxt(chrom_file, dtype=np.str)[:,0]
+	chrom = np.loadtxt(chrom_file, dtype=str)[:,0]
 
 	# add p/q arm to split chromosomes
 	if not split_file:
@@ -26,7 +26,7 @@ def generatematrix_cell(infile, outdir, cell, res, chrom_file,
 		else:
 			os.makedirs(f'{outdir}chr{c}/', exist_ok=True)
 
-	data = pd.read_csv(infile, sep='\t', header=None)
+	data = pd.read_csv(infile, sep='\t', header=None, comment='#')
 	# make pos1 < pos2
 	data.loc[data[pos1]>data[pos2], [pos1, pos2]] = data.loc[data[pos1]>data[pos2], [pos2, pos1]]
 	# filter intra autosomal contacts with insertion size threshold

@@ -1,0 +1,839 @@
+2025-08-27 20:43:29,192 - INFO - Starting schicluster processing for stages: ['E70']
+2025-08-27 20:43:29,192 - INFO - Parameters: resolution=100000, batch_size=1536, cpu_per_job=30
+2025-08-27 20:43:29,192 - INFO - 
+==================================================
+2025-08-27 20:43:29,192 - INFO - Processing stage: E70
+2025-08-27 20:43:29,192 - INFO - ==================================================
+2025-08-27 20:43:29,194 - INFO - Processing 557 cells for stage E70
+2025-08-27 20:43:29,194 - INFO - Starting complete schicluster pipeline for stage E70
+2025-08-27 20:43:29,194 - INFO - Step 1: Running prepare-impute for stage E70
+2025-08-27 20:43:29,194 - INFO - Command: hicluster prepare-impute --cell_table /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E70.tsv --batch_size 1536 --pad 1 --cpu_per_job 30 --chr1 1 --pos1 2 --chr2 5 --pos2 6 --output_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --output_dist 500000000 --window_size 500000000 --step_size 500000000 --resolution 100000
+2025-08-27 20:43:29,194 - INFO - Output directory: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K
+2025-08-27 20:43:29,194 - INFO - Contact table: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E70.tsv
+2025-08-27 20:43:30,268 - INFO - Successfully completed prepare-impute for stage E70
+2025-08-27 20:43:30,268 - INFO - STDOUT: command	prepare-impute
+output_dir	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K
+chrom_size_path	/Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt
+output_dist	500000000
+window_size	500000000
+step_size	500000000
+resolution	100000
+input_scool	None
+cell_table	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_E70.tsv
+batch_size	1536
+logscale	False
+pad	1
+std	1
+rp	0.5
+tol	0.01
+min_cutoff	1e-05
+cpu_per_job	30
+chrom1	1
+chrom2	5
+pos1	2
+pos2	6
+hicluster: Executing prepare-impute...
+prepare-impute finished.
+
+2025-08-27 20:43:30,268 - INFO - Step 2: Running snakemake imputation for stage E70
+2025-08-27 20:43:30,268 - INFO - Command: snakemake -d /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K/chunk0 --snakefile /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K/chunk0/Snakefile -j 30
+2025-08-27 20:43:50,523 - ERROR - Error in snakemake imputation for stage E70
+2025-08-27 20:43:50,528 - ERROR - Return code: 1
+2025-08-27 20:43:50,528 - ERROR - STDERR: Assuming unrestricted shared filesystem usage.
+host: liuwuhaodeMacBook-Air.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+agg_cell          557
+impute_chrom    11506
+summary             1
+total           12064
+
+Select jobs to execute...
+Execute 30 jobs...
+
+[Wed Aug 27 20:43:34 2025]
+localrule impute_chrom:
+    output: impute_GSM6999648_GasdE701129_tmp/chr3.npz
+    jobid: 2786
+    reason: Missing output files: impute_GSM6999648_GasdE701129_tmp/chr3.npz
+    wildcards: cell_id=GSM6999648_GasdE701129, chrom=chr3
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:34 2025]
+localrule impute_chrom:
+    output: impute_GSM6999717_GasdE701200_tmp/chrX.npz
+    jobid: 4311
+    reason: Missing output files: impute_GSM6999717_GasdE701200_tmp/chrX.npz
+    wildcards: cell_id=GSM6999717_GasdE701200, chrom=chrX
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:34 2025]
+localrule impute_chrom:
+    output: impute_GSM6999757_GasdE701242_tmp/chrX.npz
+    jobid: 5191
+    reason: Missing output files: impute_GSM6999757_GasdE701242_tmp/chrX.npz
+    wildcards: cell_id=GSM6999757_GasdE701242, chrom=chrX
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:34 2025]
+localrule impute_chrom:
+    output: impute_GSM6999619_GasdE701099_tmp/chr14.npz
+    jobid: 2141
+    reason: Missing output files: impute_GSM6999619_GasdE701099_tmp/chr14.npz
+    wildcards: cell_id=GSM6999619_GasdE701099, chrom=chr14
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:34 2025]
+localrule impute_chrom:
+    output: impute_GSM6999787_GasdE701276_tmp/chr14.npz
+    jobid: 5837
+    reason: Missing output files: impute_GSM6999787_GasdE701276_tmp/chr14.npz
+    wildcards: cell_id=GSM6999787_GasdE701276, chrom=chr14
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:34 2025]
+localrule impute_chrom:
+    output: impute_GSM6999827_GasdE701317_tmp/chr14.npz
+    jobid: 6717
+    reason: Missing output files: impute_GSM6999827_GasdE701317_tmp/chr14.npz
+    wildcards: cell_id=GSM6999827_GasdE701317, chrom=chr14
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:34 2025]
+localrule impute_chrom:
+    output: impute_GSM6999845_GasdE701335_tmp/chrX.npz
+    jobid: 7127
+    reason: Missing output files: impute_GSM6999845_GasdE701335_tmp/chrX.npz
+    wildcards: cell_id=GSM6999845_GasdE701335, chrom=chrX
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:34 2025]
+localrule impute_chrom:
+    output: impute_GSM7001459_GasfE703063_tmp/chr14.npz
+    jobid: 9533
+    reason: Missing output files: impute_GSM7001459_GasfE703063_tmp/chr14.npz
+    wildcards: cell_id=GSM7001459_GasfE703063, chrom=chr14
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:34 2025]
+localrule impute_chrom:
+    output: impute_GSM7001488_GasfE703093_tmp/chr3.npz
+    jobid: 10178
+    reason: Missing output files: impute_GSM7001488_GasfE703093_tmp/chr3.npz
+    wildcards: cell_id=GSM7001488_GasfE703093, chrom=chr3
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM7001557_GasfE703165_tmp/chrX.npz
+    jobid: 11703
+    reason: Missing output files: impute_GSM7001557_GasfE703165_tmp/chrX.npz
+    wildcards: cell_id=GSM7001557_GasfE703165, chrom=chrX
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999757_GasdE701242_tmp/chrY.npz
+    jobid: 5192
+    reason: Missing output files: impute_GSM6999757_GasdE701242_tmp/chrY.npz
+    wildcards: cell_id=GSM6999757_GasdE701242, chrom=chrY
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999619_GasdE701099_tmp/chr15.npz
+    jobid: 2142
+    reason: Missing output files: impute_GSM6999619_GasdE701099_tmp/chr15.npz
+    wildcards: cell_id=GSM6999619_GasdE701099, chrom=chr15
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999648_GasdE701129_tmp/chr4.npz
+    jobid: 2787
+    reason: Missing output files: impute_GSM6999648_GasdE701129_tmp/chr4.npz
+    wildcards: cell_id=GSM6999648_GasdE701129, chrom=chr4
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999717_GasdE701200_tmp/chrY.npz
+    jobid: 4312
+    reason: Missing output files: impute_GSM6999717_GasdE701200_tmp/chrY.npz
+    wildcards: cell_id=GSM6999717_GasdE701200, chrom=chrY
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999787_GasdE701276_tmp/chr15.npz
+    jobid: 5838
+    reason: Missing output files: impute_GSM6999787_GasdE701276_tmp/chr15.npz
+    wildcards: cell_id=GSM6999787_GasdE701276, chrom=chr15
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999827_GasdE701317_tmp/chr15.npz
+    jobid: 6718
+    reason: Missing output files: impute_GSM6999827_GasdE701317_tmp/chr15.npz
+    wildcards: cell_id=GSM6999827_GasdE701317, chrom=chr15
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999845_GasdE701335_tmp/chrY.npz
+    jobid: 7128
+    reason: Missing output files: impute_GSM6999845_GasdE701335_tmp/chrY.npz
+    wildcards: cell_id=GSM6999845_GasdE701335, chrom=chrY
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM7001459_GasfE703063_tmp/chr15.npz
+    jobid: 9534
+    reason: Missing output files: impute_GSM7001459_GasfE703063_tmp/chr15.npz
+    wildcards: cell_id=GSM7001459_GasfE703063, chrom=chr15
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM7001488_GasfE703093_tmp/chr4.npz
+    jobid: 10179
+    reason: Missing output files: impute_GSM7001488_GasfE703093_tmp/chr4.npz
+    wildcards: cell_id=GSM7001488_GasfE703093, chrom=chr4
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM7001557_GasfE703165_tmp/chrY.npz
+    jobid: 11704
+    reason: Missing output files: impute_GSM7001557_GasfE703165_tmp/chrY.npz
+    wildcards: cell_id=GSM7001557_GasfE703165, chrom=chrY
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999619_GasdE701099_tmp/chr16.npz
+    jobid: 2143
+    reason: Missing output files: impute_GSM6999619_GasdE701099_tmp/chr16.npz
+    wildcards: cell_id=GSM6999619_GasdE701099, chrom=chr16
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999648_GasdE701129_tmp/chr5.npz
+    jobid: 2788
+    reason: Missing output files: impute_GSM6999648_GasdE701129_tmp/chr5.npz
+    wildcards: cell_id=GSM6999648_GasdE701129, chrom=chr5
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999718_GasdE701201_tmp/chr1.npz
+    jobid: 4314
+    reason: Missing output files: impute_GSM6999718_GasdE701201_tmp/chr1.npz
+    wildcards: cell_id=GSM6999718_GasdE701201, chrom=chr1
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999758_GasdE701243_tmp/chr1.npz
+    jobid: 5194
+    reason: Missing output files: impute_GSM6999758_GasdE701243_tmp/chr1.npz
+    wildcards: cell_id=GSM6999758_GasdE701243, chrom=chr1
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999787_GasdE701276_tmp/chr16.npz
+    jobid: 5839
+    reason: Missing output files: impute_GSM6999787_GasdE701276_tmp/chr16.npz
+    wildcards: cell_id=GSM6999787_GasdE701276, chrom=chr16
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999827_GasdE701317_tmp/chr16.npz
+    jobid: 6719
+    reason: Missing output files: impute_GSM6999827_GasdE701317_tmp/chr16.npz
+    wildcards: cell_id=GSM6999827_GasdE701317, chrom=chr16
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM6999846_GasdE701336_tmp/chr1.npz
+    jobid: 7130
+    reason: Missing output files: impute_GSM6999846_GasdE701336_tmp/chr1.npz
+    wildcards: cell_id=GSM6999846_GasdE701336, chrom=chr1
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule impute_chrom:
+    output: impute_GSM7001459_GasfE703063_tmp/chr16.npz
+    jobid: 9535
+    reason: Missing output files: impute_GSM7001459_GasfE703063_tmp/chr16.npz
+    wildcards: cell_id=GSM7001459_GasfE703063, chrom=chr16
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule agg_cell:
+    input: impute_GSM6999766_GasdE701252_tmp/chr1.npz, impute_GSM6999766_GasdE701252_tmp/chr10.npz, impute_GSM6999766_GasdE701252_tmp/chr11.npz, impute_GSM6999766_GasdE701252_tmp/chr12.npz, impute_GSM6999766_GasdE701252_tmp/chr13.npz, impute_GSM6999766_GasdE701252_tmp/chr14.npz, impute_GSM6999766_GasdE701252_tmp/chr15.npz, impute_GSM6999766_GasdE701252_tmp/chr16.npz, impute_GSM6999766_GasdE701252_tmp/chr17.npz, impute_GSM6999766_GasdE701252_tmp/chr18.npz, impute_GSM6999766_GasdE701252_tmp/chr19.npz, impute_GSM6999766_GasdE701252_tmp/chr2.npz, impute_GSM6999766_GasdE701252_tmp/chr3.npz, impute_GSM6999766_GasdE701252_tmp/chr4.npz, impute_GSM6999766_GasdE701252_tmp/chr5.npz, impute_GSM6999766_GasdE701252_tmp/chr6.npz, impute_GSM6999766_GasdE701252_tmp/chr7.npz, impute_GSM6999766_GasdE701252_tmp/chr8.npz, impute_GSM6999766_GasdE701252_tmp/chr9.npz, impute_GSM6999766_GasdE701252_tmp/chrX.npz, impute_GSM6999766_GasdE701252_tmp/chrY.npz
+    output: GSM6999766_GasdE701252.cool
+    jobid: 5369
+    reason: Missing output files: GSM6999766_GasdE701252.cool
+    wildcards: cell_id=GSM6999766_GasdE701252
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Wed Aug 27 20:43:35 2025]
+localrule agg_cell:
+    input: impute_GSM6999598_GasdE701078_tmp/chr1.npz, impute_GSM6999598_GasdE701078_tmp/chr10.npz, impute_GSM6999598_GasdE701078_tmp/chr11.npz, impute_GSM6999598_GasdE701078_tmp/chr12.npz, impute_GSM6999598_GasdE701078_tmp/chr13.npz, impute_GSM6999598_GasdE701078_tmp/chr14.npz, impute_GSM6999598_GasdE701078_tmp/chr15.npz, impute_GSM6999598_GasdE701078_tmp/chr16.npz, impute_GSM6999598_GasdE701078_tmp/chr17.npz, impute_GSM6999598_GasdE701078_tmp/chr18.npz, impute_GSM6999598_GasdE701078_tmp/chr19.npz, impute_GSM6999598_GasdE701078_tmp/chr2.npz, impute_GSM6999598_GasdE701078_tmp/chr3.npz, impute_GSM6999598_GasdE701078_tmp/chr4.npz, impute_GSM6999598_GasdE701078_tmp/chr5.npz, impute_GSM6999598_GasdE701078_tmp/chr6.npz, impute_GSM6999598_GasdE701078_tmp/chr7.npz, impute_GSM6999598_GasdE701078_tmp/chr8.npz, impute_GSM6999598_GasdE701078_tmp/chr9.npz, impute_GSM6999598_GasdE701078_tmp/chrX.npz, impute_GSM6999598_GasdE701078_tmp/chrY.npz
+    output: GSM6999598_GasdE701078.cool
+    jobid: 1673
+    reason: Missing output files: GSM6999598_GasdE701078.cool
+    wildcards: cell_id=GSM6999598_GasdE701078
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+Select jobs to execute...
+Traceback (most recent call last):
+  File "/Users/wuhaoliu/mamba/envs/schicluster/bin/hic-internal", line 8, in <module>
+    sys.exit(internal_main())
+             ^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/_hicluster_internal.py", line 517, in internal_main
+    from .cool.utilities import aggregate_chromosomes as func
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/cool/__init__.py", line 1, in <module>
+    from .scool import generate_scool
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/cool/scool.py", line 12, in <module>
+    from .remove_blacklist import filter_contacts
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/cool/remove_blacklist.py", line 3, in <module>
+    import pybedtools
+ModuleNotFoundError: No module named 'pybedtools'
+Traceback (most recent call last):
+  File "/Users/wuhaoliu/mamba/envs/schicluster/bin/hic-internal", line 8, in <module>
+    sys.exit(internal_main())
+             ^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/_hicluster_internal.py", line 517, in internal_main
+    from .cool.utilities import aggregate_chromosomes as func
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/cool/__init__.py", line 1, in <module>
+    from .scool import generate_scool
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/cool/scool.py", line 12, in <module>
+    from .remove_blacklist import filter_contacts
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/cool/remove_blacklist.py", line 3, in <module>
+    import pybedtools
+ModuleNotFoundError: No module named 'pybedtools'
+RuleException:
+CalledProcessError in file "/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K/chunk0/Snakefile", line 107:
+Command 'set -euo pipefail;  hic-internal aggregate-chromosomes --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --resolution 100000 --input_dir impute_GSM6999598_GasdE701078_tmp --output_path GSM6999598_GasdE701078.cool --chrom_wildcard "{chrom}.npz"' returned non-zero exit status 1.
+[Wed Aug 27 20:43:37 2025]
+Error in rule agg_cell:
+    message: None
+    jobid: 1673
+    input: impute_GSM6999598_GasdE701078_tmp/chr1.npz, impute_GSM6999598_GasdE701078_tmp/chr10.npz, impute_GSM6999598_GasdE701078_tmp/chr11.npz, impute_GSM6999598_GasdE701078_tmp/chr12.npz, impute_GSM6999598_GasdE701078_tmp/chr13.npz, impute_GSM6999598_GasdE701078_tmp/chr14.npz, impute_GSM6999598_GasdE701078_tmp/chr15.npz, impute_GSM6999598_GasdE701078_tmp/chr16.npz, impute_GSM6999598_GasdE701078_tmp/chr17.npz, impute_GSM6999598_GasdE701078_tmp/chr18.npz, impute_GSM6999598_GasdE701078_tmp/chr19.npz, impute_GSM6999598_GasdE701078_tmp/chr2.npz, impute_GSM6999598_GasdE701078_tmp/chr3.npz, impute_GSM6999598_GasdE701078_tmp/chr4.npz, impute_GSM6999598_GasdE701078_tmp/chr5.npz, impute_GSM6999598_GasdE701078_tmp/chr6.npz, impute_GSM6999598_GasdE701078_tmp/chr7.npz, impute_GSM6999598_GasdE701078_tmp/chr8.npz, impute_GSM6999598_GasdE701078_tmp/chr9.npz, impute_GSM6999598_GasdE701078_tmp/chrX.npz, impute_GSM6999598_GasdE701078_tmp/chrY.npz
+    output: GSM6999598_GasdE701078.cool
+    shell:
+        hic-internal aggregate-chromosomes --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --resolution 100000 --input_dir impute_GSM6999598_GasdE701078_tmp --output_path GSM6999598_GasdE701078.cool --chrom_wildcard "{chrom}.npz"
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K/chunk0/Snakefile", line 107:
+Command 'set -euo pipefail;  hic-internal aggregate-chromosomes --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --resolution 100000 --input_dir impute_GSM6999766_GasdE701252_tmp --output_path GSM6999766_GasdE701252.cool --chrom_wildcard "{chrom}.npz"' returned non-zero exit status 1.
+[Wed Aug 27 20:43:38 2025]
+Error in rule agg_cell:
+    message: None
+    jobid: 5369
+    input: impute_GSM6999766_GasdE701252_tmp/chr1.npz, impute_GSM6999766_GasdE701252_tmp/chr10.npz, impute_GSM6999766_GasdE701252_tmp/chr11.npz, impute_GSM6999766_GasdE701252_tmp/chr12.npz, impute_GSM6999766_GasdE701252_tmp/chr13.npz, impute_GSM6999766_GasdE701252_tmp/chr14.npz, impute_GSM6999766_GasdE701252_tmp/chr15.npz, impute_GSM6999766_GasdE701252_tmp/chr16.npz, impute_GSM6999766_GasdE701252_tmp/chr17.npz, impute_GSM6999766_GasdE701252_tmp/chr18.npz, impute_GSM6999766_GasdE701252_tmp/chr19.npz, impute_GSM6999766_GasdE701252_tmp/chr2.npz, impute_GSM6999766_GasdE701252_tmp/chr3.npz, impute_GSM6999766_GasdE701252_tmp/chr4.npz, impute_GSM6999766_GasdE701252_tmp/chr5.npz, impute_GSM6999766_GasdE701252_tmp/chr6.npz, impute_GSM6999766_GasdE701252_tmp/chr7.npz, impute_GSM6999766_GasdE701252_tmp/chr8.npz, impute_GSM6999766_GasdE701252_tmp/chr9.npz, impute_GSM6999766_GasdE701252_tmp/chrX.npz, impute_GSM6999766_GasdE701252_tmp/chrY.npz
+    output: GSM6999766_GasdE701252.cool
+    shell:
+        hic-internal aggregate-chromosomes --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --resolution 100000 --input_dir impute_GSM6999766_GasdE701252_tmp --output_path GSM6999766_GasdE701252.cool --chrom_wildcard "{chrom}.npz"
+        (command exited with non-zero exit code)
+/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py:317: DtypeWarning: Columns (7,8) have mixed types. Specify dtype option on import or set low_memory=False.
+  A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py:317: DtypeWarning: Columns (7,8) have mixed types. Specify dtype option on import or set low_memory=False.
+  A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py:317: DtypeWarning: Columns (7,8) have mixed types. Specify dtype option on import or set low_memory=False.
+  A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+[Wed Aug 27 20:43:44 2025]
+Finished jobid: 5837 (Rule: impute_chrom)
+1 of 12064 steps (0.0%) done
+[Wed Aug 27 20:43:47 2025]
+Finished jobid: 5192 (Rule: impute_chrom)
+2 of 12064 steps (0.0%) done
+[Wed Aug 27 20:43:48 2025]
+Finished jobid: 2141 (Rule: impute_chrom)
+3 of 12064 steps (0.0%) done
+[Wed Aug 27 20:43:48 2025]
+Finished jobid: 9533 (Rule: impute_chrom)
+4 of 12064 steps (0.0%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 6719 (Rule: impute_chrom)
+5 of 12064 steps (0.0%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 2788 (Rule: impute_chrom)
+6 of 12064 steps (0.0%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 2143 (Rule: impute_chrom)
+7 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 11704 (Rule: impute_chrom)
+8 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 5838 (Rule: impute_chrom)
+9 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 6717 (Rule: impute_chrom)
+10 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 4312 (Rule: impute_chrom)
+11 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 2142 (Rule: impute_chrom)
+12 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 10178 (Rule: impute_chrom)
+13 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 7128 (Rule: impute_chrom)
+14 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 2786 (Rule: impute_chrom)
+15 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 9535 (Rule: impute_chrom)
+16 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 6718 (Rule: impute_chrom)
+17 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 2787 (Rule: impute_chrom)
+18 of 12064 steps (0.1%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 9534 (Rule: impute_chrom)
+19 of 12064 steps (0.2%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 5839 (Rule: impute_chrom)
+20 of 12064 steps (0.2%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 10179 (Rule: impute_chrom)
+21 of 12064 steps (0.2%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 4314 (Rule: impute_chrom)
+22 of 12064 steps (0.2%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 7127 (Rule: impute_chrom)
+23 of 12064 steps (0.2%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 5191 (Rule: impute_chrom)
+24 of 12064 steps (0.2%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 5194 (Rule: impute_chrom)
+25 of 12064 steps (0.2%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 7130 (Rule: impute_chrom)
+26 of 12064 steps (0.2%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 11703 (Rule: impute_chrom)
+27 of 12064 steps (0.2%) done
+[Wed Aug 27 20:43:49 2025]
+Finished jobid: 4311 (Rule: impute_chrom)
+28 of 12064 steps (0.2%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Wed Aug 27 20:43:49 2025]
+Error in rule agg_cell:
+    message: None
+    jobid: 5369
+    input: impute_GSM6999766_GasdE701252_tmp/chr1.npz, impute_GSM6999766_GasdE701252_tmp/chr10.npz, impute_GSM6999766_GasdE701252_tmp/chr11.npz, impute_GSM6999766_GasdE701252_tmp/chr12.npz, impute_GSM6999766_GasdE701252_tmp/chr13.npz, impute_GSM6999766_GasdE701252_tmp/chr14.npz, impute_GSM6999766_GasdE701252_tmp/chr15.npz, impute_GSM6999766_GasdE701252_tmp/chr16.npz, impute_GSM6999766_GasdE701252_tmp/chr17.npz, impute_GSM6999766_GasdE701252_tmp/chr18.npz, impute_GSM6999766_GasdE701252_tmp/chr19.npz, impute_GSM6999766_GasdE701252_tmp/chr2.npz, impute_GSM6999766_GasdE701252_tmp/chr3.npz, impute_GSM6999766_GasdE701252_tmp/chr4.npz, impute_GSM6999766_GasdE701252_tmp/chr5.npz, impute_GSM6999766_GasdE701252_tmp/chr6.npz, impute_GSM6999766_GasdE701252_tmp/chr7.npz, impute_GSM6999766_GasdE701252_tmp/chr8.npz, impute_GSM6999766_GasdE701252_tmp/chr9.npz, impute_GSM6999766_GasdE701252_tmp/chrX.npz, impute_GSM6999766_GasdE701252_tmp/chrY.npz
+    output: GSM6999766_GasdE701252.cool
+    shell:
+        hic-internal aggregate-chromosomes --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --resolution 100000 --input_dir impute_GSM6999766_GasdE701252_tmp --output_path GSM6999766_GasdE701252.cool --chrom_wildcard "{chrom}.npz"
+        (command exited with non-zero exit code)
+[Wed Aug 27 20:43:49 2025]
+Error in rule agg_cell:
+    message: None
+    jobid: 1673
+    input: impute_GSM6999598_GasdE701078_tmp/chr1.npz, impute_GSM6999598_GasdE701078_tmp/chr10.npz, impute_GSM6999598_GasdE701078_tmp/chr11.npz, impute_GSM6999598_GasdE701078_tmp/chr12.npz, impute_GSM6999598_GasdE701078_tmp/chr13.npz, impute_GSM6999598_GasdE701078_tmp/chr14.npz, impute_GSM6999598_GasdE701078_tmp/chr15.npz, impute_GSM6999598_GasdE701078_tmp/chr16.npz, impute_GSM6999598_GasdE701078_tmp/chr17.npz, impute_GSM6999598_GasdE701078_tmp/chr18.npz, impute_GSM6999598_GasdE701078_tmp/chr19.npz, impute_GSM6999598_GasdE701078_tmp/chr2.npz, impute_GSM6999598_GasdE701078_tmp/chr3.npz, impute_GSM6999598_GasdE701078_tmp/chr4.npz, impute_GSM6999598_GasdE701078_tmp/chr5.npz, impute_GSM6999598_GasdE701078_tmp/chr6.npz, impute_GSM6999598_GasdE701078_tmp/chr7.npz, impute_GSM6999598_GasdE701078_tmp/chr8.npz, impute_GSM6999598_GasdE701078_tmp/chr9.npz, impute_GSM6999598_GasdE701078_tmp/chrX.npz, impute_GSM6999598_GasdE701078_tmp/chrY.npz
+    output: GSM6999598_GasdE701078.cool
+    shell:
+        hic-internal aggregate-chromosomes --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/mm10_chrom_sizes_with_chrY.txt --resolution 100000 --input_dir impute_GSM6999598_GasdE701078_tmp --output_path GSM6999598_GasdE701078.cool --chrom_wildcard "{chrom}.npz"
+        (command exited with non-zero exit code)
+Complete log(s): /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/E70/impute/100K/chunk0/.snakemake/log/2025-08-27T204330.956019.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
+
+2025-08-27 20:43:50,528 - ERROR - STDOUT: MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr14 imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1250x1250 matrix, 内存需求: 23.9MB
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr14 imputation with MPS GPU acceleration
+✅ MPS Gaussian filter completed, GPU 内存已清理
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1250x1250 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0008)
+🚀 Using MPS for 1250x1250 matrix with 24GB GPU memory
+Converting 1250x1250 sparse matrix to dense for MPS...
+💾 Estimated GPU memory usage: 17.9 MB
+MPS acceleration is available and will be used for GPU acceleration.
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chrY imputation with MPS GPU acceleration
+Starting chromosome chrX imputation with MPS GPU acceleration
+🔥 MPS Iter 1 takes 0.147 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr14 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chrX imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr5 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr15 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chrX imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 918x918 matrix, 内存需求: 12.9MB
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1250x1250 matrix, 内存需求: 23.9MB
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr1 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr3 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr14 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr15 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chrX imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr16 imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1711x1711 matrix, 内存需求: 44.7MB
+MPS acceleration is available and will be used for GPU acceleration.
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1041x1041 matrix, 内存需求: 16.6MB
+Starting chromosome chr1 imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1250x1250 matrix, 内存需求: 23.9MB
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr16 imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1711x1711 matrix, 内存需求: 44.7MB
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1519x1519 matrix, 内存需求: 35.3MB
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr1 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr3 imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1601x1601 matrix, 内存需求: 39.2MB
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr16 imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1955x1955 matrix, 内存需求: 58.4MB
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr4 imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1041x1041 matrix, 内存需求: 16.6MB
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chrY imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chrY imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1711x1711 matrix, 内存需求: 44.7MB
+Using MPS-accelerated Gaussian convolution
+Starting chromosome chr15 imputation with MPS GPU acceleration
+🔥 MPS Gaussian filter: 1250x1250 matrix, 内存需求: 23.9MB
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1711x1711 matrix, 内存需求: 44.7MB
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1955x1955 matrix, 内存需求: 58.4MB
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 983x983 matrix, 内存需求: 14.8MB
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chrY imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr15 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr16 imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 983x983 matrix, 内存需求: 14.8MB
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr4 imputation with MPS GPU acceleration
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1955x1955 matrix, 内存需求: 58.4MB
+✅ MPS Gaussian filter completed, GPU 内存已清理
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1250x1250 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0008)
+🚀 Using MPS for 1250x1250 matrix with 24GB GPU memory
+Converting 1250x1250 sparse matrix to dense for MPS...
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1601x1601 matrix, 内存需求: 39.2MB
+💾 Estimated GPU memory usage: 17.9 MB
+🔥 MPS Iter 1 takes 0.113 seconds. Loss: 0.000
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 983x983 matrix, 内存需求: 14.8MB
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+✅ MPS Gaussian filter completed, GPU 内存已清理
+Using MPS acceleration for Random Walk with Restart
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1041x1041 matrix, 内存需求: 16.6MB
+🚀 MPS 加速: 918x918 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0011)
+🚀 Using MPS for 918x918 matrix with 24GB GPU memory
+Converting 918x918 sparse matrix to dense for MPS...
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 918x918 matrix, 内存需求: 12.9MB
+💾 Estimated GPU memory usage: 9.6 MB
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1566x1566 matrix, 内存需求: 37.5MB
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 983x983 matrix, 内存需求: 14.8MB
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 918x918 matrix, 内存需求: 12.9MB
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 918x918 matrix, 内存需求: 12.9MB
+🔥 MPS Iter 1 takes 0.148 seconds. Loss: 0.000
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1566x1566 matrix, 内存需求: 37.5MB
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+Using MPS-accelerated Gaussian convolution
+🔥 MPS Gaussian filter: 1041x1041 matrix, 内存需求: 16.6MB
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ MPS Gaussian filter completed, GPU 内存已清理
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1041x1041 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0010)
+🚀 Using MPS for 1041x1041 matrix with 24GB GPU memory
+Converting 1041x1041 sparse matrix to dense for MPS...
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1250x1250 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0008)
+🚀 Using MPS for 1250x1250 matrix with 24GB GPU memory
+Converting 1250x1250 sparse matrix to dense for MPS...
+💾 Estimated GPU memory usage: 12.4 MB
+💾 Estimated GPU memory usage: 17.9 MB
+🔥 MPS Iter 1 takes 0.082 seconds. Loss: 0.000
+🔥 MPS Iter 1 takes 0.161 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ MPS Gaussian filter completed, GPU 内存已清理
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1041x1041 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0010)
+🚀 Using MPS for 1041x1041 matrix with 24GB GPU memory
+Converting 1041x1041 sparse matrix to dense for MPS...
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ MPS Gaussian filter completed, GPU 内存已清理
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 983x983 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0010)
+✅ MPS Gaussian filter completed, GPU 内存已清理
+🚀 Using MPS for 983x983 matrix with 24GB GPU memory
+Converting 983x983 sparse matrix to dense for MPS...
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1519x1519 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0007)
+🚀 Using MPS for 1519x1519 matrix with 24GB GPU memory
+Converting 1519x1519 sparse matrix to dense for MPS...
+Using MPS acceleration for Random Walk with Restart
+💾 Estimated GPU memory usage: 12.4 MB
+🚀 MPS 加速: 1250x1250 矩阵 (内存需求: 0.02GB, 稀疏度: 0.0008)
+🚀 Using MPS for 1250x1250 matrix with 24GB GPU memory
+Converting 1250x1250 sparse matrix to dense for MPS...
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1601x1601 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0006)
+🚀 Using MPS for 1601x1601 matrix with 24GB GPU memory
+Converting 1601x1601 sparse matrix to dense for MPS...
+💾 Estimated GPU memory usage: 11.1 MB
+✅ MPS Gaussian filter completed, GPU 内存已清理
+💾 Estimated GPU memory usage: 26.4 MB
+Using MPS acceleration for Random Walk with Restart
+💾 Estimated GPU memory usage: 17.9 MB
+🚀 MPS 加速: 983x983 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0010)
+🚀 Using MPS for 983x983 matrix with 24GB GPU memory
+Converting 983x983 sparse matrix to dense for MPS...
+🔥 MPS Iter 1 takes 0.192 seconds. Loss: 0.000
+💾 Estimated GPU memory usage: 29.3 MB
+💾 Estimated GPU memory usage: 11.1 MB
+🔥 MPS Iter 1 takes 0.205 seconds. Loss: 0.000
+✅ MPS Gaussian filter completed, GPU 内存已清理
+🔥 MPS Iter 1 takes 0.241 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ MPS Gaussian filter completed, GPU 内存已清理
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 918x918 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0011)
+🚀 Using MPS for 918x918 matrix with 24GB GPU memory
+Converting 918x918 sparse matrix to dense for MPS...
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 918x918 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0011)
+🚀 Using MPS for 918x918 matrix with 24GB GPU memory
+Converting 918x918 sparse matrix to dense for MPS...
+Using MPS acceleration for Random Walk with Restart
+✅ MPS Gaussian filter completed, GPU 内存已清理
+🚀 MPS 加速: 1601x1601 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0006)
+🚀 Using MPS for 1601x1601 matrix with 24GB GPU memory
+Converting 1601x1601 sparse matrix to dense for MPS...
+Using MPS acceleration for Random Walk with Restart
+🔥 MPS Iter 1 takes 0.397 seconds. Loss: 0.000
+🚀 MPS 加速: 1566x1566 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0006)
+🚀 Using MPS for 1566x1566 matrix with 24GB GPU memory
+Converting 1566x1566 sparse matrix to dense for MPS...
+💾 Estimated GPU memory usage: 9.6 MB
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+💾 Estimated GPU memory usage: 29.3 MB
+💾 Estimated GPU memory usage: 9.6 MB
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+💾 Estimated GPU memory usage: 28.1 MB
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ MPS Gaussian filter completed, GPU 内存已清理
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 983x983 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0010)
+🚀 Using MPS for 983x983 matrix with 24GB GPU memory
+Converting 983x983 sparse matrix to dense for MPS...
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1041x1041 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0010)
+🚀 Using MPS for 1041x1041 matrix with 24GB GPU memory
+Converting 1041x1041 sparse matrix to dense for MPS...
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1041x1041 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0010)
+🚀 Using MPS for 1041x1041 matrix with 24GB GPU memory
+Converting 1041x1041 sparse matrix to dense for MPS...
+🔥 MPS Iter 1 takes 0.374 seconds. Loss: 0.000
+✅ MPS Gaussian filter completed, GPU 内存已清理
+💾 Estimated GPU memory usage: 11.1 MB
+Using MPS acceleration for Random Walk with Restart
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🔥 MPS Iter 1 takes 0.491 seconds. Loss: 0.000
+🧹 GPU memory cleared
+🚀 MPS 加速: 983x983 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0010)
+🚀 Using MPS for 983x983 matrix with 24GB GPU memory
+Converting 983x983 sparse matrix to dense for MPS...
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 918x918 矩阵 (内存需求: 0.01GB, 稀疏度: 0.0011)
+🚀 Using MPS for 918x918 matrix with 24GB GPU memory
+Converting 918x918 sparse matrix to dense for MPS...
+💾 Estimated GPU memory usage: 9.6 MB
+💾 Estimated GPU memory usage: 11.1 MB
+🔥 MPS Iter 1 takes 0.329 seconds. Loss: 0.000
+💾 Estimated GPU memory usage: 12.4 MB
+🔥 MPS Iter 1 takes 0.316 seconds. Loss: 0.000
+💾 Estimated GPU memory usage: 12.4 MB
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+🔥 MPS Iter 1 takes 0.427 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🔥 MPS Iter 1 takes 0.421 seconds. Loss: 0.000
+Using MPS acceleration for Random Walk with Restart
+🧹 GPU memory cleared
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+🧹 GPU memory cleared
+🚀 MPS 加速: 1566x1566 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0006)
+🚀 Using MPS for 1566x1566 matrix with 24GB GPU memory
+Converting 1566x1566 sparse matrix to dense for MPS...
+🔥 MPS Iter 1 takes 0.363 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+🔥 MPS Iter 1 takes 0.451 seconds. Loss: 0.000
+🔥 MPS Iter 1 takes 0.319 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+💾 Estimated GPU memory usage: 28.1 MB
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+🔥 MPS Iter 1 takes 0.535 seconds. Loss: 0.000
+🔥 MPS Iter 1 takes 0.482 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ MPS Gaussian filter completed, GPU 内存已清理
+🧹 GPU memory cleared
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ MPS Gaussian filter completed, GPU 内存已清理
+🔥 MPS Iter 1 takes 0.272 seconds. Loss: 0.000
+Using MPS acceleration for Random Walk with Restart
+Using MPS acceleration for Random Walk with Restart
+Using MPS acceleration for Random Walk with Restart
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1955x1955 矩阵 (内存需求: 0.04GB, 稀疏度: 0.0005)
+🚀 Using MPS for 1955x1955 matrix with 24GB GPU memory
+Converting 1955x1955 sparse matrix to dense for MPS...
+🚀 MPS 加速: 1711x1711 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0006)
+🚀 MPS 加速: 1955x1955 矩阵 (内存需求: 0.04GB, 稀疏度: 0.0005)
+🚀 Using MPS for 1711x1711 matrix with 24GB GPU memory
+Converting 1711x1711 sparse matrix to dense for MPS...
+🚀 Using MPS for 1955x1955 matrix with 24GB GPU memory
+Converting 1955x1955 sparse matrix to dense for MPS...
+🧹 GPU memory cleared
+🚀 MPS 加速: 1955x1955 矩阵 (内存需求: 0.04GB, 稀疏度: 0.0005)
+🚀 Using MPS for 1955x1955 matrix with 24GB GPU memory
+Converting 1955x1955 sparse matrix to dense for MPS...
+✅ MPS Gaussian filter completed, GPU 内存已清理
+✅ MPS Gaussian filter completed, GPU 内存已清理
+💾 Estimated GPU memory usage: 43.7 MB
+Using MPS acceleration for Random Walk with Restart
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1711x1711 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0006)
+🚀 Using MPS for 1711x1711 matrix with 24GB GPU memory
+Converting 1711x1711 sparse matrix to dense for MPS...
+🚀 MPS 加速: 1711x1711 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0006)
+🚀 Using MPS for 1711x1711 matrix with 24GB GPU memory
+Converting 1711x1711 sparse matrix to dense for MPS...
+💾 Estimated GPU memory usage: 43.7 MB
+✅ MPS Gaussian filter completed, GPU 内存已清理
+💾 Estimated GPU memory usage: 43.7 MB
+💾 Estimated GPU memory usage: 33.5 MB
+Using MPS acceleration for Random Walk with Restart
+🚀 MPS 加速: 1711x1711 矩阵 (内存需求: 0.03GB, 稀疏度: 0.0006)
+🚀 Using MPS for 1711x1711 matrix with 24GB GPU memory
+Converting 1711x1711 sparse matrix to dense for MPS...
+🔥 MPS Iter 1 takes 0.708 seconds. Loss: 0.000
+🔥 MPS Iter 1 takes 0.716 seconds. Loss: 0.000
+🔥 MPS Iter 1 takes 0.704 seconds. Loss: 0.000
+💾 Estimated GPU memory usage: 33.5 MB
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+🧹 GPU memory cleared
+💾 Estimated GPU memory usage: 33.5 MB
+🔥 MPS Iter 1 takes 0.653 seconds. Loss: 0.000
+🔥 MPS Iter 1 takes 0.908 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+🔥 MPS Iter 1 takes 1.015 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+💾 Estimated GPU memory usage: 33.5 MB
+🔥 MPS Iter 1 takes 1.454 seconds. Loss: 0.000
+✅ Converged after 1 iterations
+Converting MPS result back to sparse matrix...
+🧹 GPU memory cleared
+557 cells to process
+21 chromosomes in each cell.
+
+2025-08-27 20:43:50,528 - ERROR - Imputation step failed for stage E70
+2025-08-27 20:43:50,528 - INFO - Stage E70 processing result: Failed
+2025-08-27 20:43:50,528 - INFO - 
+==================================================
+2025-08-27 20:43:50,528 - INFO - PROCESSING SUMMARY
+2025-08-27 20:43:50,528 - INFO - ==================================================
+2025-08-27 20:43:50,528 - INFO - E70: Failed
+2025-08-27 20:43:50,528 - INFO - 
+Successfully processed 0/1 stages

@@ -66,7 +66,7 @@ def loop_mergechr(inprefix, outprefix, chrom_file, split_file=None, res=10000,
 		print('BFS takes', time.time() - start_time, 'seconds')
 		return loop
 
-	chrom = np.loadtxt(chrom_file, dtype=str)[:,0]
+	chrom = np.loadtxt(chrom_file, dtype=np.str)[:,0]
 	if not split_file:
 		chrom_split = chrom.copy() 
 	else:
