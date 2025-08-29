@@ -1,0 +1,22 @@
+{
+  "stage": "E70",
+  "total_files": 2,
+  "successful": 0,
+  "failed": 2,
+  "success_rate": 0.0,
+  "results": [
+    {
+      "success": false,
+      "error": "衰减曲线计算失败",
+      "stage": "E70",
+      "cool_file": "/Volumes/SumSung500/CSU/0_HiRES/3_create_contact_decay_profile/../hires_data_processing/outputs/E70/impute/100K/chunk0/GSM7001570_GasfE703178.cool"
+    },
+    {
+      "success": false,
+      "error": "衰减曲线计算失败",
+      "stage": "E70",
+      "cool_file": "/Volumes/SumSung500/CSU/0_HiRES/3_create_contact_decay_profile/../hires_data_processing/outputs/E70/impute/100K/chunk0/GSM7001571_GasfE703180.cool"
+    }
+  ],
+  "output_dir": "/Volumes/SumSung500/CSU/0_HiRES/3_create_contact_decay_profile/outputs/stage_E70"
+}

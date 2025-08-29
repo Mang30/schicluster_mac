@@ -1,0 +1,36 @@
+{
+  "start_time": "2025-08-29T19:01:16.880141",
+  "end_time": "2025-08-29T19:01:18.677665",
+  "processing_time_seconds": 1.797524,
+  "stages_processed": 1,
+  "total_files": 2,
+  "total_successful": 0,
+  "overall_success_rate": 0.0,
+  "stage_results": {
+    "E70": {
+      "stage": "E70",
+      "total_files": 2,
+      "successful": 0,
+      "failed": 2,
+      "success_rate": 0.0,
+      "results": [
+        {
+          "success": false,
+          "error": "衰减曲线计算失败",
+          "stage": "E70",
+          "cool_file": "/Volumes/SumSung500/CSU/0_HiRES/3_create_contact_decay_profile/../hires_data_processing/outputs/E70/impute/100K/chunk0/GSM7001570_GasfE703178.cool"
+        },
+        {
+          "success": false,
+          "error": "衰减曲线计算失败",
+          "stage": "E70",
+          "cool_file": "/Volumes/SumSung500/CSU/0_HiRES/3_create_contact_decay_profile/../hires_data_processing/outputs/E70/impute/100K/chunk0/GSM7001571_GasfE703180.cool"
+        }
+      ],
+      "output_dir": "/Volumes/SumSung500/CSU/0_HiRES/3_create_contact_decay_profile/outputs/stage_E70"
+    }
+  },
+  "output_directory": "/Volumes/SumSung500/CSU/0_HiRES/3_create_contact_decay_profile/outputs",
+  "comparison_plots": [],
+  "combined_data_points": 0
+}

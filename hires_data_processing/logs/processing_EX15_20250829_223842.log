@@ -1,0 +1,47 @@
+----- Stage EX15 START 2025年 8月29日 星期五 22时38分42秒 CST -----
+CMD: python3 /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/scripts/run_schicluster_pipeline.py --base_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing --resolution 100000 --chr1 1 --pos1 2 --chr2 3 --pos2 4 --specific_stage EX15
+2025-08-29 22:38:42,181 - INFO - Stages: ['EX15']
+2025-08-29 22:38:42,181 - INFO - Params: resolution=100000, batch_size=1536, cpu_per_job=30
+2025-08-29 22:38:42,181 - INFO - Base: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing
+2025-08-29 22:38:42,181 - INFO - contact_table_dir: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables
+2025-08-29 22:38:42,181 - INFO - output_base_dir: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs
+2025-08-29 22:38:42,182 - INFO - chrom_size_path: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes_with_chrY.txt
+2025-08-29 22:38:42,182 - INFO - logs: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/logs
+2025-08-29 22:38:42,182 - INFO - 
+============================================================
+2025-08-29 22:38:42,182 - INFO - Processing stage: EX15
+2025-08-29 22:38:42,182 - INFO - ============================================================
+2025-08-29 22:38:42,182 - INFO - Cell count (rough): 1122
+2025-08-29 22:38:42,182 - INFO - Start pipeline @ EX15
+2025-08-29 22:38:42,182 - INFO - [Step 1] prepare-impute @ EX15
+2025-08-29 22:38:42,182 - INFO - Command: hicluster prepare-impute --cell_table /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_EX15.tsv --batch_size 1536 --pad 1 --cpu_per_job 30 --chr1 1 --pos1 2 --chr2 3 --pos2 4 --output_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes_with_chrY.txt --output_dist 500000000 --window_size 500000000 --step_size 500000000 --resolution 100000
+2025-08-29 22:38:42,182 - INFO - Output directory: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K
+2025-08-29 22:38:42,182 - INFO - Contact table: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_EX15.tsv
+2025-08-29 22:38:42,986 - INFO - prepare-impute OK @ EX15
+2025-08-29 22:38:42,986 - INFO - STDOUT:
+command	prepare-impute
+output_dir	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K
+chrom_size_path	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes_with_chrY.txt
+output_dist	500000000
+window_size	500000000
+step_size	500000000
+resolution	100000
+input_scool	None
+cell_table	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_EX15.tsv
+batch_size	1536
+logscale	False
+pad	1
+std	1
+rp	0.5
+tol	0.01
+min_cutoff	1e-05
+cpu_per_job	30
+chrom1	1
+chrom2	3
+pos1	2
+pos2	4
+hicluster: Executing prepare-impute...
+prepare-impute finished.
+
+2025-08-29 22:38:42,986 - INFO - [Step 2] snakemake imputation @ EX15
+2025-08-29 22:38:42,986 - INFO - Command: snakemake -d /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K/chunk0 --snakefile /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K/chunk0/Snakefile -j 30

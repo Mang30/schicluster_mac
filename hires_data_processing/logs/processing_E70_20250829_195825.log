@@ -1,0 +1,5 @@
+----- Stage E70 START 2025年 8月29日 星期五 19时58分25秒 CST -----
+CMD: python3 /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/scripts/run_schicluster_pipeline.py --base_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing --resolution 100000 --chr1 1 --pos1 2 --chr2 3 --pos2 4 --specific_stage E70
+2025-08-29 19:58:25,672 - ERROR - Chromosome size file not found: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes_with_chrY.txt
+Stage E70 SUCCESS 2025年 8月29日 星期五 19时58分25秒 CST
+----- Stage E70 END -----

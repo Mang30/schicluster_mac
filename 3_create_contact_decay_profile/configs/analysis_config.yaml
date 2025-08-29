@@ -1,0 +1,334 @@
+# Hi-C接触衰减曲线分析配置文件
+# 作者：Claude Code Assistant
+# 日期：2025-08-29
+
+# =============================================================================
+# 基本配置
+# =============================================================================
+project_name: "HiRES_Contact_Decay_Analysis"
+version: "1.0.0"
+description: "Hi-C接触衰减曲线分析项目配置"
+
+# =============================================================================
+# 数据路径配置
+# =============================================================================
+paths:
+  # 数据根目录（包含各个stage子目录）
+  data_root: "../hires_data_processing/outputs"
+  
+  # 输出根目录
+  output_root: "./outputs"
+  
+  # 日志目录
+  log_dir: "./logs"
+  
+  # 临时文件目录
+  temp_dir: "./temp"
+  
+  # 图表输出目录
+  plots_dir: "./outputs/plots"
+
+# =============================================================================
+# 发育阶段配置
+# =============================================================================
+stages:
+  # 要分析的发育阶段列表（按时间顺序）
+  stage_list:
+    - "E70"   # 胚胎7.0天
+    - "E75"   # 胚胎7.5天
+    - "E80"   # 胚胎8.0天
+    - "E85"   # 胚胎8.5天
+    - "E95"   # 胚胎9.5天
+    - "EX05"  # 出生后0.5天
+    - "EX15"  # 出生后1.5天
+  
+  # 阶段描述
+  stage_descriptions:
+    E70: "胚胎发育7.0天"
+    E75: "胚胎发育7.5天"
+    E80: "胚胎发育8.0天"
+    E85: "胚胎发育8.5天"
+    E95: "胚胎发育9.5天"
+    EX05: "出生后0.5天"
+    EX15: "出生后1.5天"
+  
+  # 阶段颜色配置（用于图表）
+  stage_colors:
+    E70: "#1f77b4"    # 蓝色
+    E75: "#ff7f0e"    # 橙色
+    E80: "#2ca02c"    # 绿色
+    E85: "#d62728"    # 红色
+    E95: "#9467bd"    # 紫色
+    EX05: "#8c564b"   # 棕色
+    EX15: "#e377c2"   # 粉色
+
+# =============================================================================
+# 数据处理配置
+# =============================================================================
+data_processing:
+  # .cool文件相对路径模式
+  cool_file_pattern: "impute/100K/chunk0/*.cool"
+  
+  # 每个阶段最大处理文件数量（null表示不限制）
+  max_files_per_stage: null
+  
+  # 测试模式下每阶段处理文件数
+  test_max_files: 3
+  
+  # 文件筛选条件
+  file_filtering:
+    # 文件大小最小值（字节）
+    min_file_size: 1024
+    
+    # 排除的文件模式
+    exclude_patterns:
+      - "*test*"
+      - "*backup*"
+      - ".*"  # 隐藏文件
+
+# =============================================================================
+# 分析参数配置
+# =============================================================================
+analysis:
+  # 接触衰减曲线计算参数
+  decay_profile:
+    # 最大分析距离（以bin为单位）
+    max_distance: 2000
+    
+    # 是否使用对数分箱
+    use_log_bins: false
+    
+    # 分箱数量
+    n_bins: 100
+    
+    # 是否使用平衡化数据
+    use_balanced: true
+  
+  # 染色体分析配置
+  chromosome:
+    # 分析模式：'all'（全基因组）或 'individual'（单个染色体）
+    analysis_mode: "all"
+    
+    # 单染色体分析时的染色体列表
+    target_chromosomes:
+      - "chr1"
+      - "chr2"
+      - "chr3"
+      - "chrX"
+    
+    # 排除的染色体
+    exclude_chromosomes:
+      - "chrY"
+      - "chrM"
+  
+  # 统计分析参数
+  statistics:
+    # 幂律拟合相关
+    power_law_fitting:
+      # 拟合距离范围（kb）
+      distance_range:
+        min: 10
+        max: 10000
+      
+      # 是否在对数空间进行拟合
+      log_space_fitting: true
+    
+    # 显著性检验
+    significance_testing:
+      # 显著性水平
+      alpha: 0.05
+      
+      # 多重比较校正方法
+      multiple_correction: "bonferroni"
+
+# =============================================================================
+# 并行处理配置
+# =============================================================================
+parallel:
+  # 是否启用并行处理
+  enable_parallel: true
+  
+  # 最大并行worker数量
+  max_workers: 4
+  
+  # 内存限制相关
+  memory:
+    # 单个进程最大内存使用（GB）
+    max_memory_per_process: 8
+    
+    # 总体内存限制（GB）
+    total_memory_limit: 32
+  
+  # 任务分块
+  chunking:
+    # 是否启用任务分块
+    enable_chunking: true
+    
+    # 每个chunk的最大任务数
+    chunk_size: 10
+
+# =============================================================================
+# 输出配置
+# =============================================================================
+output:
+  # 图表配置
+  plots:
+    # 是否生成图表
+    generate_plots: true
+    
+    # 图表格式
+    formats: ["png", "pdf"]
+    
+    # 图片分辨率
+    dpi: 300
+    
+    # 图片大小配置
+    figure_sizes:
+      single: [10, 6]      # 单图大小
+      comparison: [16, 8]  # 对比图大小
+      heatmap: [12, 8]     # 热图大小
+    
+    # 字体配置
+    font:
+      # 字体族
+      family: ["Arial Unicode MS", "SimHei", "DejaVu Sans"]
+      
+      # 字体大小
+      sizes:
+        title: 16
+        label: 12
+        tick: 10
+        legend: 10
+  
+  # 数据输出配置
+  data:
+    # 输出格式
+    formats: ["csv", "json"]
+    
+    # 是否压缩输出文件
+    compress: true
+    
+    # 数值精度
+    decimal_places: 6
+  
+  # 报告配置
+  reports:
+    # 是否生成HTML报告
+    generate_html: true
+    
+    # 是否生成Markdown报告
+    generate_markdown: true
+    
+    # 报告语言
+    language: "zh"
+
+# =============================================================================
+# 日志配置
+# =============================================================================
+logging:
+  # 日志级别
+  level: "INFO"
+  
+  # 日志格式
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # 日志文件配置
+  file_logging:
+    # 是否启用文件日志
+    enabled: true
+    
+    # 日志文件名模式
+    filename_pattern: "contact_decay_analysis_{timestamp}.log"
+    
+    # 日志文件最大大小（MB）
+    max_size: 100
+    
+    # 保留的日志文件数量
+    backup_count: 5
+  
+  # 控制台日志配置
+  console_logging:
+    # 是否启用控制台日志
+    enabled: true
+    
+    # 控制台日志级别
+    level: "INFO"
+
+# =============================================================================
+# 环境配置
+# =============================================================================
+environment:
+  # Python环境
+  python:
+    # 最低版本要求
+    min_version: "3.8"
+    
+    # 必需的包列表
+    required_packages:
+      - "numpy>=1.19.0"
+      - "pandas>=1.3.0"
+      - "matplotlib>=3.3.0"
+      - "seaborn>=0.11.0"
+      - "cooler>=0.8.0"
+      - "cooltools>=0.5.0"
+      - "scipy>=1.7.0"
+      - "scikit-learn>=0.24.0"
+  
+  # Conda环境
+  conda:
+    # 环境名称
+    environment_name: "schicluster"
+    
+    # 频道列表
+    channels:
+      - "conda-forge"
+      - "bioconda"
+      - "defaults"
+
+# =============================================================================
+# 高级配置
+# =============================================================================
+advanced:
+  # 缓存配置
+  caching:
+    # 是否启用缓存
+    enabled: true
+    
+    # 缓存目录
+    cache_dir: "./cache"
+    
+    # 缓存过期时间（小时）
+    expire_hours: 24
+  
+  # 性能优化
+  optimization:
+    # 是否使用稀疏矩阵
+    use_sparse_matrices: true
+    
+    # 数据类型优化
+    dtype_optimization: true
+    
+    # 内存映射
+    use_memory_mapping: false
+  
+  # 错误处理
+  error_handling:
+    # 遇到错误时的行为：'stop', 'skip', 'warn'
+    on_error: "skip"
+    
+    # 最大重试次数
+    max_retries: 3
+    
+    # 重试间隔（秒）
+    retry_delay: 5
+  
+  # 调试配置
+  debugging:
+    # 是否启用调试模式
+    debug_mode: false
+    
+    # 是否保存中间结果
+    save_intermediate: false
+    
+    # 详细输出
+    verbose: false
