@@ -1,0 +1,72 @@
+----- Stage EX15 START 2025年 8月30日 星期六 14时35分11秒 CST -----
+CMD: python3 /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/scripts/run_schicluster_pipeline.py --base_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing --resolution 100000 --chr1 1 --pos1 2 --chr2 3 --pos2 4 --specific_stage EX15
+2025-08-30 14:35:11,293 - INFO - Stages: ['EX15']
+2025-08-30 14:35:11,294 - INFO - Params: resolution=100000, batch_size=1536, cpu_per_job=30
+2025-08-30 14:35:11,294 - INFO - Base: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing
+2025-08-30 14:35:11,294 - INFO - contact_table_dir: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables
+2025-08-30 14:35:11,294 - INFO - output_base_dir: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs
+2025-08-30 14:35:11,294 - INFO - chrom_size_path: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes_with_chrY.txt
+2025-08-30 14:35:11,294 - INFO - logs: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/logs
+2025-08-30 14:35:11,294 - INFO - 
+============================================================
+2025-08-30 14:35:11,294 - INFO - Processing stage: EX15
+2025-08-30 14:35:11,294 - INFO - ============================================================
+2025-08-30 14:35:11,296 - INFO - Cell count (rough): 1122
+2025-08-30 14:35:11,296 - INFO - Start pipeline @ EX15
+2025-08-30 14:35:11,296 - INFO - [Step 1] prepare-impute @ EX15
+2025-08-30 14:35:11,296 - INFO - Command: hicluster prepare-impute --cell_table /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_EX15.tsv --batch_size 1536 --pad 1 --cpu_per_job 30 --chr1 1 --pos1 2 --chr2 3 --pos2 4 --output_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes_with_chrY.txt --output_dist 500000000 --window_size 500000000 --step_size 500000000 --resolution 100000
+2025-08-30 14:35:11,296 - INFO - Output directory: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K
+2025-08-30 14:35:11,296 - INFO - Contact table: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_EX15.tsv
+2025-08-30 14:35:12,162 - INFO - prepare-impute OK @ EX15
+2025-08-30 14:35:12,162 - INFO - STDOUT:
+command	prepare-impute
+output_dir	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K
+chrom_size_path	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes_with_chrY.txt
+output_dist	500000000
+window_size	500000000
+step_size	500000000
+resolution	100000
+input_scool	None
+cell_table	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_EX15.tsv
+batch_size	1536
+logscale	False
+pad	1
+std	1
+rp	0.5
+tol	0.01
+min_cutoff	1e-05
+cpu_per_job	30
+chrom1	1
+chrom2	3
+pos1	2
+pos2	4
+hicluster: Executing prepare-impute...
+prepare-impute finished.
+
+2025-08-30 14:35:12,162 - INFO - [Step 2] snakemake imputation @ EX15
+2025-08-30 14:35:12,162 - INFO - Command: snakemake -d /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K/chunk0 --snakefile /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K/chunk0/Snakefile -j 30
+2025-08-30 14:35:24,329 - ERROR - snakemake FAILED @ EX15 (code 1)
+2025-08-30 14:35:24,330 - ERROR - STDERR:
+Assuming unrestricted shared filesystem usage.
+host: liuwuhaodeMacBook-Air.local
+Building DAG of jobs...
+LockException:
+Error: Directory cannot be locked. Please make sure that no other Snakemake process is trying to create the same files in the following directory:
+/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/EX15/impute/100K/chunk0
+If you are sure that no other instances of snakemake are running on this directory, the remaining lock was likely caused by a kill signal or a power loss. It can be removed with the --unlock argument.
+
+2025-08-30 14:35:24,330 - ERROR - STDOUT:
+1122 cells to process
+21 chromosomes in each cell.
+
+2025-08-30 14:35:24,330 - ERROR - Abort: snakemake failed @ EX15
+2025-08-30 14:35:24,330 - INFO - Result @ EX15: Failed
+2025-08-30 14:35:24,330 - INFO - 
+============================================================
+2025-08-30 14:35:24,330 - INFO - PROCESSING SUMMARY
+2025-08-30 14:35:24,330 - INFO - ============================================================
+2025-08-30 14:35:24,330 - INFO - EX15: Failed
+2025-08-30 14:35:24,330 - INFO - 
+Successfully processed 0/1 stages
+Stage EX15 SUCCESS 2025年 8月30日 星期六 14时35分24秒 CST
+----- Stage EX15 END -----

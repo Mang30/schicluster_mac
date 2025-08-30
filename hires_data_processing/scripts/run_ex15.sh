@@ -6,7 +6,7 @@
 # -------------------------------
 # Defaults (可根据需要修改)
 # -------------------------------
-STAGES="EX15 EX80"                       # 默认处理阶段 E70
+STAGES="EX15"                       # 默认处理阶段 E70
 BASE_DIR=""                        # 可用 -b 指定；为空则使用脚本相对目录的上级
 ENV_NAME="schicluster"             # 可用 -n 指定
 PYTHON_BIN="python3"               # 可用 -p 指定

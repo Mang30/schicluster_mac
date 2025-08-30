@@ -1,0 +1,23 @@
+----- Stage EX80 START 2025年 8月30日 星期六 14时35分24秒 CST -----
+CMD: python3 /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/scripts/run_schicluster_pipeline.py --base_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing --resolution 100000 --chr1 1 --pos1 2 --chr2 3 --pos2 4 --specific_stage EX80
+2025-08-30 14:35:24,369 - INFO - Stages: ['EX80']
+2025-08-30 14:35:24,369 - INFO - Params: resolution=100000, batch_size=1536, cpu_per_job=30
+2025-08-30 14:35:24,369 - INFO - Base: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing
+2025-08-30 14:35:24,369 - INFO - contact_table_dir: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables
+2025-08-30 14:35:24,369 - INFO - output_base_dir: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs
+2025-08-30 14:35:24,369 - INFO - chrom_size_path: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes_with_chrY.txt
+2025-08-30 14:35:24,369 - INFO - logs: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/logs
+2025-08-30 14:35:24,369 - INFO - 
+============================================================
+2025-08-30 14:35:24,369 - INFO - Processing stage: EX80
+2025-08-30 14:35:24,369 - INFO - ============================================================
+2025-08-30 14:35:24,369 - ERROR - Contact table not found: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/contact_table_EX80.tsv
+2025-08-30 14:35:24,369 - INFO - 
+============================================================
+2025-08-30 14:35:24,369 - INFO - PROCESSING SUMMARY
+2025-08-30 14:35:24,369 - INFO - ============================================================
+2025-08-30 14:35:24,369 - INFO - EX80: Contact table missing
+2025-08-30 14:35:24,369 - INFO - 
+Successfully processed 0/1 stages
+Stage EX80 SUCCESS 2025年 8月30日 星期六 14时35分24秒 CST
+----- Stage EX80 END -----
