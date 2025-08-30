@@ -1,8 +1,10 @@
 #!/bin/bash
-# Processing script for developmental stage E75
+# Processing script for 21-length chromosome contact table
 
-STAGE="E75"
-PROJECT_DIR="/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing"
+STAGE="21length"
+# Use relative paths from the script location
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 LOG_DIR="$PROJECT_DIR/logs"
 mkdir -p "$LOG_DIR"
 
@@ -10,12 +12,13 @@ echo "Starting processing for stage $STAGE at $(date)"
 
 # Activate environment and run processing
 eval "$(micromamba shell hook --shell=bash)"
-micromamba activate schicluster
+micromamba activate 3_schicluster_python38
 
 cd "$PROJECT_DIR"
 
-# Run processing for this specific stage
-python3 scripts/process_hic_by_stage.py --specific_stage "$STAGE" 2>&1 | tee "$LOG_DIR/processing_$STAGE.log"
+# Run processing for this specific stage with 21-chromosome configuration
+python3 scripts/process_hic_by_stage.py --specific_stage "$STAGE" \
+    --chrom_size_file "mm10_chrom_sizes_with_chrY.txt" 2>&1 | tee "$LOG_DIR/processing_$STAGE.log"
 
 EXIT_CODE=${PIPESTATUS[0]}
 

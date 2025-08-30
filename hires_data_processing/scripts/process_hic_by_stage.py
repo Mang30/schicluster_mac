@@ -1,58 +1,42 @@
 #!/usr/bin/env python3
 """
-Unified schicluster pipeline runner:
-- Stage loop: prepare-impute (hicluster) -> snakemake
-- Supports relative or absolute base_dir
-- All parameters configurable via CLI
+Process Hi-C data using schicluster for each developmental stage
 """
 
 import os
 import subprocess
 import argparse
+from pathlib import Path
 import logging
 from datetime import datetime
 
-# ---------------------------
-# Logging
-# ---------------------------
-def setup_logging(log_dir: str) -> logging.Logger:
+def setup_logging(log_dir):
+    """Setup logging configuration"""
     os.makedirs(log_dir, exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = os.path.join(log_dir, f"schicluster_processing_{ts}.log")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    log_file = os.path.join(log_dir, f"schicluster_processing_{timestamp}.log")
+    
     logging.basicConfig(
         level=logging.INFO,
-        format="%(asctime)s - %(levelname)s - %(message)s",
-        handlers=[logging.FileHandler(log_file), logging.StreamHandler()],
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file),
+            logging.StreamHandler()
+        ]
     )
     return logging.getLogger(__name__)
 
-# ---------------------------
-# Core runners
-# ---------------------------
-def run_schicluster_prepare(
-    stage: str,
-    contact_table: str,
-    output_dir: str,
-    chrom_size_path: str,
-    *,
-    resolution: int = 100_000,
-    batch_size: int = 1536,
-    cpu_per_job: int = 30,
-    pad: int = 1,
-    chr1: int = 1,
-    pos1: int = 2,
-    chr2: int = 3,
-    pos2: int = 4,
-    output_dist: int = 500_000_000,
-    window_size: int = 500_000_000,
-    step_size: int = 500_000_000,
-    timeout_sec: int = 3600,
-    dry_run: bool = False,
-    logger: logging.Logger | None = None,
-) -> bool:
-    """Run hicluster prepare-impute for a stage."""
-    logger = logger or logging.getLogger(__name__)
-
+def run_schicluster_prepare(stage, contact_table, output_dir, chrom_size_path, 
+                           resolution=100000, batch_size=1536, cpu_per_job=30,
+                           pad=1, chr1=1, pos1=2, chr2=5, pos2=6, 
+                           output_dist=500000000, window_size=500000000, 
+                           step_size=500000000, logger=None):
+    """Run schicluster prepare-impute for a specific stage"""
+    
+    if logger is None:
+        logger = logging.getLogger(__name__)
+    
+    # Prepare command
     cmd = [
         "hicluster", "prepare-impute",
         "--cell_table", contact_table,
@@ -68,279 +52,209 @@ def run_schicluster_prepare(
         "--output_dist", str(output_dist),
         "--window_size", str(window_size),
         "--step_size", str(step_size),
-        "--resolution", str(resolution),
+        "--resolution", str(resolution)
     ]
-
-    logger.info(f"[Step 1] prepare-impute @ {stage}")
+    
+    logger.info(f"Step 1: Running prepare-impute for stage {stage}")
     logger.info(f"Command: {' '.join(cmd)}")
     logger.info(f"Output directory: {output_dir}")
     logger.info(f"Contact table: {contact_table}")
-
-    if dry_run:
-        logger.info("Dry-run: skipping execution.")
-        return True
-
+    
     try:
+        # Run the command (compatible with older Python versions)
         result = subprocess.run(
-            cmd,
-            cwd=os.path.dirname(output_dir) or None,  # None -> current
-            stdout=subprocess.PIPE,
+            cmd, 
+            cwd=os.path.dirname(output_dir),
+            stdout=subprocess.PIPE, 
             stderr=subprocess.PIPE,
-            text=True,
-            timeout=timeout_sec,
+            universal_newlines=True, 
+            timeout=3600  # 1 hour timeout for prepare step
         )
+        
         if result.returncode == 0:
-            logger.info(f"prepare-impute OK @ {stage}")
-            if result.stdout:
-                logger.info(f"STDOUT:\n{result.stdout}")
+            logger.info(f"Successfully completed prepare-impute for stage {stage}")
+            logger.info(f"STDOUT: {result.stdout}")
             return True
         else:
-            logger.error(f"prepare-impute FAILED @ {stage} (code {result.returncode})")
-            if result.stderr:
-                logger.error(f"STDERR:\n{result.stderr}")
-            if result.stdout:
-                logger.error(f"STDOUT:\n{result.stdout}")
+            logger.error(f"Error in prepare-impute for stage {stage}")
+            logger.error(f"Return code: {result.returncode}")
+            logger.error(f"STDERR: {result.stderr}")
+            logger.error(f"STDOUT: {result.stdout}")
             return False
+            
     except subprocess.TimeoutExpired:
-        logger.error(f"prepare-impute TIMEOUT @ {stage} ({timeout_sec}s)")
+        logger.error(f"Timeout expired in prepare-impute for stage {stage}")
         return False
     except Exception as e:
-        logger.error(f"prepare-impute EXCEPTION @ {stage}: {e}")
+        logger.error(f"Exception in prepare-impute for stage {stage}: {str(e)}")
         return False
 
-def run_snakemake_imputation(
-    stage: str,
-    output_dir: str,
-    *,
-    snakemake_cmd_file: str = "snakemake_cmd.txt",
-    timeout_sec: int = 86_400,
-    dry_run: bool = False,
-    logger: logging.Logger | None = None,
-) -> bool:
-    """Run snakemake imputation using command recorded by hicluster."""
-    logger = logger or logging.getLogger(__name__)
-
-    cmd_path = os.path.join(output_dir, snakemake_cmd_file)
-    if not os.path.exists(cmd_path):
-        logger.error(f"Snakemake command file not found: {cmd_path}")
+def run_snakemake_imputation(stage, output_dir, cpu_per_job=30, logger=None):
+    """Run the snakemake workflow for imputation"""
+    
+    if logger is None:
+        logger = logging.getLogger(__name__)
+    
+    # Find the snakemake command file
+    snakemake_cmd_file = os.path.join(output_dir, "snakemake_cmd.txt")
+    if not os.path.exists(snakemake_cmd_file):
+        logger.error(f"Snakemake command file not found: {snakemake_cmd_file}")
         return False
-
-    with open(cmd_path, "r") as f:
+    
+    # Read the snakemake command
+    with open(snakemake_cmd_file, 'r') as f:
         snakemake_cmd = f.read().strip()
-
-    logger.info(f"[Step 2] snakemake imputation @ {stage}")
+    
+    logger.info(f"Step 2: Running snakemake imputation for stage {stage}")
     logger.info(f"Command: {snakemake_cmd}")
-
-    if dry_run:
-        logger.info("Dry-run: skipping execution.")
-        return True
-
+    
     try:
+        # Parse and run the snakemake command (compatible with older Python versions)
+        cmd_parts = snakemake_cmd.split()
         result = subprocess.run(
-            snakemake_cmd.split(),
+            cmd_parts,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            text=True,
-            timeout=timeout_sec,
+            universal_newlines=True,
+            timeout=86400  # 24 hour timeout for imputation
         )
+        
         if result.returncode == 0:
-            logger.info(f"snakemake imputation OK @ {stage}")
-            if result.stdout:
-                logger.info(f"STDOUT:\n{result.stdout}")
+            logger.info(f"Successfully completed snakemake imputation for stage {stage}")
+            logger.info(f"STDOUT: {result.stdout}")
             return True
         else:
-            logger.error(f"snakemake FAILED @ {stage} (code {result.returncode})")
-            if result.stderr:
-                logger.error(f"STDERR:\n{result.stderr}")
-            if result.stdout:
-                logger.error(f"STDOUT:\n{result.stdout}")
+            logger.error(f"Error in snakemake imputation for stage {stage}")
+            logger.error(f"Return code: {result.returncode}")
+            logger.error(f"STDERR: {result.stderr}")
+            logger.error(f"STDOUT: {result.stdout}")
             return False
+            
     except subprocess.TimeoutExpired:
-        logger.error(f"snakemake TIMEOUT @ {stage} ({timeout_sec}s)")
+        logger.error(f"Timeout expired in snakemake imputation for stage {stage}")
         return False
     except Exception as e:
-        logger.error(f"snakemake EXCEPTION @ {stage}: {e}")
+        logger.error(f"Exception in snakemake imputation for stage {stage}: {str(e)}")
         return False
 
-def run_full_pipeline(
-    stage: str,
-    contact_table: str,
-    output_dir: str,
-    chrom_size_path: str,
-    *,
-    resolution: int,
-    batch_size: int,
-    cpu_per_job: int,
-    pad: int,
-    chr1: int,
-    pos1: int,
-    chr2: int,
-    pos2: int,
-    output_dist: int,
-    window_size: int,
-    step_size: int,
-    prep_timeout: int,
-    snakemake_timeout: int,
-    snakemake_cmd_file: str,
-    dry_run: bool,
-    logger: logging.Logger,
-) -> bool:
-    logger.info(f"Start pipeline @ {stage}")
-
-    ok = run_schicluster_prepare(
+def run_schicluster_full_pipeline(stage, contact_table, output_dir, chrom_size_path, 
+                                 resolution=100000, batch_size=1536, cpu_per_job=30,
+                                 pad=1, chr1=1, pos1=2, chr2=3, pos2=4, 
+                                 output_dist=500000000, window_size=500000000, 
+                                 step_size=500000000, logger=None):
+    """Run the complete schicluster pipeline: prepare + imputation"""
+    
+    if logger is None:
+        logger = logging.getLogger(__name__)
+    
+    logger.info(f"Starting complete schicluster pipeline for stage {stage}")
+    
+    # Step 1: Prepare imputation
+    success = run_schicluster_prepare(
         stage, contact_table, output_dir, chrom_size_path,
-        resolution=resolution,
-        batch_size=batch_size,
-        cpu_per_job=cpu_per_job,
-        pad=pad,
-        chr1=chr1, pos1=pos1, chr2=chr2, pos2=pos2,
-        output_dist=output_dist, window_size=window_size, step_size=step_size,
-        timeout_sec=prep_timeout,
-        dry_run=dry_run,
-        logger=logger,
+        resolution, batch_size, cpu_per_job, pad, chr1, pos1, chr2, pos2,
+        output_dist, window_size, step_size, logger
     )
-    if not ok:
-        logger.error(f"Abort: prepare failed @ {stage}")
+    
+    if not success:
+        logger.error(f"Prepare step failed for stage {stage}")
         return False
-
-    ok = run_snakemake_imputation(
-        stage, output_dir,
-        snakemake_cmd_file=snakemake_cmd_file,
-        timeout_sec=snakemake_timeout,
-        dry_run=dry_run,
-        logger=logger,
-    )
-    if not ok:
-        logger.error(f"Abort: snakemake failed @ {stage}")
+    
+    # Step 2: Run snakemake imputation
+    success = run_snakemake_imputation(stage, output_dir, cpu_per_job, logger)
+    
+    if not success:
+        logger.error(f"Imputation step failed for stage {stage}")
         return False
-
-    logger.info(f"Pipeline OK @ {stage}")
+    
+    logger.info(f"Complete pipeline successful for stage {stage}")
     return True
 
-# ---------------------------
-# Utils
-# ---------------------------
-def get_cell_count(contact_table: str) -> int:
+def get_cell_count(contact_table):
+    """Get number of cells in contact table"""
     try:
-        with open(contact_table, "r") as f:
+        with open(contact_table, 'r') as f:
             return sum(1 for line in f if line.strip())
-    except Exception:
+    except:
         return 0
 
-# ---------------------------
-# CLI
-# ---------------------------
 def main():
-    p = argparse.ArgumentParser(
-        description="Process Hi-C data using schicluster by developmental stage"
-    )
-    # Workflow selection
-    p.add_argument("--stages", nargs="+",
-                   default=["E70", "E75", "E80", "E85", "E95", "EX05", "EX15"],
-                   help="Stages to process")
-    p.add_argument("--specific_stage", type=str, default=None,
-                   help="If set, only process this stage")
-
-    # Params
-    p.add_argument("--resolution", type=int, default=100_000,
-                   help="Resolution (e.g., 100000 for 100K)")
-    p.add_argument("--batch_size", type=int, default=1536,
-                   help="Batch size for prepare-impute")
-    p.add_argument("--cpu_per_job", type=int, default=30,
-                   help="CPUs per job for prepare-impute")
-    p.add_argument("--pad", type=int, default=1, help="pad")
-    p.add_argument("--chr1", type=int, default=1, help="Column index for chr1")
-    p.add_argument("--pos1", type=int, default=2, help="Column index for pos1")
-    p.add_argument("--chr2", type=int, default=3, help="Column index for chr2")
-    p.add_argument("--pos2", type=int, default=4, help="Column index for pos2")
-    p.add_argument("--output_dist", type=int, default=500_000_000)
-    p.add_argument("--window_size", type=int, default=500_000_000)
-    p.add_argument("--step_size", type=int, default=500_000_000)
-
-    # Timeouts
-    p.add_argument("--prep_timeout", type=int, default=3600,
-                   help="Timeout (s) for prepare step")
-    p.add_argument("--snakemake_timeout", type=int, default=86_400,
-                   help="Timeout (s) for snakemake step")
-    p.add_argument("--snakemake_cmd_file", type=str, default="snakemake_cmd.txt",
-                   help="Filename containing snakemake command")
-
-    # Paths
-    path_group = p.add_mutually_exclusive_group()
-    path_group.add_argument("--base_dir", type=str, default=None,
-                            help="Absolute base dir (overrides relative mode)")
-    path_group.add_argument("--relative_base", action="store_true",
-                            help="Use script-relative base dir (default)")
-
-    p.add_argument("--contact_table_dir", type=str, default=None,
-                   help="Override contact_table dir (else base_dir/contact_tables)")
-    p.add_argument("--output_base_dir", type=str, default=None,
-                   help="Override outputs dir (else base_dir/outputs)")
-    p.add_argument("--chrom_size_path", type=str, default=None,
-                   help="Override chrom sizes file (else base_dir/mm10_chrom_sizes_with_chrY.txt)")
-    p.add_argument("--log_dir", type=str, default=None,
-                   help="Override log dir (else base_dir/logs)")
-
-    # Misc
-    p.add_argument("--dry_run", action="store_true",
-                   help="Print commands only; do not execute")
-
-    args = p.parse_args()
-
-    # Resolve base_dir
-    if args.base_dir:
-        base_dir = args.base_dir
+    parser = argparse.ArgumentParser(description="Process Hi-C data using schicluster by developmental stage")
+    parser.add_argument("--stages", nargs="+", default=["E70", "E75", "E80", "E85", "E95", "EX05", "EX15"],
+                       help="Developmental stages to process")
+    parser.add_argument("--resolution", type=int, default=100000,
+                       help="Resolution for analysis (default: 100000)")
+    parser.add_argument("--batch_size", type=int, default=5000,
+                       help="Batch size (default: 5000)")
+    parser.add_argument("--cpu_per_job", type=int, default=36,
+                       help="CPUs per job (default: 30)")
+    parser.add_argument("--specific_stage", type=str, default=None,
+                       help="Process only a specific stage")
+    parser.add_argument("--chrom_size_file", type=str, default=None,
+                       help="Chromosome size file to use (default: mm10_chrom_sizes_with_chrY.txt)")
+    
+    args = parser.parse_args()
+    
+    # Use relative paths from the script location
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_dir = os.path.dirname(script_dir)
+    base_dir = project_dir
+    contact_table_dir = os.path.join(base_dir, "contact_tables")
+    output_base_dir = os.path.join(base_dir, "outputs")
+    
+    # Determine chromosome size file to use
+    if args.chrom_size_file:
+        chrom_size_path = os.path.join(base_dir, args.chrom_size_file)
     else:
-        # default: relative to this script
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        base_dir = os.path.dirname(script_dir)
-
-    # Resolve subdirs/files
-    contact_table_dir = args.contact_table_dir or os.path.join(base_dir, "contact_tables")
-    output_base_dir = args.output_base_dir or os.path.join(base_dir, "outputs")
-    chrom_size_path = args.chrom_size_path or os.path.join(base_dir, "mm10_chrom_sizes_with_chrY.txt")
-    log_dir = args.log_dir or os.path.join(base_dir, "logs")
-
+        chrom_size_path = os.path.join(base_dir, "mm10_chrom_sizes_with_chrY.txt")
+    
+    log_dir = os.path.join(base_dir, "logs")
+    
+    # Setup logging
     logger = setup_logging(log_dir)
-
-    # Input checks
+    
+    # Verify chromosome size file exists
     if not os.path.exists(chrom_size_path):
         logger.error(f"Chromosome size file not found: {chrom_size_path}")
         return
-
-    stages = [args.specific_stage] if args.specific_stage else args.stages
-    logger.info(f"Stages: {stages}")
-    logger.info(f"Params: resolution={args.resolution}, batch_size={args.batch_size}, cpu_per_job={args.cpu_per_job}")
-    logger.info(f"Base: {base_dir}")
-    logger.info(f"contact_table_dir: {contact_table_dir}")
-    logger.info(f"output_base_dir: {output_base_dir}")
-    logger.info(f"chrom_size_path: {chrom_size_path}")
-    logger.info(f"logs: {log_dir}")
-    if args.dry_run:
-        logger.info("DRY-RUN mode is ON")
-
-    results: dict[str, str] = {}
-
-    for stage in stages:
-        logger.info("\n" + "=" * 60)
+    
+    # Determine which stages to process
+    stages_to_process = [args.specific_stage] if args.specific_stage else args.stages
+    
+    logger.info(f"Starting schicluster processing for stages: {stages_to_process}")
+    logger.info(f"Parameters: resolution={args.resolution}, batch_size={args.batch_size}, cpu_per_job={args.cpu_per_job}")
+    
+    results = {}
+    
+    for stage in stages_to_process:
+        logger.info(f"\n{'='*50}")
         logger.info(f"Processing stage: {stage}")
-        logger.info("=" * 60)
-
-        contact_table = os.path.join(contact_table_dir, f"contact_table_{stage}.tsv")
+        logger.info(f"{'='*50}")
+        
+        # Paths for this stage
+        # Handle special case for length-specific contact tables
+        if stage.endswith("length"):
+            contact_table = os.path.join(contact_table_dir, f"{stage}_chromosome_contact_table.tsv")
+        else:
+            contact_table = os.path.join(contact_table_dir, f"contact_table_{stage}.tsv")
+            
+        output_dir = os.path.join(output_base_dir, stage, "impute", f"{args.resolution//1000}K")
+        
+        # Check if contact table exists
         if not os.path.exists(contact_table):
             logger.error(f"Contact table not found: {contact_table}")
             results[stage] = "Contact table missing"
             continue
-
-        # Output dir: .../<stage>/impute/<resolution K>
-        resK = f"{args.resolution // 1000}K"
-        output_dir = os.path.join(output_base_dir, stage, "impute", resK)
-        os.makedirs(output_dir, exist_ok=True)
-
+            
+        # Get cell count
         cell_count = get_cell_count(contact_table)
-        logger.info(f"Cell count (rough): {cell_count}")
-
-        ok = run_full_pipeline(
+        logger.info(f"Processing {cell_count} cells for stage {stage}")
+        
+        # Create output directory
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Run complete schicluster pipeline
+        success = run_schicluster_full_pipeline(
             stage=stage,
             contact_table=contact_table,
             output_dir=output_dir,
@@ -348,28 +262,23 @@ def main():
             resolution=args.resolution,
             batch_size=args.batch_size,
             cpu_per_job=args.cpu_per_job,
-            pad=args.pad,
-            chr1=args.chr1, pos1=args.pos1, chr2=args.chr2, pos2=args.pos2,
-            output_dist=args.output_dist,
-            window_size=args.window_size,
-            step_size=args.step_size,
-            prep_timeout=args.prep_timeout,
-            snakemake_timeout=args.snakemake_timeout,
-            snakemake_cmd_file=args.snakemake_cmd_file,
-            dry_run=args.dry_run,
-            logger=logger,
+            logger=logger
         )
-        results[stage] = "Success" if ok else "Failed"
-        logger.info(f"Result @ {stage}: {results[stage]}")
-
+        
+        results[stage] = "Success" if success else "Failed"
+        
+        logger.info(f"Stage {stage} processing result: {results[stage]}")
+    
     # Summary
-    logger.info("\n" + "=" * 60)
+    logger.info(f"\n{'='*50}")
     logger.info("PROCESSING SUMMARY")
-    logger.info("=" * 60)
-    for s, r in results.items():
-        logger.info(f"{s}: {r}")
-    ok_n = sum(1 for r in results.values() if r == "Success")
-    logger.info(f"\nSuccessfully processed {ok_n}/{len(results)} stages")
+    logger.info(f"{'='*50}")
+    
+    for stage, result in results.items():
+        logger.info(f"{stage}: {result}")
+    
+    successful_stages = sum(1 for result in results.values() if result == "Success")
+    logger.info(f"\nSuccessfully processed {successful_stages}/{len(results)} stages")
 
 if __name__ == "__main__":
     main()

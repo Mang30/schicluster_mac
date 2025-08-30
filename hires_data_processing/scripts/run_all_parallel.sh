@@ -1,7 +1,9 @@
 #!/bin/bash
 # Run all developmental stages in parallel
 
-PROJECT_DIR="/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing"
+# Use relative paths from the script location
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 STAGES=("E70" "E75" "E80" "E85" "E95" "EX05" "EX15")
 
 echo "Starting parallel processing of ${#STAGES[@]} developmental stages"

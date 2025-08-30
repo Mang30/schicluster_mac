@@ -1,0 +1,59 @@
+Stage,Chromosome_Count,Files,Percentage
+E70,20,160,28.725314183123878
+E70,21,397,71.27468581687613
+E75,20,778,41.60427807486631
+E75,21,1092,58.39572192513369
+E80,20,250,44.72271914132379
+E80,21,309,55.27728085867621
+E85,20,812,72.17777777777778
+E85,21,313,27.82222222222222
+E95,20,493,44.494584837545126
+E95,21,615,55.505415162454874
+EX05,20,596,52.836879432624116
+EX05,21,532,47.16312056737589
+EX15,20,764,68.09269162210339
+EX15,21,358,31.907308377896616
+
+
+
+Stage E70:
+  Total files analyzed: 557
+  Chromosome count distribution:
+    20 chromosomes: 160 files (28.7%)
+    21 chromosomes: 397 files (71.3%)
+
+Stage E75:
+  Total files analyzed: 1870
+  Chromosome count distribution:
+    20 chromosomes: 778 files (41.6%)
+    21 chromosomes: 1092 files (58.4%)
+
+Stage E80:
+  Total files analyzed: 559
+  Chromosome count distribution:
+    20 chromosomes: 250 files (44.7%)
+    21 chromosomes: 309 files (55.3%)
+
+Stage E85:
+  Total files analyzed: 1125
+  Chromosome count distribution:
+    20 chromosomes: 812 files (72.2%)
+    21 chromosomes: 313 files (27.8%)
+
+Stage E95:
+  Total files analyzed: 1108
+  Chromosome count distribution:
+    20 chromosomes: 493 files (44.5%)
+    21 chromosomes: 615 files (55.5%)
+
+Stage EX05:
+  Total files analyzed: 1128
+  Chromosome count distribution:
+    20 chromosomes: 596 files (52.8%)
+    21 chromosomes: 532 files (47.2%)
+
+Stage EX15:
+  Total files analyzed: 1122
+  Chromosome count distribution:
+    20 chromosomes: 764 files (68.1%)
+    21 chromosomes: 358 files (31.9%)
