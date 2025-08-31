@@ -1,0 +1,469 @@
+2025-08-30 21:15:21,725 - INFO - Starting schicluster processing for stages: ['20length']
+2025-08-30 21:15:21,726 - INFO - Parameters: resolution=100000, batch_size=5000, cpu_per_job=7
+2025-08-30 21:15:21,726 - INFO - 
+==================================================
+2025-08-30 21:15:21,726 - INFO - Processing stage: 20length
+2025-08-30 21:15:21,726 - INFO - ==================================================
+2025-08-30 21:15:21,728 - INFO - Processing 3288 cells for stage 20length
+2025-08-30 21:15:21,731 - INFO - Starting complete schicluster pipeline for stage 20length
+2025-08-30 21:15:21,731 - INFO - Step 1: Running prepare-impute for stage 20length
+2025-08-30 21:15:21,731 - INFO - Command: hicluster prepare-impute --cell_table /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/20length_chromosome_contact_table.tsv --batch_size 5000 --pad 1 --cpu_per_job 7 --chr1 1 --pos1 2 --chr2 3 --pos2 4 --output_dir /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --output_dist 500000000 --window_size 500000000 --step_size 500000000 --resolution 100000
+2025-08-30 21:15:21,731 - INFO - Output directory: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K
+2025-08-30 21:15:21,731 - INFO - Contact table: /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/20length_chromosome_contact_table.tsv
+2025-08-30 21:15:22,677 - INFO - Successfully completed prepare-impute for stage 20length
+2025-08-30 21:15:22,677 - INFO - STDOUT: command	prepare-impute
+output_dir	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K
+chrom_size_path	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt
+output_dist	500000000
+window_size	500000000
+step_size	500000000
+resolution	100000
+input_scool	None
+cell_table	/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/contact_tables/20length_chromosome_contact_table.tsv
+batch_size	5000
+logscale	False
+pad	1
+std	1
+rp	0.5
+tol	0.01
+min_cutoff	1e-05
+cpu_per_job	7
+chrom1	1
+chrom2	3
+pos1	2
+pos2	4
+hicluster: Executing prepare-impute...
+prepare-impute finished.
+
+2025-08-30 21:15:22,677 - INFO - Step 2: Running snakemake imputation for stage 20length
+2025-08-30 21:15:22,677 - INFO - Command: snakemake -d /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0 --snakefile /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0/Snakefile -j 7
+2025-08-30 21:15:52,545 - ERROR - Error in snakemake imputation for stage 20length
+2025-08-30 21:15:52,548 - ERROR - Return code: 1
+2025-08-30 21:15:52,548 - ERROR - STDERR: Assuming unrestricted shared filesystem usage.
+host: liuwuhaodeMacBook-Air.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 7
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+agg_cell         3288
+impute_chrom    65760
+summary             1
+total           69049
+
+Select jobs to execute...
+Execute 7 jobs...
+
+[Sat Aug 30 21:15:45 2025]
+localrule impute_chrom:
+    output: impute_OrgbE851173_tmp/chr16.npz
+    jobid: 34730
+    reason: Missing output files: impute_OrgbE851173_tmp/chr16.npz
+    wildcards: cell_id=OrgbE851173, chrom=chr16
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Sat Aug 30 21:15:45 2025]
+localrule impute_chrom:
+    output: impute_OrgaEX151378_tmp/chr12.npz
+    jobid: 32143
+    reason: Missing output files: impute_OrgaEX151378_tmp/chr12.npz
+    wildcards: cell_id=OrgaEX151378, chrom=chr12
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Sat Aug 30 21:15:45 2025]
+localrule impute_chrom:
+    output: impute_OrgbE851037_tmp/chr8.npz
+    jobid: 32790
+    reason: Missing output files: impute_OrgbE851037_tmp/chr8.npz
+    wildcards: cell_id=OrgbE851037, chrom=chr8
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Sat Aug 30 21:15:45 2025]
+localrule impute_chrom:
+    output: impute_OrgaEX151347_tmp/chr16.npz
+    jobid: 31496
+    reason: Missing output files: impute_OrgaEX151347_tmp/chr16.npz
+    wildcards: cell_id=OrgaEX151347, chrom=chr16
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Sat Aug 30 21:15:45 2025]
+localrule impute_chrom:
+    output: impute_OrgcEX154315_tmp/chrX.npz
+    jobid: 52311
+    reason: Missing output files: impute_OrgcEX154315_tmp/chrX.npz
+    wildcards: cell_id=OrgcEX154315, chrom=chrX
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Sat Aug 30 21:15:45 2025]
+localrule impute_chrom:
+    output: impute_OrgdEX052125_tmp/chr16.npz
+    jobid: 52958
+    reason: Missing output files: impute_OrgdEX052125_tmp/chr16.npz
+    wildcards: cell_id=OrgdEX052125, chrom=chr16
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+[Sat Aug 30 21:15:45 2025]
+localrule impute_chrom:
+    output: impute_OrgeEX053108_tmp/chr12.npz
+    jobid: 63601
+    reason: Missing output files: impute_OrgeEX053108_tmp/chr12.npz
+    wildcards: cell_id=OrgeEX053108, chrom=chr12
+    resources: tmpdir=/var/folders/b5/dw47cwqx70s_b6btvh8n0rdh0000gn/T
+Select jobs to execute...
+Traceback (most recent call last):
+  File "/Users/wuhaoliu/mamba/envs/schicluster/bin/hic-internal", line 8, in <module>
+Traceback (most recent call last):
+  File "/Users/wuhaoliu/mamba/envs/schicluster/bin/hic-internal", line 8, in <module>
+    sys.exit(internal_main())
+    sys.exit(internal_main())
+             ^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/_hicluster_internal.py", line 536, in internal_main
+             ^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/_hicluster_internal.py", line 536, in internal_main
+    func(**args_vars)
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py", line 317, in impute_chromosome
+    func(**args_vars)
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py", line 317, in impute_chromosome
+Traceback (most recent call last):
+  File "/Users/wuhaoliu/mamba/envs/schicluster/bin/hic-internal", line 8, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/Users/wuhaoliu/mamba/envs/schicluster/bin/hic-internal", line 8, in <module>
+Traceback (most recent call last):
+  File "/Users/wuhaoliu/mamba/envs/schicluster/bin/hic-internal", line 8, in <module>
+    sys.exit(internal_main())
+    A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+    sys.exit(internal_main())
+    A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+  File "/Users/wuhaoliu/mamba/envs/schicluster/bin/hic-internal", line 8, in <module>
+             ^^^^^^^^^^^^^^^
+             ^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/_hicluster_internal.py", line 536, in internal_main
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/_hicluster_internal.py", line 536, in internal_main
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    sys.exit(internal_main())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+             ^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/_hicluster_internal.py", line 536, in internal_main
+    func(**args_vars)
+    func(**args_vars)
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py", line 317, in impute_chromosome
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py", line 317, in impute_chromosome
+    sys.exit(internal_main())
+             ^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/_hicluster_internal.py", line 536, in internal_main
+    A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+    func(**args_vars)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py", line 317, in impute_chromosome
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    func(**args_vars)
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py", line 317, in impute_chromosome
+    return _read(filepath_or_buffer, kwds)
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    return _read(filepath_or_buffer, kwds)
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    return _read(filepath_or_buffer, kwds)
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    self._engine = self._make_engine(f, self.engine)
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/common.py", line 765, in get_handle
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/common.py", line 765, in get_handle
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/common.py", line 765, in get_handle
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/common.py", line 765, in get_handle
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+    handle = gzip.GzipFile(  # type: ignore[assignment]
+                   ^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/common.py", line 765, in get_handle
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    handle = gzip.GzipFile(  # type: ignore[assignment]
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/gzip.py", line 201, in __init__
+    handle = gzip.GzipFile(  # type: ignore[assignment]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/gzip.py", line 201, in __init__
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/gzip.py", line 201, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7004900_OrgdEX052125.pairs.gz'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002562_OrgbE851037.pairs.gz'
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/common.py", line 765, in get_handle
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+    handle = gzip.GzipFile(  # type: ignore[assignment]
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002519_OrgaEX151378.pairs.gz'
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/gzip.py", line 201, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+    handle = gzip.GzipFile(  # type: ignore[assignment]
+    handle = gzip.GzipFile(  # type: ignore[assignment]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/gzip.py", line 201, in __init__
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/gzip.py", line 201, in __init__
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7006018_OrgeEX053108.pairs.gz'
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7004709_OrgcEX154315.pairs.gz'
+FileNotFoundError: [Errno 2] No such file or directory: '/home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002488_OrgaEX151347.pairs.gz'
+Traceback (most recent call last):
+  File "/Users/wuhaoliu/mamba/envs/schicluster/bin/hic-internal", line 8, in <module>
+    sys.exit(internal_main())
+             ^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/_hicluster_internal.py", line 536, in internal_main
+    func(**args_vars)
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/schicluster/impute/impute_chromosome.py", line 317, in impute_chromosome
+    A = pd.read_csv(contact_path, sep='\t', header=None, index_col=None, comment='#')[[chrom1, pos1, chrom2, pos2]]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/site-packages/pandas/io/common.py", line 765, in get_handle
+    handle = gzip.GzipFile(  # type: ignore[assignment]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wuhaoliu/mamba/envs/schicluster/lib/python3.12/gzip.py", line 201, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002697_OrgbE851173.pairs.gz'
+RuleException:
+CalledProcessError in file "/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0/Snakefile", line 90:
+Command 'set -euo pipefail;  hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002697_OrgbE851173.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr16 --resolution 100000 --output_path impute_OrgbE851173_tmp/chr16.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4' returned non-zero exit status 1.
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 34730
+    output: impute_OrgbE851173_tmp/chr16.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002697_OrgbE851173.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr16 --resolution 100000 --output_path impute_OrgbE851173_tmp/chr16.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0/Snakefile", line 90:
+Command 'set -euo pipefail;  hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002488_OrgaEX151347.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr16 --resolution 100000 --output_path impute_OrgaEX151347_tmp/chr16.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4' returned non-zero exit status 1.
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 31496
+    output: impute_OrgaEX151347_tmp/chr16.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002488_OrgaEX151347.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr16 --resolution 100000 --output_path impute_OrgaEX151347_tmp/chr16.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0/Snakefile", line 90:
+Command 'set -euo pipefail;  hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7004709_OrgcEX154315.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chrX --resolution 100000 --output_path impute_OrgcEX154315_tmp/chrX.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4' returned non-zero exit status 1.
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 52311
+    output: impute_OrgcEX154315_tmp/chrX.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7004709_OrgcEX154315.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chrX --resolution 100000 --output_path impute_OrgcEX154315_tmp/chrX.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0/Snakefile", line 90:
+Command 'set -euo pipefail;  hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7006018_OrgeEX053108.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr12 --resolution 100000 --output_path impute_OrgeEX053108_tmp/chr12.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4' returned non-zero exit status 1.
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 63601
+    output: impute_OrgeEX053108_tmp/chr12.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7006018_OrgeEX053108.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr12 --resolution 100000 --output_path impute_OrgeEX053108_tmp/chr12.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0/Snakefile", line 90:
+Command 'set -euo pipefail;  hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002519_OrgaEX151378.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr12 --resolution 100000 --output_path impute_OrgaEX151378_tmp/chr12.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4' returned non-zero exit status 1.
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 32143
+    output: impute_OrgaEX151378_tmp/chr12.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002519_OrgaEX151378.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr12 --resolution 100000 --output_path impute_OrgaEX151378_tmp/chr12.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0/Snakefile", line 90:
+Command 'set -euo pipefail;  hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002562_OrgbE851037.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr8 --resolution 100000 --output_path impute_OrgbE851037_tmp/chr8.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4' returned non-zero exit status 1.
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 32790
+    output: impute_OrgbE851037_tmp/chr8.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002562_OrgbE851037.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr8 --resolution 100000 --output_path impute_OrgbE851037_tmp/chr8.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0/Snakefile", line 90:
+Command 'set -euo pipefail;  hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7004900_OrgdEX052125.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr16 --resolution 100000 --output_path impute_OrgdEX052125_tmp/chr16.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4' returned non-zero exit status 1.
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 52958
+    output: impute_OrgdEX052125_tmp/chr16.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7004900_OrgdEX052125.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr16 --resolution 100000 --output_path impute_OrgdEX052125_tmp/chr16.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 32143
+    output: impute_OrgaEX151378_tmp/chr12.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002519_OrgaEX151378.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr12 --resolution 100000 --output_path impute_OrgaEX151378_tmp/chr12.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 31496
+    output: impute_OrgaEX151347_tmp/chr16.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002488_OrgaEX151347.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr16 --resolution 100000 --output_path impute_OrgaEX151347_tmp/chr16.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 52311
+    output: impute_OrgcEX154315_tmp/chrX.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7004709_OrgcEX154315.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chrX --resolution 100000 --output_path impute_OrgcEX154315_tmp/chrX.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 63601
+    output: impute_OrgeEX053108_tmp/chr12.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7006018_OrgeEX053108.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr12 --resolution 100000 --output_path impute_OrgeEX053108_tmp/chr12.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 34730
+    output: impute_OrgbE851173_tmp/chr16.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002697_OrgbE851173.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr16 --resolution 100000 --output_path impute_OrgbE851173_tmp/chr16.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 32790
+    output: impute_OrgbE851037_tmp/chr8.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7002562_OrgbE851037.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr8 --resolution 100000 --output_path impute_OrgbE851037_tmp/chr8.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+[Sat Aug 30 21:15:48 2025]
+Error in rule impute_chrom:
+    message: None
+    jobid: 52958
+    output: impute_OrgdEX052125_tmp/chr16.npz
+    shell:
+        hic-internal impute-chromosome --contact_path /home/duxuyan/Projects/0_HiRES/data/GSE223917_RAW/GSM7004900_OrgdEX052125.pairs.gz --chrom_size_path /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/mm10_chrom_sizes.txt --chrom chr16 --resolution 100000 --output_path impute_OrgdEX052125_tmp/chr16.npz  --pad 1 --std 1 --rp 0.5 --tol 0.01 --window_size 500000000 --step_size 500000000 --output_dist 500000000 --min_cutoff 1e-05 --chr1 1 --chr2 3 --pos1 2 --pos2 4
+        (command exited with non-zero exit code)
+Complete log(s): /Volumes/SumSung500/CSU/0_HiRES/hires_data_processing/outputs/20length/impute/100K/chunk0/.snakemake/log/2025-08-30T211523.396026.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
+
+2025-08-30 21:15:52,549 - ERROR - STDOUT: MPS acceleration is available and will be used for GPU acceleration.
+MPS acceleration is available and will be used for GPU acceleration.
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr8 imputation with MPS GPU acceleration
+Starting chromosome chr12 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr12 imputation with MPS GPU acceleration
+Starting chromosome chrX imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr16 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr16 imputation with MPS GPU acceleration
+MPS acceleration is available and will be used for GPU acceleration.
+Starting chromosome chr16 imputation with MPS GPU acceleration
+3288 cells to process
+20 chromosomes in each cell.
+
+2025-08-30 21:15:52,549 - ERROR - Imputation step failed for stage 20length
+2025-08-30 21:15:52,549 - INFO - Stage 20length processing result: Failed
+2025-08-30 21:15:52,549 - INFO - 
+==================================================
+2025-08-30 21:15:52,549 - INFO - PROCESSING SUMMARY
+2025-08-30 21:15:52,549 - INFO - ==================================================
+2025-08-30 21:15:52,549 - INFO - 20length: Failed
+2025-08-30 21:15:52,549 - INFO - 
+Successfully processed 0/1 stages

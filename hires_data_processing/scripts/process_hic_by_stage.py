@@ -186,7 +186,7 @@ def main():
                        help="Resolution for analysis (default: 100000)")
     parser.add_argument("--batch_size", type=int, default=5000,
                        help="Batch size (default: 5000)")
-    parser.add_argument("--cpu_per_job", type=int, default=36,
+    parser.add_argument("--cpu_per_job", type=int, default=7,
                        help="CPUs per job (default: 30)")
     parser.add_argument("--specific_stage", type=str, default=None,
                        help="Process only a specific stage")
