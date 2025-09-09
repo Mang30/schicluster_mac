@@ -1,0 +1,14 @@
+2025-09-09 20:32:18 - root - INFO - 日志系统初始化完成，日志文件: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/logs/stage_E75_processing_20250909_203218.log
+2025-09-09 20:32:18 - root - INFO - 开始处理 Stage E75
+2025-09-09 20:32:18 - root - INFO - 系统信息: {'platform': 'darwin', 'python_version': '3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:38:53) [Clang 18.1.8 ]', 'cpu_count': 10, 'memory_total_gb': 24.0, 'memory_available_gb': 4.7621917724609375, 'current_time': '2025-09-09T20:32:18.545457'}
+2025-09-09 20:32:18 - metadata_processor - ERROR - 加载元数据文件失败: 元数据文件不存在: 4_contact_decay_profile_2_h5ad/json2h5ad/GSE223917_HiRES_emb_metadata.xlsx
+2025-09-09 20:32:18 - root - ERROR - 处理 Stage E75 时发生错误: 元数据文件不存在: 4_contact_decay_profile_2_h5ad/json2h5ad/GSE223917_HiRES_emb_metadata.xlsx
+Traceback (most recent call last):
+  File "/Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/convert_json_to_h5ad.py", line 98, in process_stage
+    self.metadata_processor = MetadataProcessor(metadata_file)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/metadata_processor.py", line 43, in __init__
+    self._load_metadata()
+  File "/Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/metadata_processor.py", line 49, in _load_metadata
+    raise FileNotFoundError(f"元数据文件不存在: {self.metadata_file}")
+FileNotFoundError: 元数据文件不存在: 4_contact_decay_profile_2_h5ad/json2h5ad/GSE223917_HiRES_emb_metadata.xlsx

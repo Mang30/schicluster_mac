@@ -1,0 +1,35 @@
+2025-09-09 20:34:40 - root - INFO - 日志系统初始化完成，日志文件: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/logs/stage_E75_processing_20250909_203440.log
+2025-09-09 20:34:40 - root - INFO - 开始处理 Stage E75
+2025-09-09 20:34:40 - root - INFO - 系统信息: {'platform': 'darwin', 'python_version': '3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:38:53) [Clang 18.1.8 ]', 'cpu_count': 10, 'memory_total_gb': 24.0, 'memory_available_gb': 4.6936798095703125, 'current_time': '2025-09-09T20:34:40.559037'}
+2025-09-09 20:34:40 - metadata_processor - INFO - 加载元数据文件: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/GSE223917_HiRES_emb_metadata.xlsx
+2025-09-09 20:34:41 - metadata_processor - INFO - 成功加载元数据: 7469 个细胞记录
+2025-09-09 20:34:41 - root - INFO - 调试模式: 仅处理前 5 个文件
+2025-09-09 20:34:41 - root - INFO - 找到 5 个JSON文件
+2025-09-09 20:34:41 - utils - INFO - 处理 Stage E75 JSON文件: 5/5 (100.0%) - 已用时: 0.1s - 预计剩余: 0.0s
+2025-09-09 20:34:41 - utils - INFO - 处理 Stage E75 JSON文件 完成! 总用时: 0.1s
+2025-09-09 20:34:41 - root - INFO - 成功处理 5 个文件
+2025-09-09 20:34:41 - root - INFO - 处理 Stage E75 的 5 个文件 完成 - 用时: 0.1s - 内存变化: +9.7 MB
+2025-09-09 20:34:41 - data_validator - WARNING - Stage E75 distances长度差异较大: {22881: 1, 24510: 1, 24614: 1, 21357: 1, 21883: 1}
+2025-09-09 20:34:41 - root - INFO - Stage E75 统计信息:
+2025-09-09 20:34:41 - root - INFO -   细胞数量: 5
+2025-09-09 20:34:41 - root - INFO -   距离长度范围: (21357, 24614)
+2025-09-09 20:34:41 - root - INFO -   最常见长度: (22881, 1)
+2025-09-09 20:34:41 - root - INFO -   分辨率: [100000]
+2025-09-09 20:34:41 - root - INFO -   总contacts范围: (9, 10)
+2025-09-09 20:34:41 - root - INFO -   平均contacts: 9.6
+2025-09-09 20:34:41 - data_validator - WARNING - 验证发现 1 个警告:
+2025-09-09 20:34:41 - data_validator - WARNING -   - Stage E75 distances长度差异较大: {22881: 1, 24510: 1, 24614: 1, 21357: 1, 21883: 1}
+2025-09-09 20:34:41 - root - INFO - 验证和对齐数据 完成 - 用时: 0.0s - 内存变化: +0.0 MB
+2025-09-09 20:34:41 - data_validator - INFO - 统一distances长度为: 22881
+2025-09-09 20:34:41 - data_validator - WARNING - 细胞 GasaE751006 的decay_values被截断从 24510 到 22881
+2025-09-09 20:34:41 - data_validator - WARNING - 细胞 GasaE751008 的decay_values被截断从 24614 到 22881
+2025-09-09 20:34:41 - data_validator - WARNING - 细胞 GasaE751010 的decay_values被填充从 21357 到 22881
+2025-09-09 20:34:41 - data_validator - WARNING - 细胞 GasaE751011 的decay_values被填充从 21883 到 22881
+2025-09-09 20:34:41 - root - INFO - 创建了 5 × 22881 的decay矩阵
+2025-09-09 20:34:41 - root - INFO - 创建AnnData对象: 5 细胞 × 22881 特征
+2025-09-09 20:34:41 - root - INFO - 转换为H5AD格式 完成 - 用时: 0.0s - 内存变化: +1.3 MB
+2025-09-09 20:34:41 - root - INFO - 保存H5AD文件: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E75.h5ad
+2025-09-09 20:34:41 - root - INFO - H5AD文件已保存: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E75.h5ad (1.2 MB)
+2025-09-09 20:34:41 - root - INFO - 处理摘要已保存: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E75_summary.json
+2025-09-09 20:34:41 - root - INFO - 保存H5AD文件 完成 - 用时: 0.1s - 内存变化: +4.0 MB
+2025-09-09 20:34:41 - root - INFO - 处理完成: 271.7 MB (+33.2 MB from start)

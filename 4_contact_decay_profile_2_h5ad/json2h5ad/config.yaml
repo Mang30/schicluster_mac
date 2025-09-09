@@ -1,0 +1,192 @@
+# JSON to H5AD 转换配置文件
+# 版本: v1.0
+# 创建日期: 2025-09-09
+
+# 路径配置
+paths:
+  # 输入数据根目录
+  input_root: "/Volumes/SumSung500/CSU/0_HiRES/3_create_contact_decay_profile/outputs"
+  
+  # 输出目录
+  output_dir: "/Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output"
+  
+  # 元数据文件路径
+  metadata_file: "/Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/GSE223917_HiRES_emb_metadata.xlsx"
+  
+  # 日志目录
+  log_dir: "/Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/logs"
+
+# 发育阶段配置
+stages:
+  - "E70"
+  - "E75"
+  - "E80"
+  - "E85"
+  - "E95"
+  - "EX05"
+  - "EX15"
+
+# 数据处理参数
+processing:
+  # 数据类型设置
+  data_dtype: "float32"  # 用于节省内存
+  
+  # 批处理大小 (一次处理的文件数量)
+  batch_size: 100
+  
+  # 内存优化
+  use_sparse_matrix: false  # 是否使用稀疏矩阵
+  
+  # 数据对齐策略
+  alignment_strategy: "mode"  # "mode": 使用最常见长度, "min": 使用最小长度, "max": 使用最大长度
+  
+  # 缺失值处理
+  fill_missing_with_nan: true
+  
+  # 最小细胞数阈值 (stage必须包含的最小细胞数)
+  min_cells_per_stage: 1
+  
+  # 最小数据点数阈值
+  min_data_points: 10
+
+# 验证参数
+validation:
+  # 是否启用严格验证
+  strict_validation: true
+  
+  # 允许的最大错误数
+  max_errors: 0
+  
+  # 允许的最大警告数 
+  max_warnings: 100
+  
+  # 跳过的文件模式
+  skip_file_patterns:
+    - "analysis_summary.json"
+    - "*.log"
+    - ".*"  # 隐藏文件
+
+# H5AD文件结构配置
+h5ad_structure:
+  # obs字段配置 (细胞级别元数据)
+  obs_fields:
+    cell_id: "string"
+    stage: "string"
+    celltype: "string"
+    cellcycle_phase: "string"
+    cdps_cluster: "string"
+    sub_k_cluster: "string"
+    total_contacts: "int32"
+    power_law_slope: "float32"
+    resolution: "int32"
+    g1s_score: "float32"
+    g2m_score: "float32"
+    repli_score: "float32"
+    raw_contacts: "float32"
+    clean_contacts: "float32"
+  
+  # var字段配置 (特征级别元数据)
+  var_fields:
+    distance_bins: "int32"
+    distance_kb: "float32"
+  
+  # uns字段配置 (非结构化元数据)
+  uns_fields:
+    - "processing_date"
+    - "stage_summary"
+    - "celltype_counts"
+    - "processing_parameters"
+    - "validation_summary"
+
+# 日志配置
+logging:
+  # 日志级别: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  
+  # 日志格式
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # 日期格式
+  date_format: "%Y-%m-%d %H:%M:%S"
+  
+  # 是否同时输出到控制台
+  console_output: true
+  
+  # 是否创建按stage分别的日志文件
+  stage_specific_logs: true
+  
+  # 日志文件命名格式
+  log_filename_format: "stage_{stage}_processing_{timestamp}.log"
+
+# 性能配置
+performance:
+  # 并行处理
+  enable_multiprocessing: false  # macOS上可能有兼容性问题
+  max_workers: 4
+  
+  # 内存限制 (MB)
+  memory_limit: 8192
+  
+  # 进度显示
+  show_progress: true
+  progress_update_interval: 10  # 每处理多少个文件更新一次进度
+
+# 输出配置
+output:
+  # H5AD文件命名格式
+  h5ad_filename_format: "stage_{stage}.h5ad"
+  
+  # 是否压缩输出文件
+  compress_output: true
+  
+  # 压缩级别 (0-9, 9为最高压缩)
+  compression_level: 6
+  
+  # 是否覆盖已存在的文件
+  overwrite_existing: true
+  
+  # 是否创建备份
+  create_backup: true
+
+# 环境配置
+environment:
+  # Python环境路径
+  python_path: "/Users/wuhaoliu/mamba/envs/schicluster/bin/python"
+  
+  # Conda环境名称
+  conda_env: "schicluster"
+  
+  # 必需的Python包及最小版本
+  required_packages:
+    pandas: "1.3.0"
+    numpy: "1.20.0"
+    scanpy: "1.8.0"
+    openpyxl: "3.0.0"
+    pyyaml: "5.4.0"
+
+# 调试配置
+debug:
+  # 是否启用调试模式
+  enable: false
+  
+  # 调试时处理的最大文件数
+  max_files_debug: 5
+  
+  # 是否保存中间结果
+  save_intermediate_results: false
+  
+  # 中间结果保存目录
+  intermediate_dir: "/tmp/h5ad_conversion_debug"
+
+# 默认值配置
+defaults:
+  # 缺失元数据的默认值
+  unknown_celltype: "Unknown"
+  unknown_stage: "Unknown" 
+  unknown_cellcycle: "Unknown"
+  unknown_cluster: "Unknown"
+  
+  # 数值型字段的默认值
+  default_contacts: 0
+  default_resolution: 100000
+  default_slope: 0.0

@@ -35,6 +35,8 @@ imputed_matrices_by_stage_20k/
 test_impute_output/
 lwh_schicluster_impute_code/imputation_mac/logs/
 hires_data_processing/outputs/
+3_create_contact_decay_profile/outputs/
+4_contact_decay_profile_2_h5ad/json2h5ad/output
 
 # Large data files
 *.hdf5

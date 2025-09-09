@@ -87,10 +87,11 @@ class ContactDecayAnalyzer:
             view_df = None # 全基因组
             self.logger.info("使用全基因组")
 
-        expected_df = cooltools.expected.diagsum(
+        expected_df = cooltools.expected_cis(
             self.cooler_obj,
             view_df=view_df,
-            ignore_diags=2
+            ignore_diags=2,
+            clr_weight_name=None  # 使用原始计数数据
         )
         
         value_col = 'balanced.avg' if 'balanced.avg.smoothed' in expected_df.columns else 'count.avg'
@@ -212,6 +213,7 @@ class ContactDecayAnalyzer:
             return {'success': False, 'error': str(e)}
 
 if __name__ == '__main__':
+    import argparse
     # 这个部分用于独立测试单个文件
     parser = argparse.ArgumentParser(description="单个.cool文件接触衰减曲线分析")
     parser.add_argument('-i', '--cool-path', required=True, help=".cool文件路径")

@@ -30,9 +30,10 @@ if ! command -v micromamba &> /dev/null; then
 fi
 
 # 激活schicluster环境
-print_message $YELLOW "激活3_schicluster_python38环境..."
+print_message $YELLOW "激活环境..."
 eval "$(micromamba shell hook --shell bash)"
-micromamba activate 3_schicluster_python38
+# micromamba activate 3_schicluster_python38
+micromamba activate schicluster
 
 # 检查Python环境
 print_message $BLUE "\n2. 检查Python环境..."
@@ -54,9 +55,10 @@ for package in "${required_packages[@]}"; do
 done
 
 # 设置脚本路径和参数
-SCRIPT_DIR="/home/duxuyan/Projects/schicluster_mac/5_plot_umap"
+SCRIPT_DIR="/Volumes/SumSung500/CSU/0_HiRES/5_plot_umap"
 SCRIPT_FILE="${SCRIPT_DIR}/plot_umap_from_h5ad.py"
-INPUT_DIR="/home/duxuyan/Projects/schicluster_mac/4_contact_decay_profile_2_h5ad/outputs_with_metadata"
+# INPUT_DIR="/home/duxuyan/Projects/schicluster_mac/4_contact_decay_profile_2_h5ad/outputs_with_metadata"
+INPUT_DIR="/Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E75.h5ad"
 COLOR_MAPPING_FILE="${SCRIPT_DIR}/color_mapping.json"
 OUTPUT_DIR="${SCRIPT_DIR}/umap_plots"
 

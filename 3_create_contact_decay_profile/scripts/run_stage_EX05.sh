@@ -25,7 +25,7 @@ print_message() {
 # 获取脚本的绝对路径，确保无论从哪个目录执行都能正确找到文件
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-DATA_ROOT="$(cd "${PROJECT_ROOT}/../hires_data_processing/outputs" 2>/dev/null && pwd || echo "${PROJECT_ROOT}/../hires_data_processing/outputs")"
+DATA_ROOT="$(cd "${PROJECT_ROOT}/../hires_data_processing/outputs/stage_organized" 2>/dev/null && pwd || echo "${PROJECT_ROOT}/../hires_data_processing/outputs/stage_organized")"
 BATCH_PROCESS_SCRIPT="${SCRIPT_DIR}/batch_process_stages.py"
 OUTPUT_DIR="${PROJECT_ROOT}/outputs"
 
@@ -70,9 +70,9 @@ print_message $BLUE "=================================================="
 
 # 激活环境并检查依赖
 print_message $BLUE "\n1. 准备环境..."
-eval "$(micromamba shell hook --shell bash)"
-micromamba activate 3_schicluster_python38
-print_message $GREEN "✓ 环境 '3_schicluster_python38' 已激活"
+# 使用正确的Python环境路径
+PYTHON_PATH="/Users/wuhaoliu/mamba/envs/schicluster/bin/python"
+print_message $GREEN "✓ 使用 schicluster 环境: ${PYTHON_PATH}"
 
 # 显示处理参数
 print_message $BLUE "\n2. 分析参数配置:"
@@ -86,8 +86,8 @@ else
     print_message $YELLOW "  文件数量: 不限制（全量处理）"
 fi
 
-# 检查输入目录
-STAGE_DATA_PATH="${DATA_ROOT}/${STAGE}/impute/${RESOLUTION}"
+# 检查输入目录  
+STAGE_DATA_PATH="${DATA_ROOT}/${STAGE}"
 print_message $BLUE "\n3. 检查输入数据路径..."
 print_message $YELLOW "  预期路径: ${STAGE_DATA_PATH}"
 if [ ! -d "${STAGE_DATA_PATH}" ]; then
@@ -100,7 +100,7 @@ print_message $GREEN "✓ 输入数据目录存在"
 mkdir -p "${OUTPUT_DIR}"
 
 # 构建命令
-CMD="python '${BATCH_PROCESS_SCRIPT}' \
+CMD="${PYTHON_PATH} '${BATCH_PROCESS_SCRIPT}' \
     --input '${DATA_ROOT}' \
     --output '${OUTPUT_DIR}' \
     --stage '${STAGE}' \
