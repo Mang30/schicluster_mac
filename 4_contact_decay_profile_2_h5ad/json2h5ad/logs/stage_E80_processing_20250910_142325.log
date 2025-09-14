@@ -1,0 +1,269 @@
+2025-09-10 14:23:25 - root - INFO - 日志系统初始化完成，日志文件: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/logs/stage_E80_processing_20250910_142325.log
+2025-09-10 14:23:25 - root - INFO - 开始处理 Stage E80
+2025-09-10 14:23:25 - root - INFO - 系统信息: {'platform': 'darwin', 'python_version': '3.12.11 | packaged by conda-forge | (main, Jun  4 2025, 14:38:53) [Clang 18.1.8 ]', 'cpu_count': 10, 'memory_total_gb': 24.0, 'memory_available_gb': 4.9540557861328125, 'current_time': '2025-09-10T14:23:25.382297'}
+2025-09-10 14:23:25 - metadata_processor - INFO - 加载元数据文件: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/GSE223917_HiRES_emb_metadata.xlsx
+2025-09-10 14:23:26 - metadata_processor - INFO - 成功加载元数据: 7469 个细胞记录
+2025-09-10 14:23:26 - root - INFO - 找到 239 个JSON文件
+2025-09-10 14:23:28 - utils - INFO - 处理 Stage E80 JSON文件: 100/239 (41.8%) - 已用时: 2.3s - 预计剩余: 3.2s
+2025-09-10 14:23:30 - utils - INFO - 处理 Stage E80 JSON文件: 200/239 (83.7%) - 已用时: 4.7s - 预计剩余: 0.9s
+2025-09-10 14:23:31 - utils - INFO - 处理 Stage E80 JSON文件: 239/239 (100.0%) - 已用时: 5.5s - 预计剩余: 0.0s
+2025-09-10 14:23:31 - utils - INFO - 处理 Stage E80 JSON文件 完成! 总用时: 5.5s
+2025-09-10 14:23:31 - root - INFO - 成功处理 239 个文件
+2025-09-10 14:23:31 - root - INFO - 处理 Stage E80 的 239 个文件 完成 - 用时: 5.5s - 内存变化: +628.5 MB
+2025-09-10 14:23:31 - data_validator - WARNING - Stage E80 distances长度差异较大: {22398: 1, 25586: 1, 22786: 1, 20344: 1, 25628: 1, 25494: 1, 22516: 1, 22010: 1, 24258: 1, 24439: 1, 24151: 1, 15021: 1, 22396: 1, 24322: 1, 23283: 1, 22107: 1, 22772: 1, 22794: 1, 23170: 1, 24720: 1, 19523: 1, 23585: 1, 20434: 1, 24558: 1, 24544: 1, 24818: 1, 23171: 1, 25046: 1, 23742: 1, 25363: 1, 23237: 1, 24055: 1, 21814: 1, 22669: 1, 24729: 1, 24939: 1, 22452: 1, 23006: 1, 24234: 1, 25381: 1, 24801: 1, 25575: 1, 24022: 1, 24991: 1, 22703: 1, 24567: 1, 23421: 1, 25636: 1, 23130: 1, 24214: 1, 24838: 1, 22961: 1, 24955: 1, 22993: 1, 23853: 1, 22806: 2, 23125: 1, 25597: 1, 25166: 1, 24865: 1, 23946: 1, 23227: 1, 24522: 1, 24615: 1, 25240: 1, 22121: 1, 23538: 1, 24235: 1, 24573: 1, 24229: 1, 23122: 1, 24880: 1, 23875: 1, 23040: 1, 24154: 1, 23697: 1, 24960: 1, 24555: 1, 23104: 1, 25313: 1, 24315: 1, 21538: 1, 24970: 2, 22537: 2, 24374: 1, 24137: 2, 22785: 1, 24854: 1, 20790: 1, 24064: 1, 23163: 1, 23460: 1, 23555: 1, 25292: 1, 25298: 1, 25398: 1, 24323: 1, 24633: 1, 21243: 1, 24709: 2, 22641: 1, 24600: 1, 22170: 1, 20362: 1, 23146: 1, 22378: 1, 23533: 1, 25127: 1, 25606: 1, 23815: 1, 24200: 1, 22224: 1, 23606: 1, 25081: 2, 23717: 1, 22974: 1, 24851: 1, 25438: 2, 24807: 1, 23400: 1, 19119: 1, 24963: 1, 24680: 1, 21987: 1, 20559: 1, 24456: 1, 25199: 1, 23461: 1, 20886: 1, 23818: 1, 23568: 1, 23830: 1, 24010: 1, 23473: 1, 23570: 1, 22671: 1, 22702: 1, 25083: 1, 22731: 1, 22273: 1, 24215: 1, 21784: 1, 24746: 1, 24671: 1, 25623: 1, 24763: 1, 25251: 1, 25482: 1, 22879: 1, 24424: 1, 22552: 1, 24186: 1, 23836: 1, 24473: 1, 20492: 1, 25608: 1, 19474: 1, 24120: 1, 23535: 1, 23242: 1, 22722: 1, 25651: 1, 23367: 1, 22891: 1, 23430: 1, 24031: 1, 24025: 1, 23249: 1, 20446: 1, 24329: 1, 24143: 1, 24470: 1, 22992: 1, 21765: 1, 24698: 1, 21484: 1, 24123: 1, 22583: 1, 23017: 1, 23070: 1, 22644: 1, 24515: 1, 22859: 1, 25507: 1, 21549: 1, 25414: 1, 23807: 1, 23058: 1, 22149: 1, 24626: 1, 24919: 1, 22451: 1, 23142: 1, 22853: 1, 23311: 1, 23940: 1, 25091: 1, 24506: 1, 24772: 1, 22188: 1, 24181: 1, 25147: 1, 25194: 1, 25220: 1, 24554: 1, 23350: 1, 17395: 1, 19429: 1, 25464: 1, 23272: 1, 22834: 1, 23734: 1, 24842: 1, 20806: 1, 25528: 1, 24085: 1, 22629: 1, 21550: 1, 22958: 1, 23201: 1, 21972: 1, 24366: 1, 23872: 1, 23320: 1, 22986: 1, 22500: 1, 22536: 1, 25500: 1, 23002: 1, 23984: 1, 25481: 1, 23432: 1}
+2025-09-10 14:23:31 - root - INFO - Stage E80 统计信息:
+2025-09-10 14:23:31 - root - INFO -   细胞数量: 239
+2025-09-10 14:23:31 - root - INFO -   距离长度范围: (15021, 25651)
+2025-09-10 14:23:31 - root - INFO -   最常见长度: (22806, 2)
+2025-09-10 14:23:31 - root - INFO -   分辨率: [100000]
+2025-09-10 14:23:31 - root - INFO -   总contacts范围: (8, 13)
+2025-09-10 14:23:31 - root - INFO -   平均contacts: 9.6
+2025-09-10 14:23:31 - data_validator - WARNING - 验证发现 1 个警告:
+2025-09-10 14:23:31 - data_validator - WARNING -   - Stage E80 distances长度差异较大: {22398: 1, 25586: 1, 22786: 1, 20344: 1, 25628: 1, 25494: 1, 22516: 1, 22010: 1, 24258: 1, 24439: 1, 24151: 1, 15021: 1, 22396: 1, 24322: 1, 23283: 1, 22107: 1, 22772: 1, 22794: 1, 23170: 1, 24720: 1, 19523: 1, 23585: 1, 20434: 1, 24558: 1, 24544: 1, 24818: 1, 23171: 1, 25046: 1, 23742: 1, 25363: 1, 23237: 1, 24055: 1, 21814: 1, 22669: 1, 24729: 1, 24939: 1, 22452: 1, 23006: 1, 24234: 1, 25381: 1, 24801: 1, 25575: 1, 24022: 1, 24991: 1, 22703: 1, 24567: 1, 23421: 1, 25636: 1, 23130: 1, 24214: 1, 24838: 1, 22961: 1, 24955: 1, 22993: 1, 23853: 1, 22806: 2, 23125: 1, 25597: 1, 25166: 1, 24865: 1, 23946: 1, 23227: 1, 24522: 1, 24615: 1, 25240: 1, 22121: 1, 23538: 1, 24235: 1, 24573: 1, 24229: 1, 23122: 1, 24880: 1, 23875: 1, 23040: 1, 24154: 1, 23697: 1, 24960: 1, 24555: 1, 23104: 1, 25313: 1, 24315: 1, 21538: 1, 24970: 2, 22537: 2, 24374: 1, 24137: 2, 22785: 1, 24854: 1, 20790: 1, 24064: 1, 23163: 1, 23460: 1, 23555: 1, 25292: 1, 25298: 1, 25398: 1, 24323: 1, 24633: 1, 21243: 1, 24709: 2, 22641: 1, 24600: 1, 22170: 1, 20362: 1, 23146: 1, 22378: 1, 23533: 1, 25127: 1, 25606: 1, 23815: 1, 24200: 1, 22224: 1, 23606: 1, 25081: 2, 23717: 1, 22974: 1, 24851: 1, 25438: 2, 24807: 1, 23400: 1, 19119: 1, 24963: 1, 24680: 1, 21987: 1, 20559: 1, 24456: 1, 25199: 1, 23461: 1, 20886: 1, 23818: 1, 23568: 1, 23830: 1, 24010: 1, 23473: 1, 23570: 1, 22671: 1, 22702: 1, 25083: 1, 22731: 1, 22273: 1, 24215: 1, 21784: 1, 24746: 1, 24671: 1, 25623: 1, 24763: 1, 25251: 1, 25482: 1, 22879: 1, 24424: 1, 22552: 1, 24186: 1, 23836: 1, 24473: 1, 20492: 1, 25608: 1, 19474: 1, 24120: 1, 23535: 1, 23242: 1, 22722: 1, 25651: 1, 23367: 1, 22891: 1, 23430: 1, 24031: 1, 24025: 1, 23249: 1, 20446: 1, 24329: 1, 24143: 1, 24470: 1, 22992: 1, 21765: 1, 24698: 1, 21484: 1, 24123: 1, 22583: 1, 23017: 1, 23070: 1, 22644: 1, 24515: 1, 22859: 1, 25507: 1, 21549: 1, 25414: 1, 23807: 1, 23058: 1, 22149: 1, 24626: 1, 24919: 1, 22451: 1, 23142: 1, 22853: 1, 23311: 1, 23940: 1, 25091: 1, 24506: 1, 24772: 1, 22188: 1, 24181: 1, 25147: 1, 25194: 1, 25220: 1, 24554: 1, 23350: 1, 17395: 1, 19429: 1, 25464: 1, 23272: 1, 22834: 1, 23734: 1, 24842: 1, 20806: 1, 25528: 1, 24085: 1, 22629: 1, 21550: 1, 22958: 1, 23201: 1, 21972: 1, 24366: 1, 23872: 1, 23320: 1, 22986: 1, 22500: 1, 22536: 1, 25500: 1, 23002: 1, 23984: 1, 25481: 1, 23432: 1}
+2025-09-10 14:23:31 - root - INFO - 验证和对齐数据 完成 - 用时: 0.0s - 内存变化: +0.0 MB
+2025-09-10 14:23:31 - data_validator - INFO - 统一distances长度为: 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803001 的decay_values被填充从 22398 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803002 的decay_values被截断从 25586 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803003 的decay_values被填充从 22786 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803004 的decay_values被填充从 20344 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803005 的decay_values被截断从 25628 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803009 的decay_values被截断从 25494 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803012 的decay_values被填充从 22516 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803013 的decay_values被填充从 22010 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803015 的decay_values被截断从 24258 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803017 的decay_values被截断从 24439 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803019 的decay_values被截断从 24151 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803024 的decay_values被填充从 15021 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803025 的decay_values被填充从 22396 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803027 的decay_values被截断从 24322 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803031 的decay_values被截断从 23283 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803033 的decay_values被填充从 22107 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803034 的decay_values被填充从 22772 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803035 的decay_values被填充从 22794 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803038 的decay_values被截断从 23170 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803041 的decay_values被截断从 24720 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803043 的decay_values被填充从 19523 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803044 的decay_values被截断从 23585 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803051 的decay_values被填充从 20434 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803052 的decay_values被截断从 24558 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803053 的decay_values被截断从 24544 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803054 的decay_values被截断从 24818 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803057 的decay_values被截断从 23171 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803059 的decay_values被截断从 25046 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803063 的decay_values被截断从 23742 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803064 的decay_values被截断从 25363 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803065 的decay_values被截断从 23237 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803066 的decay_values被截断从 24055 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803067 的decay_values被填充从 21814 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803073 的decay_values被填充从 22669 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803074 的decay_values被截断从 24729 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803078 的decay_values被截断从 24939 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803083 的decay_values被填充从 22452 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803085 的decay_values被截断从 23006 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803086 的decay_values被截断从 24234 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803087 的decay_values被截断从 25381 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803092 的decay_values被截断从 24801 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE803096 的decay_values被截断从 25575 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804002 的decay_values被截断从 24022 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804003 的decay_values被截断从 24991 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804004 的decay_values被填充从 22703 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804006 的decay_values被截断从 24567 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804009 的decay_values被截断从 23421 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804016 的decay_values被截断从 25636 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804017 的decay_values被截断从 23130 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804018 的decay_values被截断从 24214 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804020 的decay_values被截断从 24838 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804022 的decay_values被截断从 22961 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804024 的decay_values被截断从 24955 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804025 的decay_values被截断从 22993 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804027 的decay_values被截断从 23853 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804031 的decay_values被截断从 23125 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804032 的decay_values被截断从 25597 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804034 的decay_values被截断从 25166 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804036 的decay_values被截断从 24865 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804040 的decay_values被截断从 23946 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804044 的decay_values被截断从 23227 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804046 的decay_values被截断从 24522 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804049 的decay_values被截断从 24615 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804050 的decay_values被截断从 25240 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804051 的decay_values被填充从 22121 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804052 的decay_values被截断从 23538 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804054 的decay_values被截断从 24235 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804063 的decay_values被截断从 24573 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804065 的decay_values被截断从 24229 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804067 的decay_values被截断从 23122 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804068 的decay_values被截断从 24880 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804069 的decay_values被截断从 23875 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804072 的decay_values被截断从 23040 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804074 的decay_values被截断从 24154 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804079 的decay_values被截断从 23697 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804080 的decay_values被截断从 24960 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804087 的decay_values被截断从 24555 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804091 的decay_values被截断从 23104 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804094 的decay_values被截断从 25313 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804104 的decay_values被截断从 24315 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804105 的decay_values被填充从 21538 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804106 的decay_values被截断从 24970 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804107 的decay_values被填充从 22537 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804113 的decay_values被截断从 24374 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804114 的decay_values被截断从 24137 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804117 的decay_values被填充从 22785 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804119 的decay_values被截断从 24854 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804121 的decay_values被填充从 20790 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804123 的decay_values被截断从 24064 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804126 的decay_values被截断从 23163 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804128 的decay_values被截断从 23460 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804129 的decay_values被截断从 23555 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804131 的decay_values被截断从 25292 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804133 的decay_values被截断从 25298 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804134 的decay_values被截断从 25398 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804136 的decay_values被截断从 24323 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804137 的decay_values被截断从 24633 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804139 的decay_values被填充从 21243 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804140 的decay_values被截断从 24709 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804143 的decay_values被填充从 22641 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804144 的decay_values被截断从 24600 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804149 的decay_values被填充从 22170 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804151 的decay_values被填充从 20362 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804153 的decay_values被截断从 23146 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804157 的decay_values被填充从 22378 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804161 的decay_values被截断从 23533 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804166 的decay_values被截断从 25127 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804168 的decay_values被截断从 25606 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804169 的decay_values被截断从 23815 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804170 的decay_values被截断从 24200 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804176 的decay_values被填充从 22224 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804177 的decay_values被截断从 23606 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804178 的decay_values被截断从 25081 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804179 的decay_values被截断从 23717 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804180 的decay_values被截断从 22974 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804184 的decay_values被截断从 24851 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804188 的decay_values被截断从 25438 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804193 的decay_values被截断从 24807 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804194 的decay_values被截断从 23400 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804198 的decay_values被填充从 19119 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804202 的decay_values被截断从 24963 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804210 的decay_values被填充从 22537 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804212 的decay_values被截断从 24680 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804215 的decay_values被填充从 21987 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804216 的decay_values被填充从 20559 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804217 的decay_values被截断从 24456 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804218 的decay_values被截断从 25199 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804219 的decay_values被截断从 23461 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804220 的decay_values被填充从 20886 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804222 的decay_values被截断从 23818 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804223 的decay_values被截断从 24137 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804224 的decay_values被截断从 23568 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804235 的decay_values被截断从 23830 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804236 的decay_values被截断从 24010 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804238 的decay_values被截断从 23473 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804239 的decay_values被截断从 23570 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804242 的decay_values被填充从 22671 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804245 的decay_values被填充从 22702 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804248 的decay_values被截断从 25083 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804250 的decay_values被填充从 22731 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804254 的decay_values被填充从 22273 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804261 的decay_values被截断从 24215 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804266 的decay_values被截断从 25081 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804269 的decay_values被填充从 21784 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804270 的decay_values被截断从 24746 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804278 的decay_values被截断从 24671 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804283 的decay_values被截断从 25623 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804287 的decay_values被截断从 24763 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804291 的decay_values被截断从 25251 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804292 的decay_values被截断从 24709 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804294 的decay_values被截断从 25482 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804296 的decay_values被截断从 22879 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804298 的decay_values被截断从 24424 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804299 的decay_values被填充从 22552 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804302 的decay_values被截断从 24186 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804304 的decay_values被截断从 23836 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804307 的decay_values被截断从 24473 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804311 的decay_values被填充从 20492 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804313 的decay_values被截断从 25608 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804314 的decay_values被填充从 19474 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804319 的decay_values被截断从 24970 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804320 的decay_values被截断从 24120 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804322 的decay_values被截断从 23535 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804324 的decay_values被截断从 23242 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804325 的decay_values被填充从 22722 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804326 的decay_values被截断从 25438 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804328 的decay_values被截断从 25651 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804330 的decay_values被截断从 23367 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804332 的decay_values被截断从 22891 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804334 的decay_values被截断从 23430 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804335 的decay_values被截断从 24031 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804339 的decay_values被截断从 24025 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804340 的decay_values被截断从 23249 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804341 的decay_values被填充从 20446 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804342 的decay_values被截断从 24329 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804343 的decay_values被截断从 24143 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804344 的decay_values被截断从 24470 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804345 的decay_values被截断从 22992 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804347 的decay_values被填充从 21765 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804349 的decay_values被截断从 24698 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804351 的decay_values被填充从 21484 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804353 的decay_values被截断从 24123 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804354 的decay_values被填充从 22583 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804355 的decay_values被截断从 23017 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804356 的decay_values被截断从 23070 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804359 的decay_values被填充从 22644 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804360 的decay_values被截断从 24515 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804363 的decay_values被截断从 22859 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804365 的decay_values被截断从 25507 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804368 的decay_values被填充从 21549 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804369 的decay_values被截断从 25414 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804370 的decay_values被截断从 23807 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804374 的decay_values被截断从 23058 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804375 的decay_values被填充从 22149 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804376 的decay_values被截断从 24626 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804381 的decay_values被截断从 24919 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GaseE804382 的decay_values被填充从 22451 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803002 的decay_values被截断从 23142 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803003 的decay_values被截断从 22853 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803004 的decay_values被截断从 23311 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803014 的decay_values被截断从 23940 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803015 的decay_values被截断从 25091 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803018 的decay_values被截断从 24506 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803019 的decay_values被截断从 24772 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803022 的decay_values被填充从 22188 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803023 的decay_values被截断从 24181 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803024 的decay_values被截断从 25147 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803027 的decay_values被截断从 25194 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803029 的decay_values被截断从 25220 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803030 的decay_values被截断从 24554 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803032 的decay_values被截断从 23350 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803043 的decay_values被填充从 17395 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803044 的decay_values被填充从 19429 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803046 的decay_values被截断从 25464 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803047 的decay_values被截断从 23272 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803050 的decay_values被截断从 22834 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803051 的decay_values被截断从 23734 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803052 的decay_values被截断从 24842 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803053 的decay_values被填充从 20806 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803054 的decay_values被截断从 25528 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803055 的decay_values被截断从 24085 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803056 的decay_values被填充从 22629 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803057 的decay_values被填充从 21550 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803058 的decay_values被截断从 22958 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803059 的decay_values被截断从 23201 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803060 的decay_values被填充从 21972 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803064 的decay_values被截断从 24366 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803069 的decay_values被截断从 23872 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803075 的decay_values被截断从 23320 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803078 的decay_values被截断从 22986 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803080 的decay_values被填充从 22500 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803084 的decay_values被填充从 22536 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803086 的decay_values被截断从 25500 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803087 的decay_values被截断从 23002 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803090 的decay_values被截断从 23984 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803091 的decay_values被截断从 25481 到 22806
+2025-09-10 14:23:31 - data_validator - WARNING - 细胞 GasfE803095 的decay_values被截断从 23432 到 22806
+2025-09-10 14:23:31 - root - INFO - 创建了 239 × 22806 的decay矩阵
+2025-09-10 14:23:31 - root - INFO - 创建AnnData对象: 239 细胞 × 22806 特征
+2025-09-10 14:23:31 - root - INFO - 转换为H5AD格式 完成 - 用时: 0.1s - 内存变化: +56.2 MB
+2025-09-10 14:23:31 - root - INFO - 保存H5AD文件: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E80.h5ad
+2025-09-10 14:23:32 - root - INFO - H5AD文件已保存: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E80.h5ad (19.9 MB)
+2025-09-10 14:23:32 - root - INFO - 处理摘要已保存: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E80_summary.json
+2025-09-10 14:23:32 - root - INFO - 保存H5AD文件 完成 - 用时: 0.4s - 内存变化: +4.9 MB
+2025-09-10 14:23:32 - root - INFO - 处理完成: 947.6 MB (+709.3 MB from start)

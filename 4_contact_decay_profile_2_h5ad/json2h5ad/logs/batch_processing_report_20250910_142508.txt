@@ -1,0 +1,17 @@
+JSON to H5AD 批处理报告
+=====================
+
+处理时间: 2025年 9月10日 星期三 14时25分08秒 CST
+总Stage数: 7
+成功处理: 7
+失败处理: 0
+
+输出目录: /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output
+生成的文件:
+  - /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E70.h5ad (4.5M)
+  - /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E75.h5ad (61M)
+  - /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E80.h5ad (20M)
+  - /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E85.h5ad (58M)
+  - /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_E95.h5ad (39M)
+  - /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_EX05.h5ad (49M)
+  - /Volumes/SumSung500/CSU/0_HiRES/4_contact_decay_profile_2_h5ad/json2h5ad/output/stage_EX15.h5ad (48M)
