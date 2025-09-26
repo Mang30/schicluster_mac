@@ -8,13 +8,7 @@
 - `run_conversion.py`: 便捷运行脚本，内置内存优化配置
 - `README.md`: 使用说明
 
-## 核心特性
-
-### 🧬 雌雄混合细胞支持
-- **完整染色体**: 支持全部21条染色体 (chr1-19, chrX, chrY)
-- **智能检测**: 自动使用 `mm10_chrom_sizes_with_chrY.txt` 参考文件
-- **数据完整性**: 雄性细胞的chrY数据不再丢失
-- **一致性处理**: 雌性细胞chrY列为0，雄性细胞包含实际数据
+## 内存优化特性
 
 ### 🚀 分批处理
 - **默认批大小**: 200个细胞/批
@@ -36,7 +30,7 @@
 ```bash
 cd /Volumes/SumSung500/CSU/0_HiRES/11pair2h5ad/code
 
-# 默认配置 (推荐：21条染色体，批大小200，float32，过滤≥2次接触)
+# 默认配置 (推荐：批大小200，float32，过滤≥2次接触)
 /Users/wuhaoliu/mamba/envs/schicluster/bin/python run_conversion.py
 
 # 自定义批大小 (适合不同内存配置)
@@ -47,19 +41,15 @@ cd /Volumes/SumSung500/CSU/0_HiRES/11pair2h5ad/code
 
 # 不分批模式 (需要32-64GB内存)
 /Users/wuhaoliu/mamba/envs/schicluster/bin/python run_conversion.py --no_batch
-
-# 使用自动检测染色体模式 (可能丢失chrY数据)
-/Users/wuhaoliu/mamba/envs/schicluster/bin/python run_conversion.py --no_chr_file
 ```
 
 ### 方法2: 直接使用转换器
 
 ```bash
-# 基本用法 (使用染色体参考文件)
+# 基本用法
 /Users/wuhaoliu/mamba/envs/schicluster/bin/python pairs_to_h5ad_converter.py \
     --cell_table ../cell_table.tsv \
     --output ../output/hic_data_100k.h5ad \
-    --chr_sizes ../mm10_chrom_sizes_with_chrY.txt \
     --batch_size 200 \
     --min_contacts 2
 
@@ -67,50 +57,22 @@ cd /Volumes/SumSung500/CSU/0_HiRES/11pair2h5ad/code
 /Users/wuhaoliu/mamba/envs/schicluster/bin/python pairs_to_h5ad_converter.py \
     --cell_table ../cell_table.tsv \
     --output ../output/hic_data_100k_highperf.h5ad \
-    --chr_sizes ../mm10_chrom_sizes_with_chrY.txt \
     --use_float64 \
     --min_contacts 1 \
     --verbose
-
-# 自动检测模式 (可能不完整)
-/Users/wuhaoliu/mamba/envs/schicluster/bin/python pairs_to_h5ad_converter.py \
-    --cell_table ../cell_table.tsv \
-    --output ../output/hic_data_100k_auto.h5ad \
-    --batch_size 200 \
-    --verbose
 ```
 
-```
-  # 处理雌性细胞 (20条染色体)
-  /Users/wuhaoliu/mamba/envs/schicluster/bin/python
-   pairs_to_h5ad_converter.py \
-      --cell_table 20length_cell_table.tsv \
-      --output ../output/female_cells_20chr.h5ad \
-      --batch_size 200
-
-  # 处理雄性细胞 (21条染色体) 
-  /Users/wuhaoliu/mamba/envs/schicluster/bin/python
-   pairs_to_h5ad_converter.py \
-      --cell_table 21length_cell_table.tsv \
-      --output ../output/male_cells_21chr.h5ad \
-      --batch_size 200
-```
 ## 参数详细说明
 
 ### 核心参数
 - `--cell_table`: cell_table.tsv 文件路径
 - `--output`: 输出 h5ad 文件路径
 - `--resolution`: 分辨率（默认: 100000，即100K）
-- `--chr_sizes`: 染色体大小文件路径（推荐使用以确保完整性）
 
 ### 内存优化参数
 - `--batch_size`: 分批处理大小（默认: None，推荐: 100-500）
 - `--use_float64`: 使用float64精度（默认: float32）
 - `--min_contacts`: 最小接触次数阈值（默认: 1）
-
-### 便捷脚本专用参数
-- `--no_chr_file`: 不使用染色体文件，改为自动检测
-- `--no_batch`: 禁用分批处理
 
 ### 其他参数
 - `--verbose`: 详细输出模式
@@ -128,13 +90,12 @@ cd /Volumes/SumSung500/CSU/0_HiRES/11pair2h5ad/code
 
 输出文件名自动根据配置生成：
 ```
-hic_data_100k_{precision}_{batch_info}_min{min_contacts}_{chr_info}.h5ad
+hic_data_100k_{precision}_{batch_info}_min{min_contacts}.h5ad
 ```
 
 示例：
-- `hic_data_100k_float32_batch200_min2_ref.h5ad` (使用参考文件，21条染色体)
-- `hic_data_100k_float64_nobatch_min1_auto.h5ad` (自动检测，可能20条染色体)
-- `hic_data_100k_float32_batch100_min3_ref.h5ad` (完整染色体，低内存配置)
+- `hic_data_100k_float32_batch200_min2.h5ad`
+- `hic_data_100k_float64_nobatch_min1.h5ad`
 
 ## 输入数据格式
 

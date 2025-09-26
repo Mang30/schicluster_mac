@@ -25,8 +25,7 @@ logger = logging.getLogger(__name__)
 
 class PairsToH5ADConverter:
     def __init__(self, cell_table_path, output_path, resolution=100000,
-                 batch_size=None, use_float32=True, min_contacts=1,
-                 chr_sizes_file=None):
+                 batch_size=None, use_float32=True, min_contacts=1):
         """
         初始化转换器
 
@@ -37,7 +36,6 @@ class PairsToH5ADConverter:
             batch_size: 分批处理大小，None表示不分批
             use_float32: 是否使用float32降低内存使用
             min_contacts: 最小接触次数阈值，低于此值的接触将被过滤
-            chr_sizes_file: 染色体大小文件路径，如果提供则使用此文件而非从pairs文件推断
         """
         self.cell_table_path = cell_table_path
         self.output_path = output_path
@@ -45,7 +43,6 @@ class PairsToH5ADConverter:
         self.batch_size = batch_size
         self.use_float32 = use_float32
         self.min_contacts = min_contacts
-        self.chr_sizes_file = chr_sizes_file
         self.chromosomes = []
         self.chr_lengths = {}
         self.bin_mapping = {}
@@ -75,96 +72,17 @@ class PairsToH5ADConverter:
 
         return chr_info
 
-    def load_chromosome_info_from_file(self, chr_sizes_file):
-        """从染色体大小文件加载染色体信息"""
-        logger.info(f"从文件加载染色体信息: {chr_sizes_file}")
-
-        chr_info = {}
-        with open(chr_sizes_file, 'r') as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith('#'):
-                    parts = line.split('\t')
-                    if len(parts) >= 2:
-                        chr_name = parts[0]
-                        chr_length = int(parts[1])
-                        chr_info[chr_name] = chr_length
-
-        logger.info(f"从文件加载了 {len(chr_info)} 条染色体信息")
-        return chr_info
-
-    def scan_multiple_files_for_chromosomes(self, cell_df, max_files=10):
-        """扫描多个文件以获取完整的染色体信息"""
-        logger.info("扫描多个文件以获取完整染色体信息...")
-
-        all_chr_info = {}
-        files_scanned = 0
-
-        for idx, row in cell_df.iterrows():
-            if files_scanned >= max_files:
-                break
-
-            pairs_file = row['file_path']
-            if not os.path.exists(pairs_file):
-                continue
-
-            try:
-                chr_info = self.get_chromosome_info(pairs_file)
-                # 合并染色体信息，保留最大长度
-                for chr_name, chr_length in chr_info.items():
-                    if chr_name not in all_chr_info:
-                        all_chr_info[chr_name] = chr_length
-                    else:
-                        all_chr_info[chr_name] = max(all_chr_info[chr_name], chr_length)
-
-                files_scanned += 1
-                logger.debug(f"扫描文件 {files_scanned}: {os.path.basename(pairs_file)}")
-
-            except Exception as e:
-                logger.warning(f"扫描文件 {pairs_file} 时出错: {e}")
-                continue
-
-        logger.info(f"扫描了 {files_scanned} 个文件，发现 {len(all_chr_info)} 条染色体")
-        return all_chr_info
-
-    def setup_bins(self, cell_df=None):
+    def setup_bins(self, sample_file):
         """建立基因组分箱系统"""
         logger.info("设置基因组分箱...")
 
-        # 优先使用提供的染色体大小文件
-        if self.chr_sizes_file and os.path.exists(self.chr_sizes_file):
-            chr_info = self.load_chromosome_info_from_file(self.chr_sizes_file)
-        elif cell_df is not None:
-            # 扫描多个文件获取完整染色体信息
-            chr_info = self.scan_multiple_files_for_chromosomes(cell_df)
-        else:
-            # 回退到原有方法（使用第一个文件）
-            sample_file = self.cell_df.iloc[0]['file_path']
-            if not os.path.exists(sample_file):
-                raise FileNotFoundError(f"示例文件不存在: {sample_file}")
-            chr_info = self.get_chromosome_info(sample_file)
-            logger.warning("使用第一个文件推断染色体信息，可能不完整")
+        # 从一个示例文件获取染色体信息
+        chr_info = self.get_chromosome_info(sample_file)
 
-        if not chr_info:
-            raise ValueError("无法获取染色体信息")
-
-        # 按染色体名称排序 - 改进的排序逻辑
-        def sort_chromosome(chr_name):
-            # 移除 'chr' 前缀进行排序
-            if chr_name.startswith('chr'):
-                suffix = chr_name[3:]
-                if suffix.isdigit():
-                    return (0, int(suffix))  # 常染色体按数字排序
-                elif suffix == 'X':
-                    return (1, 0)  # X染色体
-                elif suffix == 'Y':
-                    return (1, 1)  # Y染色体
-                else:
-                    return (2, suffix)  # 其他染色体按字母排序
-            else:
-                return (3, chr_name)  # 无chr前缀的染色体
-
-        sorted_chrs = sorted(chr_info.keys(), key=sort_chromosome)
+        # 按染色体名称排序
+        sorted_chrs = sorted(chr_info.keys(), key=lambda x: (
+            len(x), x  # 先按长度排序，再按字母排序，确保 chr1, chr2, ..., chr10, chr11 等正确排序
+        ))
 
         self.chromosomes = sorted_chrs
         self.chr_lengths = chr_info
@@ -182,20 +100,7 @@ class PairsToH5ADConverter:
             bin_start += n_bins
 
         self.total_bins = bin_start
-
-        # 详细输出染色体信息
         logger.info(f"总共 {self.total_bins} 个分箱，覆盖 {len(self.chromosomes)} 条染色体")
-        logger.info(f"染色体列表: {', '.join(self.chromosomes)}")
-
-        # 特别标注性染色体
-        sex_chrs = [chr_name for chr_name in self.chromosomes if chr_name in ['chrX', 'chrY']]
-        if sex_chrs:
-            logger.info(f"包含性染色体: {', '.join(sex_chrs)}")
-
-        if 'chrY' in self.chromosomes:
-            logger.info("✓ 支持雄性细胞 (包含chrY)")
-        else:
-            logger.warning("⚠ 仅支持雌性细胞 (缺少chrY)")
 
     def pos_to_bin(self, chr_name, pos):
         """将染色体位置转换为分箱索引"""
@@ -306,8 +211,12 @@ class PairsToH5ADConverter:
         # 加载细胞表
         cell_df = self.load_cell_table()
 
-        # 设置基因组分箱系统 - 传入cell_df以支持多文件扫描
-        self.setup_bins(cell_df)
+        # 检查第一个文件以设置分箱系统
+        sample_file = cell_df.iloc[0]['file_path']
+        if not os.path.exists(sample_file):
+            raise FileNotFoundError(f"示例文件不存在: {sample_file}")
+
+        self.setup_bins(sample_file)
 
         # 确定是否使用分批处理
         if self.batch_size is None:
@@ -371,15 +280,10 @@ class PairsToH5ADConverter:
             # 显示进度
             logger.info(f"批次 {batch_idx + 1} 完成，本批处理 {len(batch_matrices)} 个细胞")
 
-            # 激进内存清理
+            # 内存清理
             del batch_matrices, batch_cells
             import gc
             gc.collect()
-
-            # 强制内存释放
-            import psutil
-            process = psutil.Process()
-            logger.debug(f"批次 {batch_idx + 1} 完成后内存使用: {process.memory_info().rss / 1024**3:.2f} GB")
 
         if not all_matrices:
             raise ValueError("没有成功处理任何细胞数据")
@@ -435,7 +339,6 @@ def main():
     parser.add_argument('--batch_size', type=int, default=None, help='分批处理大小 (默认: None, 不分批)')
     parser.add_argument('--use_float64', action='store_true', help='使用 float64 精度 (默认: float32)')
     parser.add_argument('--min_contacts', type=int, default=1, help='最小接触次数阈值 (默认: 1)')
-    parser.add_argument('--chr_sizes', type=str, help='染色体大小文件路径 (推荐使用以确保完整性)')
     parser.add_argument('--verbose', action='store_true', help='详细输出')
 
     args = parser.parse_args()
@@ -446,11 +349,6 @@ def main():
     # 检查输入文件
     if not os.path.exists(args.cell_table):
         print(f"错误: 细胞表文件不存在: {args.cell_table}")
-        sys.exit(1)
-
-    # 检查染色体大小文件
-    if args.chr_sizes and not os.path.exists(args.chr_sizes):
-        print(f"错误: 染色体大小文件不存在: {args.chr_sizes}")
         sys.exit(1)
 
     # 创建输出目录
@@ -466,7 +364,6 @@ def main():
     print(f"分批大小: {args.batch_size if args.batch_size else '不分批'}")
     print(f"数据精度: {'float64' if args.use_float64 else 'float32'}")
     print(f"最小接触数: {args.min_contacts}")
-    print(f"染色体信息: {args.chr_sizes if args.chr_sizes else '自动检测'}")
     print("=" * 60)
 
     # 执行转换
@@ -476,8 +373,7 @@ def main():
         resolution=args.resolution,
         batch_size=args.batch_size,
         use_float32=not args.use_float64,
-        min_contacts=args.min_contacts,
-        chr_sizes_file=args.chr_sizes
+        min_contacts=args.min_contacts
     )
     converter.convert_to_h5ad()
 

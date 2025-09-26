@@ -133,6 +133,12 @@ def main():
     # 创建输出目录
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+    # 生成全部细胞表（包含所有有效细胞）
+    output_all = os.path.join(OUTPUT_DIR, 'all_cell_table.tsv')
+    all_cells_output = merged_df[['cellname', 'file_path']]
+    all_cells_output.to_csv(output_all, sep='\t', header=False, index=False)
+    logger.info(f"已生成 全部细胞表: {output_all}")
+
     # 生成20条染色体细胞表
     output_20 = os.path.join(OUTPUT_DIR, '20length_cell_table.tsv')
     cells_20_output = cells_20_chr[['cellname', 'file_path']]
@@ -184,22 +190,7 @@ def main():
     else:
         logger.info("✅ 所有生成的文件路径验证通过")
 
-    # 输出使用建议
-    print("\n" + "="*50)
-    print("📋 使用建议:")
-    print("="*50)
-    print("1. 雌性细胞处理 (内存需求较低):")
-    print(f"   /Users/wuhaoliu/mamba/envs/schicluster/bin/python pairs_to_h5ad_converter.py \\")
-    print(f"       --cell_table {output_20} \\")
-    print(f"       --output ../output/female_cells_20chr.h5ad \\")
-    print(f"       --batch_size 200")
-    print()
-    print("2. 雄性细胞处理:")
-    print(f"   /Users/wuhaoliu/mamba/envs/schicluster/bin/python pairs_to_h5ad_converter.py \\")
-    print(f"       --cell_table {output_21} \\")
-    print(f"       --output ../output/male_cells_21chr.h5ad \\")
-    print(f"       --batch_size 200")
-    print("="*50)
+
 
 
 if __name__ == '__main__':
